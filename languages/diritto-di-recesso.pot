@@ -203,6 +203,9 @@ msgstr ""
 msgid "Diritto di recesso"
 msgstr ""
 
+msgid "Disclaimer."
+msgstr ""
+
 msgid "Documento riepilogativo della dichiarazione di recesso (art. 54-bis Codice del Consumo)."
 msgstr ""
 
@@ -450,6 +453,9 @@ msgid "Per ripristinare il testo predefinito, svuota il campo e salva."
 msgstr ""
 
 msgid "Permessi insufficienti."
+msgstr ""
+
+msgid "Plugin gratuito fornito «così com’è», senza garanzie. È uno strumento tecnico: non costituisce consulenza legale né garantisce la conformità normativa. La responsabilità degli adempimenti di legge (art. 54-bis e art. 49 del Codice del Consumo, Direttiva 2011/83/UE) e dell’adeguamento dei testi resta esclusivamente del titolare del sito. Nei limiti consentiti dalla legge, Artwork non risponde di danni, sanzioni o conseguenze derivanti dall’uso."
 msgstr ""
 
 msgid "Procedi alla conferma"

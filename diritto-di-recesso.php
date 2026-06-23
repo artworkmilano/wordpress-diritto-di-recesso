@@ -3,7 +3,7 @@
  * Plugin Name:       Diritto di Recesso per WooCommerce
  * Plugin URI:        https://artworkstudios.it/diritto-di-recesso
  * Description:       Recesso digitale conforme all'art. 54-bis del Codice del Consumo (D.Lgs. 209/2025) per WooCommerce. Punto d'accesso unico (pagina + link footer) valido anche per ospiti senza account: lookup ordine, doppia conferma, avviso di ricevimento su supporto durevole con data/ora, notifica admin e audit trail.
- * Version:           1.9.0
+ * Version:           1.9.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Artwork
@@ -17,17 +17,23 @@
  *
  * Diritto di Recesso per WooCommerce — by Artwork (https://artworkstudios.it)
  *
- * NOTA LEGALE: questo plugin fornisce gli strumenti tecnici per adempiere
- * all'obbligo dell'art. 54-bis. Non sostituisce un parere legale: le condizioni
- * generali di vendita e l'informativa precontrattuale (art. 49 c.1 lett. h)
- * vanno adeguate separatamente dal professionista.
+ * DISCLAIMER / ESCLUSIONE DI RESPONSABILITA':
+ * Software libero e gratuito (licenza GPL-2.0-or-later) fornito "COSI' COM'E'"
+ * ("AS IS"), SENZA GARANZIE DI ALCUN TIPO, esplicite o implicite. E' uno
+ * strumento tecnico: NON costituisce consulenza legale e NON garantisce la
+ * conformita' normativa. La responsabilita' dell'adempimento degli obblighi di
+ * legge (art. 54-bis e art. 49 c.1 lett. h del Codice del Consumo, Direttiva
+ * 2011/83/UE) e dell'adeguamento dei testi resta ESCLUSIVAMENTE del titolare del
+ * sito. Nei limiti massimi consentiti dalla legge applicabile, l'autore (Artwork)
+ * non e' responsabile per danni diretti o indiretti, sanzioni, perdite o
+ * conseguenze derivanti dall'installazione o dall'uso del plugin.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DDR_VERSION', '1.9.0' );
+define( 'DDR_VERSION', '1.9.1' );
 define( 'DDR_FILE', __FILE__ );
 define( 'DDR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DDR_URL', plugin_dir_url( __FILE__ ) );

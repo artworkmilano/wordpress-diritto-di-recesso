@@ -176,6 +176,8 @@ class DDR_Legal {
 		<div class="wrap">
 			<h1><?php esc_html_e( 'Diritto di Recesso – Testi legali', 'diritto-di-recesso' ); ?></h1>
 
+			<?php if ( class_exists( 'DDR_Admin' ) ) { DDR_Admin::disclaimer_notice(); } ?>
+
 			<?php if ( $saved ) : ?>
 				<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Testi salvati.', 'diritto-di-recesso' ); ?></p></div>
 			<?php endif; ?>

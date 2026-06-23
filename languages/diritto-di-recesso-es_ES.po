@@ -694,3 +694,9 @@ msgstr "Se ha registrado una nueva solicitud de desistimiento en línea."
 msgid "— Nessuno —"
 msgstr "— Ninguno —"
 
+
+msgid "Disclaimer."
+msgstr "Aviso legal."
+
+msgid "Plugin gratuito fornito «così com’è», senza garanzie. È uno strumento tecnico: non costituisce consulenza legale né garantisce la conformità normativa. La responsabilità degli adempimenti di legge (art. 54-bis e art. 49 del Codice del Consumo, Direttiva 2011/83/UE) e dell’adeguamento dei testi resta esclusivamente del titolare del sito. Nei limiti consentiti dalla legge, Artwork non risponde di danni, sanzioni o conseguenze derivanti dall’uso."
+msgstr "Plugin gratuito proporcionado «tal cual», sin garantías. Es una herramienta técnica: no constituye asesoramiento jurídico ni garantiza el cumplimiento normativo. La responsabilidad del cumplimiento legal (art. 54-bis y art. 49 del Código de Consumo italiano, Directiva 2011/83/UE) y de la adaptación de los textos corresponde exclusivamente al titular del sitio. En la medida permitida por la ley, Artwork no responde por daños, sanciones o consecuencias derivadas del uso."

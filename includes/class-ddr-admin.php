@@ -88,6 +88,16 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_shadow', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 	}
 
+	/**
+	 * Disclaimer / esclusione di responsabilità mostrato nelle pagine del plugin.
+	 */
+	public static function disclaimer_notice() {
+		echo '<div class="notice notice-info inline" style="border-left-color:#8b31ff;padding:10px 14px;margin:14px 0;"><p style="margin:0;">';
+		echo '<strong>' . esc_html__( 'Disclaimer.', 'diritto-di-recesso' ) . '</strong> ';
+		echo esc_html__( 'Plugin gratuito fornito «così com’è», senza garanzie. È uno strumento tecnico: non costituisce consulenza legale né garantisce la conformità normativa. La responsabilità degli adempimenti di legge (art. 54-bis e art. 49 del Codice del Consumo, Direttiva 2011/83/UE) e dell’adeguamento dei testi resta esclusivamente del titolare del sito. Nei limiti consentiti dalla legge, Artwork non risponde di danni, sanzioni o conseguenze derivanti dall’uso.', 'diritto-di-recesso' );
+		echo '</p></div>';
+	}
+
 	public static function render_settings() {
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
 			return;
@@ -96,6 +106,8 @@ class DDR_Admin {
 		?>
 		<div class="wrap">
 			<h1><?php esc_html_e( 'Diritto di Recesso 54-bis – Impostazioni', 'diritto-di-recesso' ); ?></h1>
+
+			<?php self::disclaimer_notice(); ?>
 
 			<?php if ( $page_id ) : ?>
 				<p><?php esc_html_e( 'Pagina pubblica del recesso:', 'diritto-di-recesso' ); ?>

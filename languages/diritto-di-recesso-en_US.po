@@ -694,3 +694,9 @@ msgstr "A new online withdrawal request has been registered."
 msgid "— Nessuno —"
 msgstr "— None —"
 
+
+msgid "Disclaimer."
+msgstr "Disclaimer."
+
+msgid "Plugin gratuito fornito «così com’è», senza garanzie. È uno strumento tecnico: non costituisce consulenza legale né garantisce la conformità normativa. La responsabilità degli adempimenti di legge (art. 54-bis e art. 49 del Codice del Consumo, Direttiva 2011/83/UE) e dell’adeguamento dei testi resta esclusivamente del titolare del sito. Nei limiti consentiti dalla legge, Artwork non risponde di danni, sanzioni o conseguenze derivanti dall’uso."
+msgstr "Free plugin provided “as is”, without warranty. It is a technical tool: it does not constitute legal advice nor guarantee regulatory compliance. Responsibility for legal compliance (art. 54-bis and art. 49 of the Italian Consumer Code, Directive 2011/83/EU) and for adapting the texts remains solely with the site owner. To the extent permitted by law, Artwork is not liable for damages, penalties or consequences arising from use."

@@ -694,3 +694,9 @@ msgstr "Ein neuer Online-Widerrufsantrag wurde registriert."
 msgid "— Nessuno —"
 msgstr "— Keiner —"
 
+
+msgid "Disclaimer."
+msgstr "Haftungsausschluss."
+
+msgid "Plugin gratuito fornito «così com’è», senza garanzie. È uno strumento tecnico: non costituisce consulenza legale né garantisce la conformità normativa. La responsabilità degli adempimenti di legge (art. 54-bis e art. 49 del Codice del Consumo, Direttiva 2011/83/UE) e dell’adeguamento dei testi resta esclusivamente del titolare del sito. Nei limiti consentiti dalla legge, Artwork non risponde di danni, sanzioni o conseguenze derivanti dall’uso."
+msgstr "Kostenloses Plugin, bereitgestellt „wie besehen“, ohne Gewährleistung. Es ist ein technisches Werkzeug: Es stellt keine Rechtsberatung dar und gewährleistet keine Rechtskonformität. Die Verantwortung für die Einhaltung der gesetzlichen Pflichten (Art. 54-bis und Art. 49 des italienischen Verbrauchergesetzbuchs, Richtlinie 2011/83/EU) und für die Anpassung der Texte liegt ausschließlich beim Website-Inhaber. Soweit gesetzlich zulässig, haftet Artwork nicht für Schäden, Strafen oder Folgen, die aus der Nutzung entstehen."

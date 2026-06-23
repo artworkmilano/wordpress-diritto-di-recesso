@@ -694,3 +694,9 @@ msgstr "Une nouvelle demande de rétractation en ligne a été enregistrée."
 msgid "— Nessuno —"
 msgstr "— Aucun —"
 
+
+msgid "Disclaimer."
+msgstr "Avertissement."
+
+msgid "Plugin gratuito fornito «così com’è», senza garanzie. È uno strumento tecnico: non costituisce consulenza legale né garantisce la conformità normativa. La responsabilità degli adempimenti di legge (art. 54-bis e art. 49 del Codice del Consumo, Direttiva 2011/83/UE) e dell’adeguamento dei testi resta esclusivamente del titolare del sito. Nei limiti consentiti dalla legge, Artwork non risponde di danni, sanzioni o conseguenze derivanti dall’uso."
+msgstr "Extension gratuite fournie « telle quelle », sans garantie. C’est un outil technique : il ne constitue pas un avis juridique ni ne garantit la conformité réglementaire. La responsabilité du respect des obligations légales (art. 54-bis et art. 49 du Code de la consommation italien, Directive 2011/83/UE) et de l’adaptation des textes incombe exclusivement au titulaire du site. Dans les limites permises par la loi, Artwork n’est pas responsable des dommages, sanctions ou conséquences résultant de l’utilisation."

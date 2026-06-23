@@ -471,8 +471,7 @@ JS;
 		$per_page = 50;
 		$offset   = ( $paged - 1 ) * $per_page;
 		$total    = DDR_DB::count_all();
-		$rows     = DDR_DB::all( array( 'per_page' => $per_page, 'offset' => $offset ) );
-		?>
+		$rows       = DDR_DB::all( array( 'per_page' => $per_page, 'offset' => $offset ) );
 		$export_url = wp_nonce_url( admin_url( 'admin-post.php?action=ddr_export_csv' ), 'ddr_export_csv' );
 		?>
 		<div class="wrap">

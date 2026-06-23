@@ -5,7 +5,7 @@ Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 7.0
-Stable tag: 1.9.1
+Stable tag: 1.9.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,9 @@ I testi legali predefiniti sono un punto di partenza generico (basato sulla Dire
 Strumento tecnico, non sostituisce un parere legale. Adeguare separatamente condizioni generali di vendita e informativa precontrattuale (art. 49 c.1 lett. h). La funzione non crea il diritto di recesso: lo rende esercitabile online dove gia' esiste.
 
 == Changelog ==
+= 1.9.2 =
+* Fix: nella pagina "Richieste di recesso" veniva stampata una riga di codice (tag PHP errato). Risolto.
+
 = 1.9.1 =
 * Disclaimer/esclusione di responsabilità (gratuito, fornito «così com'è», non sostituisce consulenza legale) nell'header, nel readme e ben visibile nell'admin, tradotto nelle 5 lingue.
 * Predisposta la build per WordPress.org (self-updater disattivato: gli aggiornamenti li gestisce WordPress.org).

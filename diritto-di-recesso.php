@@ -13,6 +13,7 @@
  * Text Domain:       diritto-di-recesso
  * Domain Path:       /languages
  * WC requires at least: 7.0
+ * Update URI:        https://github.com/artworkmilano/wordpress-diritto-di-recesso
  *
  * Diritto di Recesso 54-bis — by Artwork (https://artworkstudios.it)
  *
@@ -33,9 +34,9 @@ define( 'DDR_URL', plugin_dir_url( __FILE__ ) );
 define( 'DDR_SHORTCODE', 'diritto_recesso' );
 
 // Repo GitHub per l'auto-aggiornamento integrato (formato "owner/repo").
-// Vuoto = updater disattivato. Impostato alla pubblicazione del repo.
+// Vuoto = updater disattivato.
 if ( ! defined( 'DDR_GITHUB_REPO' ) ) {
-	define( 'DDR_GITHUB_REPO', '' );
+	define( 'DDR_GITHUB_REPO', 'artworkmilano/wordpress-diritto-di-recesso' );
 }
 
 /**

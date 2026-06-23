@@ -1,0 +1,696 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Diritto di Recesso 54-bis\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
+"X-Domain: diritto-di-recesso\n"
+
+msgid "(*) Cancellare la dicitura inutile."
+msgstr "(*) Biffez la mention inutile."
+
+msgid "(Compilare e restituire il presente modulo solo se si desidera recedere dal contratto.)"
+msgstr "(Complétez et renvoyez ce formulaire uniquement si vous souhaitez vous rétracter du contrat.)"
+
+msgid "Abbiamo aggiornato lo stato della tua richiesta di recesso."
+msgstr "Nous avons mis à jour le statut de votre demande de rétractation."
+
+msgid "Abbiamo registrato la tua dichiarazione di recesso. Ti abbiamo inviato l’avviso di ricevimento all’indirizzo email indicato, con data e ora della trasmissione."
+msgstr "Nous avons enregistré votre déclaration de rétractation. Nous vous avons envoyé l’accusé de réception à l’adresse e-mail indiquée, avec la date et l’heure de transmission."
+
+msgid "Abilita la generazione del PDF della ricevuta (pulsante “Scarica PDF”)"
+msgstr "Activer la génération du PDF du reçu (bouton « Télécharger le PDF »)"
+
+msgid "Aggiornamenti"
+msgstr "Mises à jour"
+
+msgid "Aggiornamento richiesta di recesso"
+msgstr "Mise à jour de la demande de rétractation"
+
+msgid "Aggiunge la voce di recesso al menu selezionato. In alternativa usa lo shortcode:"
+msgstr "Ajoute l’entrée de rétractation au menu sélectionné. Vous pouvez aussi utiliser le shortcode :"
+
+msgid "Aggiungi a un menu"
+msgstr "Ajouter à un menu"
+
+msgid "Allega il PDF all’email di avviso ricevimento"
+msgstr "Joindre le PDF à l’e-mail d’accusé de réception"
+
+msgid "All’attenzione di %1$s, %2$s:"
+msgstr "À l’attention de %1$s, %2$s :"
+
+msgid "Annulla"
+msgstr "Annuler"
+
+msgid "Annullata"
+msgstr "Annulée"
+
+msgid "Apri il flusso di recesso in una finestra modale (overlay) invece di cambiare pagina"
+msgstr "Ouvrir le parcours de rétractation dans une fenêtre modale (overlay) au lieu de changer de page"
+
+msgid "Apri in finestra modale"
+msgstr "Ouvrir dans une fenêtre modale"
+
+msgid "Arrotondamento globale di box, card, pulsanti e campi. 0 = squadrato."
+msgstr "Arrondi global des boîtes, cartes, boutons et champs. 0 = carré."
+
+msgid "Aspetto"
+msgstr "Apparence"
+
+msgid "Attenzione: rimuove definitivamente l’audit trail delle richieste di recesso. Lascia disattivato per conservare le prove."
+msgstr "Attention : ceci supprime définitivement l’historique des demandes de rétractation. Laissez désactivé pour conserver les preuves."
+
+msgid "Attiva solo se il sito è dietro Cloudflare o un reverse proxy affidabile. Di default viene registrato l’IP della connessione diretta."
+msgstr "Activez uniquement si le site est derrière Cloudflare ou un reverse proxy fiable. Par défaut, l’IP de la connexion directe est enregistrée."
+
+msgid "Aumenta quantità"
+msgstr "Augmenter la quantité"
+
+msgid "Avanzate"
+msgstr "Avancé"
+
+msgid "Avvisa il cliente via email quando cambi lo stato della sua richiesta (in lavorazione, completata, annullata)"
+msgstr "Avertir le client par e-mail lorsque vous changez le statut de sa demande (en traitement, terminée, annulée)"
+
+msgid "Avviso di ricevimento del recesso"
+msgstr "Accusé de réception de la rétractation"
+
+msgid "Badge (pill)"
+msgstr "Badge (pastille)"
+
+msgid "Cancellazione dati"
+msgstr "Suppression des données"
+
+msgid "Ciao %s,"
+msgstr "Bonjour %s,"
+
+msgid "Clausola di recesso (condizioni)"
+msgstr "Clause de rétractation (conditions)"
+
+msgid "Cliente"
+msgstr "Client"
+
+msgid "Codice ricevuta"
+msgstr "Code du reçu"
+
+msgid "Codice ricevuta:"
+msgstr "Code du reçu :"
+
+msgid "Colore accento"
+msgstr "Couleur d’accent"
+
+msgid "Colore dell’icona e dei link “stile testo”. Intonalo al brand del sito."
+msgstr "Couleur de l’icône et des liens « texte ». Accordez-la à votre marque."
+
+msgid "Colore overlay:"
+msgstr "Couleur de l’overlay :"
+
+msgid "Colore pulsante"
+msgstr "Couleur du bouton"
+
+msgid "Completata"
+msgstr "Terminée"
+
+msgid "Con la presente io/noi (*) notifico/notifichiamo (*) il recesso dal mio/nostro (*) contratto di vendita dei seguenti beni (*)/per la prestazione dei seguenti servizi (*):"
+msgstr "Je/nous (*) vous notifie/notifions (*) par la présente la rétractation de mon/notre (*) contrat de vente des biens suivants (*)/pour la prestation des services suivants (*) :"
+
+msgid "Conferma il recesso"
+msgstr "Confirmer la rétractation"
+
+msgid "Conferma la richiesta di recesso"
+msgstr "Confirmer la demande de rétractation"
+
+msgid "Conferma recesso"
+msgstr "Confirmer la rétractation"
+
+msgid "Confermiamo di aver ricevuto la tua dichiarazione di recesso. Questo messaggio costituisce avviso di ricevimento su supporto durevole ai sensi dell’art. 54-bis del Codice del Consumo."
+msgstr "Nous confirmons avoir reçu votre déclaration de rétractation. Ce message constitue l’accusé de réception sur un support durable conformément à l’art. 54-bis du Code de la consommation italien."
+
+msgid "Consigliato: PNG o JPG, lato lungo ~600 px (orizzontale), fondo trasparente o bianco."
+msgstr "Recommandé : PNG ou JPG, plus grand côté ~600 px (horizontal), fond transparent ou blanc."
+
+msgid "Continua"
+msgstr "Continuer"
+
+msgid "Controlla aggiornamenti adesso"
+msgstr "Vérifier les mises à jour maintenant"
+
+msgid "Controllo aggiornamenti eseguito."
+msgstr "Vérification des mises à jour effectuée."
+
+msgid "Conversione SVG su questo server: NON disponibile. Per il PDF carica un PNG o JPG."
+msgstr "Conversion SVG sur ce serveur : NON disponible. Téléversez un PNG ou un JPG pour le PDF."
+
+msgid "Conversione SVG su questo server: disponibile (gli SVG vengono convertiti automaticamente)."
+msgstr "Conversion SVG sur ce serveur : disponible (les SVG sont convertis automatiquement)."
+
+msgid "Cosa vuoi restituire"
+msgstr "Que souhaitez-vous retourner"
+
+msgid "Crea/aggiorna una pagina “Diritto di recesso” (collegala nel footer) con la clausola, il modulo tipo e le esclusioni."
+msgstr "Créez/mettez à jour une page « Droit de rétractation » (liée dans le pied de page) avec la clause, le formulaire type et les exceptions."
+
+msgid "Da indicare nell’informativa precontrattuale / Condizioni di Vendita per chiarire i casi in cui il recesso non si applica."
+msgstr "À indiquer dans l’information précontractuelle / les Conditions de vente pour préciser les cas où la rétractation ne s’applique pas."
+
+msgid "Da inserire nelle Condizioni Generali di Vendita e nella pagina “Diritto di recesso” (informativa precontrattuale, art. 49 c.1 lett. h)."
+msgstr "À inclure dans les Conditions générales de vente et sur la page « Droit de rétractation » (information précontractuelle, art. 49(1)(h))."
+
+msgid "Da mettere a disposizione nella pagina “Diritto di recesso” (Allegato I.B Dir. 2011/83/UE). L’uso del modulo non è obbligatorio per il consumatore."
+msgstr "À mettre à disposition sur la page « Droit de rétractation » (Annexe I.B Dir. 2011/83/UE). L’usage du formulaire n’est pas obligatoire pour le consommateur."
+
+msgid "Da qui puoi esercitare il diritto di recesso sugli ordini idonei e consultare le richieste già inviate."
+msgstr "Ici vous pouvez exercer le droit de rétractation sur les commandes éligibles et consulter les demandes déjà envoyées."
+
+msgid "Data"
+msgstr "Date"
+
+msgid "Data e ora"
+msgstr "Date et heure"
+
+msgid "Data e ora di trasmissione"
+msgstr "Date et heure de transmission"
+
+msgid "Data:"
+msgstr "Date :"
+
+msgid "Default 14. L’art. 53 può estendere fino a 12 mesi se l’informativa precontrattuale è carente."
+msgstr "Par défaut 14. L’art. 53 peut l’étendre jusqu’à 12 mois si l’information précontractuelle est incomplète."
+
+msgid "Destinatari notifiche"
+msgstr "Destinataires des notifications"
+
+msgid "Dichiarazione di recesso"
+msgstr "Déclaration de rétractation"
+
+msgid "Dichiaro di voler recedere dal contratto relativo ai prodotti sopra indicati."
+msgstr "Je déclare vouloir me rétracter du contrat relatif aux produits indiqués ci-dessus."
+
+msgid "Diritto di Recesso"
+msgstr "Droit de rétractation"
+
+msgid "Diritto di Recesso 54-bis richiede WooCommerce attivo per funzionare."
+msgstr "Droit de rétractation 54-bis nécessite que WooCommerce soit actif."
+
+msgid "Diritto di Recesso 54-bis – Impostazioni"
+msgstr "Droit de rétractation 54-bis – Réglages"
+
+msgid "Diritto di Recesso – Testi legali"
+msgstr "Droit de rétractation – Textes légaux"
+
+msgid "Diritto di recesso"
+msgstr "Droit de rétractation"
+
+msgid "Documento riepilogativo della dichiarazione di recesso (art. 54-bis Codice del Consumo)."
+msgstr "Document récapitulatif de la déclaration de rétractation (art. 54-bis Code de la consommation italien)."
+
+msgid "Documento riepilogativo della dichiarazione di recesso ai sensi dell’art. 54-bis del Codice del Consumo. Costituisce avviso di ricevimento su supporto durevole."
+msgstr "Document récapitulatif de la déclaration de rétractation conformément à l’art. 54-bis du Code de la consommation italien. Il constitue l’accusé de réception sur un support durable."
+
+msgid "Dove inserire questi testi (obblighi di legge)."
+msgstr "Où insérer ces textes (obligations légales)."
+
+msgid "Eccezioni al diritto di recesso"
+msgstr "Exceptions au droit de rétractation"
+
+msgid "Elimina tabella, opzioni e pagina alla disinstallazione del plugin"
+msgstr "Supprimer la table, les options et la page lors de la désinstallation de l’extension"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Email al cliente sui cambi di stato"
+msgstr "E-mail au client lors des changements de statut"
+
+msgid "Email di fatturazione"
+msgstr "E-mail de facturation"
+
+msgid "Email separate da virgola. Vuoto = email amministratore del sito."
+msgstr "E-mails séparés par des virgules. Vide = e-mail de l’administrateur du site."
+
+msgid "Email: %s"
+msgstr "E-mail : %s"
+
+msgid "Esclusioni legali (art. 59)"
+msgstr "Exceptions légales (art. 59)"
+
+msgid "Escluso dal recesso (art. 59)"
+msgstr "Exclu de la rétractation (art. 59)"
+
+msgid "Esporta CSV"
+msgstr "Exporter en CSV"
+
+msgid "Etichetta del link/pulsante (footer, area ordini, form). Vuoto = “Recedere dal contratto qui”, l’esempio indicato dall’art. 54-bis c.3."
+msgstr "Libellé du lien/bouton (pied de page, espace commandes, formulaire). Vide = « Se rétracter du contrat ici », l’exemple indiqué par l’art. 54-bis(3)."
+
+msgid "Firma del consumatore o dei consumatori (solo se il presente modulo è notificato in versione cartacea):"
+msgstr "Signature du/des consommateur(s) (uniquement si ce formulaire est notifié sur papier) :"
+
+msgid "Giorni di recesso"
+msgstr "Jours de rétractation"
+
+msgid "Hai avviato una procedura di recesso per l’ordine %s. Per proseguire in modo sicuro, conferma di essere l’intestatario dell’ordine cliccando il pulsante qui sotto."
+msgstr "Vous avez initié une procédure de rétractation pour la commande %s. Pour continuer en toute sécurité, confirmez que vous êtes le titulaire de la commande en cliquant sur le bouton ci-dessous."
+
+msgid "I prodotti di questo ordine sono esclusi dal diritto di recesso ai sensi dell’art. 59 del Codice del Consumo."
+msgstr "Les produits de cette commande sont exclus du droit de rétractation conformément à l’art. 59 du Code de la consommation italien."
+
+msgid "I prodotti selezionati non sono più disponibili per il recesso. Ricomincia la procedura."
+msgstr "Les produits sélectionnés ne sont plus disponibles pour la rétractation. Veuillez recommencer."
+
+msgid "IP dietro proxy/CDN"
+msgstr "IP derrière proxy/CDN"
+
+msgid "Icona"
+msgstr "Icône"
+
+msgid "Il consumatore dichiara di recedere dal contratto relativo ai prodotti indicati dell’ordine."
+msgstr "Le consommateur déclare se rétracter du contrat relatif aux produits indiqués de la commande."
+
+msgid "Il link di verifica non è valido o è scaduto. Ricomincia la procedura."
+msgstr "Le lien de vérification est invalide ou a expiré. Veuillez recommencer la procédure."
+
+msgid "Il link testuale si integra come una normale voce di footer; non invadente e conforme (posizione chiaramente visibile)."
+msgstr "Le lien texte s’intègre comme une entrée normale du pied de page ; discret et conforme (position clairement visible)."
+
+msgid "Il link è valido per 30 minuti. Se non hai richiesto tu il recesso, ignora questa email: nessuna azione verrà eseguita."
+msgstr "Le lien est valable 30 minutes. Si vous n’avez pas demandé la rétractation, ignorez cet e-mail : aucune action ne sera effectuée."
+
+msgid "Il logo selezionato è un SVG e questo server non può convertirlo: nel PDF verrà usato il logo successivo o il testo. Carica un PNG/JPG."
+msgstr "Le logo sélectionné est un SVG et ce serveur ne peut pas le convertir : le logo suivant ou le texte sera utilisé dans le PDF. Téléversez un PNG/JPG."
+
+msgid "Il pulsante di recesso viene nascosto automaticamente per gli ordini che contengono soltanto prodotti esclusi."
+msgstr "Le bouton de rétractation est automatiquement masqué pour les commandes ne contenant que des produits exclus."
+
+msgid "Il termine per il recesso (%s) è scaduto."
+msgstr "Le délai de rétractation (%s) a expiré."
+
+msgid "Impostazioni"
+msgstr "Réglages"
+
+msgid "In caso di recesso le rimborseremo tutti i pagamenti ricevuti, comprese le spese di consegna standard, entro e non oltre %d giorni dal giorno in cui siamo informati della sua decisione, utilizzando lo stesso mezzo di pagamento dell’ordine salvo diverso accordo espresso. Possiamo trattenere il rimborso finché non abbiamo ricevuto i beni o finché lei non abbia dimostrato di averli rispediti."
+msgstr "En cas de rétractation, nous vous rembourserons tous les paiements reçus, y compris les frais de livraison standard, au plus tard %d jours à compter du jour où nous sommes informés de votre décision, en utilisant le même moyen de paiement que la commande sauf accord exprès contraire. Nous pouvons différer le remboursement jusqu’à réception des biens ou jusqu’à ce que vous ayez prouvé leur renvoi."
+
+msgid "In conformità alla Direttiva 2011/83/UE sui diritti dei consumatori, dispone di %d giorni per esercitare il diritto di recesso senza dover fornire alcuna motivazione e senza penalità. Il termine decorre dal giorno in cui lei, o un terzo da lei designato, acquisisce il possesso fisico dei beni (o dell’ultimo bene in caso di ordine di più beni consegnati separatamente)."
+msgstr "Conformément à la Directive 2011/83/UE relative aux droits des consommateurs, vous disposez de %d jours pour exercer le droit de rétractation sans avoir à motiver votre décision et sans pénalité. Le délai court à compter du jour où vous, ou un tiers désigné par vous, prenez physiquement possession des biens (ou du dernier bien en cas de commande de plusieurs biens livrés séparément)."
+
+msgid "In conformità alla Direttiva 2011/83/UE, il diritto di recesso non si applica a:"
+msgstr "Conformément à la Directive 2011/83/UE, le droit de rétractation ne s’applique pas à :"
+
+msgid "In lavorazione"
+msgstr "En traitement"
+
+msgid "Indirizzo del consumatore o dei consumatori:"
+msgstr "Adresse du/des consommateur(s) :"
+
+msgid "Inserisci il numero d’ordine e l’email usata per l’acquisto. Verificheremo la titolarità e potrai inviare la dichiarazione di recesso."
+msgstr "Saisissez votre numéro de commande et l’e-mail utilisé pour l’achat. Nous vérifierons la propriété et vous pourrez envoyer la déclaration de rétractation."
+
+msgid "Inserisci la clausola anche nelle Condizioni Generali di Vendita e richiamala al checkout."
+msgstr "Incluez également la clause dans les Conditions générales de vente et rappelez-la lors du paiement."
+
+msgid "Intero ordine"
+msgstr "Commande entière"
+
+msgid "Intestatario"
+msgstr "Titulaire"
+
+msgid "La pagina del recesso non è stata creata. Disattiva e riattiva il plugin, oppure crea una pagina con lo shortcode [diritto_recesso]."
+msgstr "La page de rétractation n’a pas été créée. Désactivez et réactivez l’extension, ou créez une page avec le shortcode [diritto_recesso]."
+
+msgid "La presente dichiarazione di recesso si intende validamente esercitata alla data e ora sopra indicate. Riceverai a breve istruzioni operative per l’eventuale restituzione dei beni e il rimborso."
+msgstr "Cette déclaration de rétractation est réputée valablement exercée à la date et à l’heure indiquées ci-dessus. Vous recevrez prochainement des instructions opérationnelles pour le retour des biens et le remboursement."
+
+msgid "La tua richiesta di recesso è ora in lavorazione."
+msgstr "Votre demande de rétractation est en cours de traitement."
+
+msgid "La tua richiesta di recesso è stata annullata. Per chiarimenti rispondi a questa email."
+msgstr "Votre demande de rétractation a été annulée. Pour toute précision, répondez à cet e-mail."
+
+msgid "La tua richiesta di recesso è stata completata."
+msgstr "Votre demande de rétractation a été traitée."
+
+msgid "Le tue richieste di recesso"
+msgstr "Vos demandes de rétractation"
+
+msgid "Limita agli ordini dal 19/06/2026"
+msgstr "Limiter aux commandes à partir du 19/06/2026"
+
+msgid "Link nel footer"
+msgstr "Lien dans le pied de page"
+
+msgid "Link testuale (discreto, consigliato)"
+msgstr "Lien texte (discret, recommandé)"
+
+msgid "Lo stato di questo ordine non consente il recesso online in questo momento."
+msgstr "Le statut de cette commande ne permet pas la rétractation en ligne pour le moment."
+
+msgid "Logo del PDF"
+msgstr "Logo du PDF"
+
+msgid "L’art. 49 c.1 lett. h del Codice del Consumo impone che condizioni, termini e procedure di recesso — e l’esistenza e collocazione della funzione digitale — siano nell’informativa precontrattuale e nelle Condizioni Generali di Vendita."
+msgstr "L’art. 49(1)(h) du Code de la consommation italien impose que les conditions, délais et modalités de rétractation — ainsi que l’existence et l’emplacement de la fonction numérique — figurent dans l’information précontractuelle et dans les Conditions générales de vente."
+
+msgid "Mezzo per l’avviso di ricevimento"
+msgstr "Moyen pour l’accusé de réception"
+
+msgid "Modulo tipo di recesso"
+msgstr "Formulaire type de rétractation"
+
+msgid "Mostra automaticamente il link di recesso nel footer del sito"
+msgstr "Afficher automatiquement le lien de rétractation dans le pied de page du site"
+
+msgid "Mostra il pulsante di recesso nella tabella degli ordini dell’area account"
+msgstr "Afficher le bouton de rétractation dans le tableau des commandes de l’espace client"
+
+msgid "Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo"
+msgstr "Afficher la fonction uniquement pour les commandes conclues à partir de la date d’application de l’obligation"
+
+msgid "Mostra la voce dedicata nel menu dell’area “Il mio account”"
+msgstr "Afficher l’entrée dédiée dans le menu « Mon compte »"
+
+msgid "Mostra l’icona accanto al testo del link/pulsante"
+msgstr "Afficher l’icône à côté du texte du lien/bouton"
+
+msgid "Mostra l’ombra (box-shadow) su box, badge e modale"
+msgstr "Afficher l’ombre (box-shadow) sur les boîtes, badges et la fenêtre modale"
+
+msgid "Motivazione"
+msgstr "Motif"
+
+msgid "Motivazione (facoltativa)"
+msgstr "Motif (facultatif)"
+
+msgid "Nessun ordine attualmente idoneo al recesso online."
+msgstr "Aucune commande actuellement éligible à la rétractation en ligne."
+
+msgid "Nessuna richiesta registrata."
+msgstr "Aucune demande enregistrée."
+
+msgid "Nome del consumatore o dei consumatori:"
+msgstr "Nom du/des consommateur(s) :"
+
+msgid "Nome e cognome"
+msgstr "Nom et prénom"
+
+msgid "Non hai ancora inviato richieste di recesso."
+msgstr "Vous n’avez encore envoyé aucune demande de rétractation."
+
+msgid "Notifiche & rimborsi"
+msgstr "Notifications et remboursements"
+
+msgid "Numero d’ordine"
+msgstr "Numéro de commande"
+
+msgid "Numero ordine"
+msgstr "Numéro de commande"
+
+msgid "Nuova richiesta di recesso"
+msgstr "Nouvelle demande de rétractation"
+
+msgid "Nuova richiesta di recesso – ordine %s"
+msgstr "Nouvelle demande de rétractation – commande %s"
+
+msgid "Ombra"
+msgstr "Ombre"
+
+msgid "Ordinato il (*)/ricevuto il (*):"
+msgstr "Commandé le (*)/reçu le (*) :"
+
+msgid "Ordine"
+msgstr "Commande"
+
+msgid "Ordine #%s"
+msgstr "Commande n° %s"
+
+msgid "Ordine non trovato."
+msgstr "Commande introuvable."
+
+msgid "Ordini per cui puoi recedere"
+msgstr "Commandes pour lesquelles vous pouvez vous rétracter"
+
+msgid "Pagina pubblica del recesso:"
+msgstr "Page publique de rétractation :"
+
+msgid "Per esercitare tale diritto può utilizzare il pulsante di recesso disponibile nel suo account cliente e nel dettaglio dell’ordine, oppure comunicarci la sua decisione mediante una dichiarazione esplicita (ad esempio il modulo tipo riportato di seguito). Le invieremo senza indugio una conferma del recesso su un supporto durevole."
+msgstr "Pour exercer ce droit, vous pouvez utiliser le bouton de rétractation disponible dans votre compte client et dans le détail de la commande, ou nous notifier votre décision par une déclaration explicite (par exemple le formulaire type ci-dessous). Nous vous enverrons sans délai une confirmation de la rétractation sur un support durable."
+
+msgid "Per questo ordine il recesso è già stato esercitato su tutti i prodotti disponibili."
+msgstr "Pour cette commande, la rétractation a déjà été exercée sur tous les produits disponibles."
+
+msgid "Per questo ordine non risultano prodotti per cui è ancora possibile recedere."
+msgstr "Pour cette commande, aucun produit n’est encore disponible pour la rétractation."
+
+msgid "Per questo ordine non è prevista la funzione di recesso online."
+msgstr "La fonction de rétractation en ligne n’est pas disponible pour cette commande."
+
+msgid "Per ripristinare il testo predefinito, svuota il campo e salva."
+msgstr "Pour restaurer le texte par défaut, videz le champ et enregistrez."
+
+msgid "Permessi insufficienti."
+msgstr "Permissions insuffisantes."
+
+msgid "Procedi alla conferma"
+msgstr "Passer à la confirmation"
+
+msgid "Prodotti"
+msgstr "Produits"
+
+msgid "Prodotti oggetto del recesso"
+msgstr "Produits concernés par la rétractation"
+
+msgid "Pulsante"
+msgstr "Bouton"
+
+msgid "Pulsante in “I miei ordini”"
+msgstr "Bouton dans « Mes commandes »"
+
+msgid "Punto di accesso"
+msgstr "Point d’accès"
+
+msgid "Puoi incollare il testo a mano oppure usare lo shortcode indicato sotto ogni riquadro: in questo modo, se aggiorni qui il testo, si aggiorna ovunque."
+msgstr "Vous pouvez coller le texte manuellement ou utiliser le shortcode indiqué sous chaque encadré : ainsi, lorsque vous mettez à jour le texte ici, il est mis à jour partout."
+
+msgid "Quando segni una richiesta come “completata”, crea un rimborso WooCommerce per i prodotti recessi con ripristino dello stock"
+msgstr "Lorsque vous marquez une demande comme « terminée », créer un remboursement WooCommerce pour les produits rétractés avec remise en stock"
+
+msgid "Raggio dei bordi"
+msgstr "Rayon des bords"
+
+msgid "Recedere dal contratto"
+msgstr "Se rétracter du contrat"
+
+msgid "Recedere dal contratto qui"
+msgstr "Se rétracter du contrat ici"
+
+msgid "Recedi"
+msgstr "Se rétracter"
+
+msgid "Recesso"
+msgstr "Rétractation"
+
+msgid "Recesso art. 54-bis – ricevuta %s"
+msgstr "Rétractation art. 54-bis – reçu %s"
+
+msgid "Recesso dal contratto"
+msgstr "Rétractation du contrat"
+
+msgid "Recesso digitale conforme all’art. 54-bis del Codice del Consumo per WooCommerce."
+msgstr "Rétractation numérique conforme à l’art. 54-bis du Code de la consommation italien pour WooCommerce."
+
+msgid "Recesso non disponibile per questo ordine."
+msgstr "Rétractation non disponible pour cette commande."
+
+msgid "Recesso ricevuto"
+msgstr "Rétractation reçue"
+
+msgid "Recesso: rimborso automatico non riuscito (%s)."
+msgstr "Rétractation : remboursement automatique échoué (%s)."
+
+msgid "Recesso: rimborso di %1$s registrato con ripristino stock (ricevuta %2$s). Verificare l’eventuale rimborso tramite il gateway di pagamento."
+msgstr "Rétractation : remboursement de %1$s enregistré avec remise en stock (reçu %2$s). Vérifiez l’éventuel remboursement via la passerelle de paiement."
+
+msgid "Registra il rimborso e riporta lo stock, ma NON movimenta denaro tramite il gateway: l’eventuale restituzione al cliente va confermata manualmente. Disattivato di default."
+msgstr "Il enregistre le remboursement et remet le stock, mais ne déplace PAS d’argent via la passerelle : tout remboursement au client doit être confirmé manuellement. Désactivé par défaut."
+
+msgid "Repository: %s"
+msgstr "Dépôt : %s"
+
+msgid "Ricevuta"
+msgstr "Reçu"
+
+msgid "Ricevuta & PDF"
+msgstr "Reçu et PDF"
+
+msgid "Ricevuta PDF"
+msgstr "Reçu PDF"
+
+msgid "Ricevuta non trovata."
+msgstr "Reçu introuvable."
+
+msgid "Richiesta di recesso online ricevuta (art. 54-bis). Ricevuta: %1$s — %2$s"
+msgstr "Demande de rétractation en ligne reçue (art. 54-bis). Reçu : %1$s — %2$s"
+
+msgid "Richieste"
+msgstr "Demandes"
+
+msgid "Richieste di recesso"
+msgstr "Demandes de rétractation"
+
+msgid "Riduci quantità"
+msgstr "Diminuer la quantité"
+
+msgid "Riferimento ordine"
+msgstr "Référence de la commande"
+
+msgid "Rileva l’IP reale del cliente dagli header del proxy (Cloudflare / X-Forwarded-For)"
+msgstr "Détecter l’IP réelle du client à partir des en-têtes du proxy (Cloudflare / X-Forwarded-For)"
+
+msgid "Rimborso automatico"
+msgstr "Remboursement automatique"
+
+msgid "Rimuovi"
+msgstr "Supprimer"
+
+msgid "Salva testi"
+msgstr "Enregistrer les textes"
+
+msgid "Scarica PDF"
+msgstr "Télécharger le PDF"
+
+msgid "Scegli logo"
+msgstr "Choisir un logo"
+
+msgid "Se i dati corrispondono a un ordine valido, riceverai a breve le istruzioni via email."
+msgstr "Si les données correspondent à une commande valide, vous recevrez sous peu les instructions par e-mail."
+
+msgid "Se il tuo tema rende stretta la colonna azioni, puoi disattivarlo: il recesso resta disponibile nel dettaglio ordine e nel tab “Diritto di recesso”."
+msgstr "Si votre thème rend la colonne des actions étroite, vous pouvez le désactiver : la rétractation reste disponible dans le détail de la commande et dans l’onglet « Droit de rétractation »."
+
+msgid "Se vuoto, viene usato (in ordine): logo email di WooCommerce, logo del sito, infine il nome del negozio in testo."
+msgstr "Si vide, le suivant est utilisé (dans l’ordre) : logo e-mail WooCommerce, logo du site, et enfin le nom de la boutique en texte."
+
+msgid "Seleziona almeno un prodotto da restituire."
+msgstr "Sélectionnez au moins un produit à retourner."
+
+msgid "Seleziona i prodotti e le quantità per cui eserciti il recesso. Puoi recedere anche solo per una parte dell’ordine."
+msgstr "Sélectionnez les produits et les quantités pour lesquels vous exercez la rétractation. Vous pouvez vous rétracter pour une partie seulement de la commande."
+
+msgid "Sessione scaduta. Ricomincia la procedura."
+msgstr "Session expirée. Veuillez recommencer la procédure."
+
+msgid "Sfondo e testo del pulsante principale."
+msgstr "Fond et texte du bouton principal."
+
+msgid "Shortcode riutilizzabile:"
+msgstr "Shortcode réutilisable :"
+
+msgid "Si è verificato un errore nel salvataggio. Riprova."
+msgstr "Une erreur s’est produite lors de l’enregistrement. Veuillez réessayer."
+
+msgid "Spunta se questo prodotto non dà diritto di recesso (es. beni su misura, sigillati e aperti, deperibili)."
+msgstr "Cochez si ce produit ne donne pas droit à la rétractation (ex. biens sur mesure, scellés et ouverts, périssables)."
+
+msgid "Stai per inviare la seguente dichiarazione di recesso. Una volta confermata riceverai l’avviso di ricevimento via email."
+msgstr "Vous êtes sur le point d’envoyer la déclaration de rétractation suivante. Une fois confirmée, vous recevrez l’accusé de réception par e-mail."
+
+msgid "Stampa"
+msgstr "Imprimer"
+
+msgid "Stato"
+msgstr "Statut"
+
+msgid "Stato della richiesta aggiornato."
+msgstr "Statut de la demande mis à jour."
+
+msgid "Stile nel footer"
+msgstr "Style dans le pied de page"
+
+msgid "Strumento tecnico, non sostituisce un parere legale. I testi predefiniti sono un punto di partenza da adattare alla tua attività."
+msgstr "Outil technique, il ne remplace pas un avis juridique. Les textes par défaut sont un point de départ à adapter à votre activité."
+
+msgid "Testi legali"
+msgstr "Textes légaux"
+
+msgid "Testi salvati."
+msgstr "Textes enregistrés."
+
+msgid "Testo del pulsante di recesso"
+msgstr "Texte du bouton de rétractation"
+
+msgid "Ti abbiamo inviato un’email con un link per confermare la richiesta di recesso. Controlla la posta (anche lo spam). Il link è valido per 30 minuti."
+msgstr "Nous vous avons envoyé un e-mail avec un lien pour confirmer la demande de rétractation. Vérifiez votre boîte (et les spams). Le lien est valable 30 minutes."
+
+msgid "Ultima su GitHub"
+msgstr "Dernière sur GitHub"
+
+msgid "Vai all’elenco richieste"
+msgstr "Aller à la liste des demandes"
+
+msgid "Vale per il link footer, l’area account, lo shortcode e le voci di menu. L’overlay usa il colore scelto con trasparenza."
+msgstr "S’applique au lien du pied de page, à l’espace client, au shortcode et aux entrées de menu. L’overlay utilise la couleur choisie avec transparence."
+
+msgid "Vedi le release su GitHub."
+msgstr "Voir les versions sur GitHub."
+
+msgid "Verifica i dati della dichiarazione. Al passaggio successivo potrai confermare il recesso."
+msgstr "Vérifiez les détails de la déclaration. À l’étape suivante vous pourrez confirmer la rétractation."
+
+msgid "Versione installata"
+msgstr "Version installée"
+
+msgid "Visualizza la ricevuta"
+msgstr "Voir le reçu"
+
+msgid "Voce “Diritto di recesso” nell’account"
+msgstr "Entrée « Droit de rétractation » dans le compte"
+
+msgid "[%1$s] Aggiornamento richiesta di recesso – %2$s"
+msgstr "[%1$s] Mise à jour de la demande de rétractation – %2$s"
+
+msgid "[%1$s] Avviso di ricevimento del recesso – %2$s"
+msgstr "[%1$s] Accusé de réception de la rétractation – %2$s"
+
+msgid "[%s] Verifica la richiesta di recesso"
+msgstr "[%s] Vérifiez la demande de rétractation"
+
+msgid "aggiornamento disponibile"
+msgstr "mise à jour disponible"
+
+msgid "disponibili %1$d (già recessi %2$d)"
+msgstr "disponibles %1$d (déjà rétractés %2$d)"
+
+msgid "la fornitura di beni che rischiano di deteriorarsi o scadere rapidamente;"
+msgstr "la fourniture de biens susceptibles de se détériorer ou de se périmer rapidement ;"
+
+msgid "la fornitura di beni che, dopo la consegna, risultano per loro natura inscindibilmente mescolati con altri beni;"
+msgstr "la fourniture de biens qui, après livraison, sont du fait de leur nature mélangés de manière indissociable avec d’autres articles ;"
+
+msgid "la fornitura di beni confezionati su misura o chiaramente personalizzati;"
+msgstr "la fourniture de biens confectionnés sur mesure ou nettement personnalisés ;"
+
+msgid "la fornitura di beni sigillati che non si prestano a essere restituiti per motivi igienici o di protezione della salute e che sono stati aperti dopo la consegna;"
+msgstr "la fourniture de biens scellés ne pouvant être renvoyés pour des raisons d’hygiène ou de protection de la santé et qui ont été descellés après la livraison ;"
+
+msgid "la fornitura di contenuto digitale mediante un supporto non materiale se l’esecuzione è iniziata con il suo previo consenso espresso e con l’accettazione della perdita del diritto di recesso."
+msgstr "la fourniture d’un contenu numérique sur support immatériel si l’exécution a commencé avec votre consentement préalable exprès et la reconnaissance de la perte du droit de rétractation."
+
+msgid "la fornitura di registrazioni audio o video sigillate o di software informatici aperti dopo la consegna;"
+msgstr "la fourniture d’enregistrements audio ou vidéo scellés ou de logiciels informatiques descellés après la livraison ;"
+
+msgid "non rilevabile (nessuna release o connessione a GitHub non riuscita)."
+msgstr "non détectable (aucune version ou connexion à GitHub échouée)."
+
+msgid "sei aggiornato"
+msgstr "vous êtes à jour"
+
+msgid "vai ad aggiornare"
+msgstr "aller à la mise à jour"
+
+msgid "È stata registrata una nuova richiesta di recesso online."
+msgstr "Une nouvelle demande de rétractation en ligne a été enregistrée."
+
+msgid "— Nessuno —"
+msgstr "— Aucun —"
+

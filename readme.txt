@@ -5,7 +5,7 @@ Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 7.0
-Stable tag: 1.7.3
+Stable tag: 1.8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,7 @@ Diritto di Recesso 54-bis aggiunge al tuo store WooCommerce un punto d'accesso u
 La funzione e' utilizzabile anche dagli ospiti senza account: l'utente inserisce numero d'ordine ed email di fatturazione, conferma la titolarita', invia la dichiarazione di recesso e riceve l'avviso di ricevimento su supporto durevole con data e ora.
 
 = Cosa fa =
+* Multilingua: italiano, inglese, francese, spagnolo, tedesco.
 * Pagina pubblica unica /recesso (shortcode [diritto_recesso]) valida anche per ospiti senza account.
 * Recesso PARZIALE: il cliente sceglie prodotti e quantita' da restituire; piu' richieste possibili nel tempo finche' restano quantita' recedibili.
 * Link "Recedere dal contratto qui" nel footer (etichetta letterale c.3) + pulsante nell'area "I miei ordini" + tab dedicato "Diritto di recesso" nell'area account.
@@ -56,6 +57,10 @@ Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli o
 Strumento tecnico, non sostituisce un parere legale. Adeguare separatamente condizioni generali di vendita e informativa precontrattuale (art. 49 c.1 lett. h). La funzione non crea il diritto di recesso: lo rende esercitabile online dove gia' esiste.
 
 == Changelog ==
+= 1.8.0 =
+* Plugin multilingua: traduzioni complete in inglese, francese, spagnolo e tedesco (oltre all'italiano).
+* Fix: corretti due titoli di sezione nell'admin che mostravano '&amp;'.
+
 = 1.7.3 =
 * I pulsanti ereditano il font del tema; hover con sola opacità (testo leggibile anche su fondo scuro).
 * Sicurezza: neutralizzata la CSV formula injection nell'export; header anti-clickjacking sul frame della modale.

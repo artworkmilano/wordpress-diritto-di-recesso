@@ -1,697 +1,696 @@
-# Diritto di Recesso 54-bis - by Artwork
-# Copyright (C) 2026 Artwork
 msgid ""
 msgstr ""
-"Project-Id-Version: Diritto di Recesso 54-bis 1.0.0\n"
+"Project-Id-Version: Diritto di Recesso 54-bis\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it_IT\n"
+"Language: en_US\n"
 "X-Domain: diritto-di-recesso\n"
 
 msgid "(*) Cancellare la dicitura inutile."
-msgstr ""
+msgstr "(*) Delete as appropriate."
 
 msgid "(Compilare e restituire il presente modulo solo se si desidera recedere dal contratto.)"
-msgstr ""
+msgstr "(Complete and return this form only if you wish to withdraw from the contract.)"
 
 msgid "Abbiamo aggiornato lo stato della tua richiesta di recesso."
-msgstr ""
+msgstr "We have updated the status of your withdrawal request."
 
 msgid "Abbiamo registrato la tua dichiarazione di recesso. Ti abbiamo inviato l’avviso di ricevimento all’indirizzo email indicato, con data e ora della trasmissione."
-msgstr ""
+msgstr "We have registered your withdrawal declaration. We have sent the acknowledgement of receipt to the email address provided, with the date and time of transmission."
 
 msgid "Abilita la generazione del PDF della ricevuta (pulsante “Scarica PDF”)"
-msgstr ""
+msgstr "Enable generation of the receipt PDF (“Download PDF” button)"
 
 msgid "Aggiornamenti"
-msgstr ""
+msgstr "Updates"
 
 msgid "Aggiornamento richiesta di recesso"
-msgstr ""
+msgstr "Withdrawal request update"
 
 msgid "Aggiunge la voce di recesso al menu selezionato. In alternativa usa lo shortcode:"
-msgstr ""
+msgstr "Adds the withdrawal entry to the selected menu. Alternatively use the shortcode:"
 
 msgid "Aggiungi a un menu"
-msgstr ""
+msgstr "Add to a menu"
 
 msgid "Allega il PDF all’email di avviso ricevimento"
-msgstr ""
+msgstr "Attach the PDF to the acknowledgement email"
 
 msgid "All’attenzione di %1$s, %2$s:"
-msgstr ""
+msgstr "For the attention of %1$s, %2$s:"
 
 msgid "Annulla"
-msgstr ""
+msgstr "Cancel"
 
 msgid "Annullata"
-msgstr ""
+msgstr "Cancelled"
 
 msgid "Apri il flusso di recesso in una finestra modale (overlay) invece di cambiare pagina"
-msgstr ""
+msgstr "Open the withdrawal flow in a modal window (overlay) instead of changing page"
 
 msgid "Apri in finestra modale"
-msgstr ""
+msgstr "Open in a modal window"
 
 msgid "Arrotondamento globale di box, card, pulsanti e campi. 0 = squadrato."
-msgstr ""
+msgstr "Global rounding of boxes, cards, buttons and fields. 0 = square."
 
 msgid "Aspetto"
-msgstr ""
+msgstr "Appearance"
 
 msgid "Attenzione: rimuove definitivamente l’audit trail delle richieste di recesso. Lascia disattivato per conservare le prove."
-msgstr ""
+msgstr "Warning: this permanently removes the audit trail of withdrawal requests. Leave disabled to keep the records."
 
 msgid "Attiva solo se il sito è dietro Cloudflare o un reverse proxy affidabile. Di default viene registrato l’IP della connessione diretta."
-msgstr ""
+msgstr "Enable only if the site is behind Cloudflare or a trusted reverse proxy. By default the direct connection IP is recorded."
 
 msgid "Aumenta quantità"
-msgstr ""
+msgstr "Increase quantity"
 
 msgid "Avanzate"
-msgstr ""
+msgstr "Advanced"
 
 msgid "Avvisa il cliente via email quando cambi lo stato della sua richiesta (in lavorazione, completata, annullata)"
-msgstr ""
+msgstr "Notify the customer by email when you change the status of their request (processing, completed, cancelled)"
 
 msgid "Avviso di ricevimento del recesso"
-msgstr ""
+msgstr "Acknowledgement of receipt of withdrawal"
 
 msgid "Badge (pill)"
-msgstr ""
+msgstr "Badge (pill)"
 
 msgid "Cancellazione dati"
-msgstr ""
+msgstr "Data deletion"
 
 msgid "Ciao %s,"
-msgstr ""
+msgstr "Hello %s,"
 
 msgid "Clausola di recesso (condizioni)"
-msgstr ""
+msgstr "Withdrawal clause (terms)"
 
 msgid "Cliente"
-msgstr ""
+msgstr "Customer"
 
 msgid "Codice ricevuta"
-msgstr ""
+msgstr "Receipt code"
 
 msgid "Codice ricevuta:"
-msgstr ""
+msgstr "Receipt code:"
 
 msgid "Colore accento"
-msgstr ""
+msgstr "Accent colour"
 
 msgid "Colore dell’icona e dei link “stile testo”. Intonalo al brand del sito."
-msgstr ""
+msgstr "Colour of the icon and of the “text” links. Match it to your brand."
 
 msgid "Colore overlay:"
-msgstr ""
+msgstr "Overlay colour:"
 
 msgid "Colore pulsante"
-msgstr ""
+msgstr "Button colour"
 
 msgid "Completata"
-msgstr ""
+msgstr "Completed"
 
 msgid "Con la presente io/noi (*) notifico/notifichiamo (*) il recesso dal mio/nostro (*) contratto di vendita dei seguenti beni (*)/per la prestazione dei seguenti servizi (*):"
-msgstr ""
+msgstr "I/we (*) hereby give notice (*) that I/we (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following services (*):"
 
 msgid "Conferma il recesso"
-msgstr ""
+msgstr "Confirm withdrawal"
 
 msgid "Conferma la richiesta di recesso"
-msgstr ""
+msgstr "Confirm the withdrawal request"
 
 msgid "Conferma recesso"
-msgstr ""
+msgstr "Confirm withdrawal"
 
 msgid "Confermiamo di aver ricevuto la tua dichiarazione di recesso. Questo messaggio costituisce avviso di ricevimento su supporto durevole ai sensi dell’art. 54-bis del Codice del Consumo."
-msgstr ""
+msgstr "We confirm that we have received your withdrawal declaration. This message constitutes the acknowledgement of receipt on a durable medium pursuant to art. 54-bis of the Italian Consumer Code."
 
 msgid "Consigliato: PNG o JPG, lato lungo ~600 px (orizzontale), fondo trasparente o bianco."
-msgstr ""
+msgstr "Recommended: PNG or JPG, longest side ~600 px (landscape), transparent or white background."
 
 msgid "Continua"
-msgstr ""
+msgstr "Continue"
 
 msgid "Controlla aggiornamenti adesso"
-msgstr ""
+msgstr "Check for updates now"
 
 msgid "Controllo aggiornamenti eseguito."
-msgstr ""
+msgstr "Update check completed."
 
 msgid "Conversione SVG su questo server: NON disponibile. Per il PDF carica un PNG o JPG."
-msgstr ""
+msgstr "SVG conversion on this server: NOT available. Upload a PNG or JPG for the PDF."
 
 msgid "Conversione SVG su questo server: disponibile (gli SVG vengono convertiti automaticamente)."
-msgstr ""
+msgstr "SVG conversion on this server: available (SVG files are converted automatically)."
 
 msgid "Cosa vuoi restituire"
-msgstr ""
+msgstr "What do you want to return"
 
 msgid "Crea/aggiorna una pagina “Diritto di recesso” (collegala nel footer) con la clausola, il modulo tipo e le esclusioni."
-msgstr ""
+msgstr "Create/update a “Right of withdrawal” page (link it in the footer) with the clause, the model form and the exceptions."
 
 msgid "Da indicare nell’informativa precontrattuale / Condizioni di Vendita per chiarire i casi in cui il recesso non si applica."
-msgstr ""
+msgstr "To be stated in the pre-contractual information / Terms of Sale to clarify the cases in which withdrawal does not apply."
 
 msgid "Da inserire nelle Condizioni Generali di Vendita e nella pagina “Diritto di recesso” (informativa precontrattuale, art. 49 c.1 lett. h)."
-msgstr ""
+msgstr "To be included in the General Terms of Sale and on the “Right of withdrawal” page (pre-contractual information, art. 49(1)(h))."
 
 msgid "Da mettere a disposizione nella pagina “Diritto di recesso” (Allegato I.B Dir. 2011/83/UE). L’uso del modulo non è obbligatorio per il consumatore."
-msgstr ""
+msgstr "To be made available on the “Right of withdrawal” page (Annex I.B Dir. 2011/83/EU). Use of the form is not mandatory for the consumer."
 
 msgid "Da qui puoi esercitare il diritto di recesso sugli ordini idonei e consultare le richieste già inviate."
-msgstr ""
+msgstr "From here you can exercise the right of withdrawal on eligible orders and review the requests already submitted."
 
 msgid "Data"
-msgstr ""
+msgstr "Date"
 
 msgid "Data e ora"
-msgstr ""
+msgstr "Date and time"
 
 msgid "Data e ora di trasmissione"
-msgstr ""
+msgstr "Date and time of transmission"
 
 msgid "Data:"
-msgstr ""
+msgstr "Date:"
 
 msgid "Default 14. L’art. 53 può estendere fino a 12 mesi se l’informativa precontrattuale è carente."
-msgstr ""
+msgstr "Default 14. Art. 53 may extend it up to 12 months if the pre-contractual information is incomplete."
 
 msgid "Destinatari notifiche"
-msgstr ""
+msgstr "Notification recipients"
 
 msgid "Dichiarazione di recesso"
-msgstr ""
+msgstr "Withdrawal declaration"
 
 msgid "Dichiaro di voler recedere dal contratto relativo ai prodotti sopra indicati."
-msgstr ""
+msgstr "I declare that I wish to withdraw from the contract relating to the products indicated above."
 
 msgid "Diritto di Recesso"
-msgstr ""
+msgstr "Right of Withdrawal"
 
 msgid "Diritto di Recesso 54-bis richiede WooCommerce attivo per funzionare."
-msgstr ""
+msgstr "Right of Withdrawal 54-bis requires WooCommerce to be active."
 
 msgid "Diritto di Recesso 54-bis – Impostazioni"
-msgstr ""
+msgstr "Right of Withdrawal 54-bis – Settings"
 
 msgid "Diritto di Recesso – Testi legali"
-msgstr ""
+msgstr "Right of Withdrawal – Legal texts"
 
 msgid "Diritto di recesso"
-msgstr ""
+msgstr "Right of withdrawal"
 
 msgid "Documento riepilogativo della dichiarazione di recesso (art. 54-bis Codice del Consumo)."
-msgstr ""
+msgstr "Summary document of the withdrawal declaration (art. 54-bis Italian Consumer Code)."
 
 msgid "Documento riepilogativo della dichiarazione di recesso ai sensi dell’art. 54-bis del Codice del Consumo. Costituisce avviso di ricevimento su supporto durevole."
-msgstr ""
+msgstr "Summary document of the withdrawal declaration pursuant to art. 54-bis of the Italian Consumer Code. It constitutes the acknowledgement of receipt on a durable medium."
 
 msgid "Dove inserire questi testi (obblighi di legge)."
-msgstr ""
+msgstr "Where to insert these texts (legal obligations)."
 
 msgid "Eccezioni al diritto di recesso"
-msgstr ""
+msgstr "Exceptions to the right of withdrawal"
 
 msgid "Elimina tabella, opzioni e pagina alla disinstallazione del plugin"
-msgstr ""
+msgstr "Delete table, options and page when the plugin is uninstalled"
 
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 msgid "Email al cliente sui cambi di stato"
-msgstr ""
+msgstr "Customer email on status changes"
 
 msgid "Email di fatturazione"
-msgstr ""
+msgstr "Billing email"
 
 msgid "Email separate da virgola. Vuoto = email amministratore del sito."
-msgstr ""
+msgstr "Comma-separated emails. Empty = site administrator email."
 
 msgid "Email: %s"
-msgstr ""
+msgstr "Email: %s"
 
 msgid "Esclusioni legali (art. 59)"
-msgstr ""
+msgstr "Legal exceptions (art. 59)"
 
 msgid "Escluso dal recesso (art. 59)"
-msgstr ""
+msgstr "Excluded from withdrawal (art. 59)"
 
 msgid "Esporta CSV"
-msgstr ""
+msgstr "Export CSV"
 
 msgid "Etichetta del link/pulsante (footer, area ordini, form). Vuoto = “Recedere dal contratto qui”, l’esempio indicato dall’art. 54-bis c.3."
-msgstr ""
+msgstr "Label of the link/button (footer, orders area, form). Empty = “Withdraw from the contract here”, the example given by art. 54-bis(3)."
 
 msgid "Firma del consumatore o dei consumatori (solo se il presente modulo è notificato in versione cartacea):"
-msgstr ""
+msgstr "Signature of the consumer(s) (only if this form is notified on paper):"
 
 msgid "Giorni di recesso"
-msgstr ""
+msgstr "Withdrawal days"
 
 msgid "Hai avviato una procedura di recesso per l’ordine %s. Per proseguire in modo sicuro, conferma di essere l’intestatario dell’ordine cliccando il pulsante qui sotto."
-msgstr ""
+msgstr "You have started a withdrawal procedure for order %s. To proceed securely, confirm that you are the order holder by clicking the button below."
 
 msgid "I prodotti di questo ordine sono esclusi dal diritto di recesso ai sensi dell’art. 59 del Codice del Consumo."
-msgstr ""
+msgstr "The products in this order are excluded from the right of withdrawal pursuant to art. 59 of the Italian Consumer Code."
 
 msgid "I prodotti selezionati non sono più disponibili per il recesso. Ricomincia la procedura."
-msgstr ""
+msgstr "The selected products are no longer available for withdrawal. Please start over."
 
 msgid "IP dietro proxy/CDN"
-msgstr ""
+msgstr "IP behind proxy/CDN"
 
 msgid "Icona"
-msgstr ""
+msgstr "Icon"
 
 msgid "Il consumatore dichiara di recedere dal contratto relativo ai prodotti indicati dell’ordine."
-msgstr ""
+msgstr "The consumer declares to withdraw from the contract relating to the indicated products of the order."
 
 msgid "Il link di verifica non è valido o è scaduto. Ricomincia la procedura."
-msgstr ""
+msgstr "The verification link is invalid or has expired. Please start the procedure again."
 
 msgid "Il link testuale si integra come una normale voce di footer; non invadente e conforme (posizione chiaramente visibile)."
-msgstr ""
+msgstr "The text link blends in like a normal footer entry; unobtrusive and compliant (clearly visible position)."
 
 msgid "Il link è valido per 30 minuti. Se non hai richiesto tu il recesso, ignora questa email: nessuna azione verrà eseguita."
-msgstr ""
+msgstr "The link is valid for 30 minutes. If you did not request the withdrawal, ignore this email: no action will be taken."
 
 msgid "Il logo selezionato è un SVG e questo server non può convertirlo: nel PDF verrà usato il logo successivo o il testo. Carica un PNG/JPG."
-msgstr ""
+msgstr "The selected logo is an SVG and this server cannot convert it: the next logo or the text will be used in the PDF. Upload a PNG/JPG."
 
 msgid "Il pulsante di recesso viene nascosto automaticamente per gli ordini che contengono soltanto prodotti esclusi."
-msgstr ""
+msgstr "The withdrawal button is automatically hidden for orders that contain only excluded products."
 
 msgid "Il termine per il recesso (%s) è scaduto."
-msgstr ""
+msgstr "The deadline for withdrawal (%s) has expired."
 
 msgid "Impostazioni"
-msgstr ""
+msgstr "Settings"
 
 msgid "In caso di recesso le rimborseremo tutti i pagamenti ricevuti, comprese le spese di consegna standard, entro e non oltre %d giorni dal giorno in cui siamo informati della sua decisione, utilizzando lo stesso mezzo di pagamento dell’ordine salvo diverso accordo espresso. Possiamo trattenere il rimborso finché non abbiamo ricevuto i beni o finché lei non abbia dimostrato di averli rispediti."
-msgstr ""
+msgstr "In the event of withdrawal we will refund all payments received, including standard delivery costs, no later than %d days from the day we are informed of your decision, using the same payment method as the order unless otherwise expressly agreed. We may withhold the refund until we have received the goods or until you have provided proof of having returned them."
 
 msgid "In conformità alla Direttiva 2011/83/UE sui diritti dei consumatori, dispone di %d giorni per esercitare il diritto di recesso senza dover fornire alcuna motivazione e senza penalità. Il termine decorre dal giorno in cui lei, o un terzo da lei designato, acquisisce il possesso fisico dei beni (o dell’ultimo bene in caso di ordine di più beni consegnati separatamente)."
-msgstr ""
+msgstr "In accordance with Directive 2011/83/EU on consumer rights, you have %d days to exercise the right of withdrawal without giving any reason and without penalty. The period starts on the day on which you, or a third party designated by you, acquire physical possession of the goods (or of the last item in the case of an order of several goods delivered separately)."
 
 msgid "In conformità alla Direttiva 2011/83/UE, il diritto di recesso non si applica a:"
-msgstr ""
+msgstr "In accordance with Directive 2011/83/EU, the right of withdrawal does not apply to:"
 
 msgid "In lavorazione"
-msgstr ""
+msgstr "Processing"
 
 msgid "Indirizzo del consumatore o dei consumatori:"
-msgstr ""
+msgstr "Address of the consumer(s):"
 
 msgid "Inserisci il numero d’ordine e l’email usata per l’acquisto. Verificheremo la titolarità e potrai inviare la dichiarazione di recesso."
-msgstr ""
+msgstr "Enter your order number and the email used for the purchase. We will verify the ownership and you will be able to submit the withdrawal declaration."
 
 msgid "Inserisci la clausola anche nelle Condizioni Generali di Vendita e richiamala al checkout."
-msgstr ""
+msgstr "Also include the clause in the General Terms of Sale and recall it at checkout."
 
 msgid "Intero ordine"
-msgstr ""
+msgstr "Entire order"
 
 msgid "Intestatario"
-msgstr ""
+msgstr "Holder"
 
 msgid "La pagina del recesso non è stata creata. Disattiva e riattiva il plugin, oppure crea una pagina con lo shortcode [diritto_recesso]."
-msgstr ""
+msgstr "The withdrawal page has not been created. Deactivate and reactivate the plugin, or create a page with the shortcode [diritto_recesso]."
 
 msgid "La presente dichiarazione di recesso si intende validamente esercitata alla data e ora sopra indicate. Riceverai a breve istruzioni operative per l’eventuale restituzione dei beni e il rimborso."
-msgstr ""
+msgstr "This withdrawal declaration is deemed validly exercised at the date and time indicated above. You will shortly receive operational instructions for the return of the goods and the refund."
 
 msgid "La tua richiesta di recesso è ora in lavorazione."
-msgstr ""
+msgstr "Your withdrawal request is now being processed."
 
 msgid "La tua richiesta di recesso è stata annullata. Per chiarimenti rispondi a questa email."
-msgstr ""
+msgstr "Your withdrawal request has been cancelled. For clarifications, reply to this email."
 
 msgid "La tua richiesta di recesso è stata completata."
-msgstr ""
+msgstr "Your withdrawal request has been completed."
 
 msgid "Le tue richieste di recesso"
-msgstr ""
+msgstr "Your withdrawal requests"
 
 msgid "Limita agli ordini dal 19/06/2026"
-msgstr ""
+msgstr "Limit to orders from 19/06/2026"
 
 msgid "Link nel footer"
-msgstr ""
+msgstr "Footer link"
 
 msgid "Link testuale (discreto, consigliato)"
-msgstr ""
+msgstr "Text link (discreet, recommended)"
 
 msgid "Lo stato di questo ordine non consente il recesso online in questo momento."
-msgstr ""
+msgstr "The status of this order does not allow online withdrawal at this time."
 
 msgid "Logo del PDF"
-msgstr ""
+msgstr "PDF logo"
 
 msgid "L’art. 49 c.1 lett. h del Codice del Consumo impone che condizioni, termini e procedure di recesso — e l’esistenza e collocazione della funzione digitale — siano nell’informativa precontrattuale e nelle Condizioni Generali di Vendita."
-msgstr ""
+msgstr "Art. 49(1)(h) of the Italian Consumer Code requires that the conditions, terms and procedures for withdrawal — and the existence and location of the digital function — be stated in the pre-contractual information and in the General Terms of Sale."
 
 msgid "Mezzo per l’avviso di ricevimento"
-msgstr ""
+msgstr "Means for the acknowledgement of receipt"
 
 msgid "Modulo tipo di recesso"
-msgstr ""
+msgstr "Model withdrawal form"
 
 msgid "Mostra automaticamente il link di recesso nel footer del sito"
-msgstr ""
+msgstr "Automatically show the withdrawal link in the site footer"
 
 msgid "Mostra il pulsante di recesso nella tabella degli ordini dell’area account"
-msgstr ""
+msgstr "Show the withdrawal button in the orders table of the account area"
 
 msgid "Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo"
-msgstr ""
+msgstr "Show the function only for orders concluded from the date the obligation applies"
 
 msgid "Mostra la voce dedicata nel menu dell’area “Il mio account”"
-msgstr ""
+msgstr "Show the dedicated entry in the “My account” menu"
 
 msgid "Mostra l’icona accanto al testo del link/pulsante"
-msgstr ""
+msgstr "Show the icon next to the link/button text"
 
 msgid "Mostra l’ombra (box-shadow) su box, badge e modale"
-msgstr ""
+msgstr "Show the shadow (box-shadow) on boxes, badges and modal"
 
 msgid "Motivazione"
-msgstr ""
+msgstr "Reason"
 
 msgid "Motivazione (facoltativa)"
-msgstr ""
+msgstr "Reason (optional)"
 
 msgid "Nessun ordine attualmente idoneo al recesso online."
-msgstr ""
+msgstr "No order currently eligible for online withdrawal."
 
 msgid "Nessuna richiesta registrata."
-msgstr ""
+msgstr "No request recorded."
 
 msgid "Nome del consumatore o dei consumatori:"
-msgstr ""
+msgstr "Name of the consumer(s):"
 
 msgid "Nome e cognome"
-msgstr ""
+msgstr "Full name"
 
 msgid "Non hai ancora inviato richieste di recesso."
-msgstr ""
+msgstr "You have not submitted any withdrawal requests yet."
 
 msgid "Notifiche & rimborsi"
-msgstr ""
+msgstr "Notifications & refunds"
 
 msgid "Numero d’ordine"
-msgstr ""
+msgstr "Order number"
 
 msgid "Numero ordine"
-msgstr ""
+msgstr "Order number"
 
 msgid "Nuova richiesta di recesso"
-msgstr ""
+msgstr "New withdrawal request"
 
 msgid "Nuova richiesta di recesso – ordine %s"
-msgstr ""
+msgstr "New withdrawal request – order %s"
 
 msgid "Ombra"
-msgstr ""
+msgstr "Shadow"
 
 msgid "Ordinato il (*)/ricevuto il (*):"
-msgstr ""
+msgstr "Ordered on (*)/received on (*):"
 
 msgid "Ordine"
-msgstr ""
+msgstr "Order"
 
 msgid "Ordine #%s"
-msgstr ""
+msgstr "Order #%s"
 
 msgid "Ordine non trovato."
-msgstr ""
+msgstr "Order not found."
 
 msgid "Ordini per cui puoi recedere"
-msgstr ""
+msgstr "Orders you can withdraw from"
 
 msgid "Pagina pubblica del recesso:"
-msgstr ""
+msgstr "Public withdrawal page:"
 
 msgid "Per esercitare tale diritto può utilizzare il pulsante di recesso disponibile nel suo account cliente e nel dettaglio dell’ordine, oppure comunicarci la sua decisione mediante una dichiarazione esplicita (ad esempio il modulo tipo riportato di seguito). Le invieremo senza indugio una conferma del recesso su un supporto durevole."
-msgstr ""
+msgstr "To exercise this right you can use the withdrawal button available in your customer account and in the order details, or notify us of your decision by an explicit statement (for example the model form below). We will send you confirmation of the withdrawal on a durable medium without delay."
 
 msgid "Per questo ordine il recesso è già stato esercitato su tutti i prodotti disponibili."
-msgstr ""
+msgstr "For this order, withdrawal has already been exercised on all available products."
 
 msgid "Per questo ordine non risultano prodotti per cui è ancora possibile recedere."
-msgstr ""
+msgstr "For this order there are no products for which withdrawal is still possible."
 
 msgid "Per questo ordine non è prevista la funzione di recesso online."
-msgstr ""
+msgstr "The online withdrawal function is not available for this order."
 
 msgid "Per ripristinare il testo predefinito, svuota il campo e salva."
-msgstr ""
+msgstr "To restore the default text, clear the field and save."
 
 msgid "Permessi insufficienti."
-msgstr ""
+msgstr "Insufficient permissions."
 
 msgid "Procedi alla conferma"
-msgstr ""
+msgstr "Proceed to confirmation"
 
 msgid "Prodotti"
-msgstr ""
+msgstr "Products"
 
 msgid "Prodotti oggetto del recesso"
-msgstr ""
+msgstr "Products covered by the withdrawal"
 
 msgid "Pulsante"
-msgstr ""
+msgstr "Button"
 
 msgid "Pulsante in “I miei ordini”"
-msgstr ""
+msgstr "Button in “My orders”"
 
 msgid "Punto di accesso"
-msgstr ""
+msgstr "Access point"
 
 msgid "Puoi incollare il testo a mano oppure usare lo shortcode indicato sotto ogni riquadro: in questo modo, se aggiorni qui il testo, si aggiorna ovunque."
-msgstr ""
+msgstr "You can paste the text manually or use the shortcode shown under each box: this way, when you update the text here, it updates everywhere."
 
 msgid "Quando segni una richiesta come “completata”, crea un rimborso WooCommerce per i prodotti recessi con ripristino dello stock"
-msgstr ""
+msgstr "When you mark a request as “completed”, create a WooCommerce refund for the withdrawn products with stock restock"
 
 msgid "Raggio dei bordi"
-msgstr ""
+msgstr "Border radius"
 
 msgid "Recedere dal contratto"
-msgstr ""
+msgstr "Withdraw from the contract"
 
 msgid "Recedere dal contratto qui"
-msgstr ""
+msgstr "Withdraw from the contract here"
 
 msgid "Recedi"
-msgstr ""
+msgstr "Withdraw"
 
 msgid "Recesso"
-msgstr ""
+msgstr "Withdrawal"
 
 msgid "Recesso art. 54-bis – ricevuta %s"
-msgstr ""
+msgstr "Withdrawal art. 54-bis – receipt %s"
 
 msgid "Recesso dal contratto"
-msgstr ""
+msgstr "Withdrawal from the contract"
 
 msgid "Recesso digitale conforme all’art. 54-bis del Codice del Consumo per WooCommerce."
-msgstr ""
+msgstr "Digital withdrawal compliant with art. 54-bis of the Italian Consumer Code for WooCommerce."
 
 msgid "Recesso non disponibile per questo ordine."
-msgstr ""
+msgstr "Withdrawal not available for this order."
 
 msgid "Recesso ricevuto"
-msgstr ""
+msgstr "Withdrawal received"
 
 msgid "Recesso: rimborso automatico non riuscito (%s)."
-msgstr ""
+msgstr "Withdrawal: automatic refund failed (%s)."
 
 msgid "Recesso: rimborso di %1$s registrato con ripristino stock (ricevuta %2$s). Verificare l’eventuale rimborso tramite il gateway di pagamento."
-msgstr ""
+msgstr "Withdrawal: refund of %1$s recorded with stock restock (receipt %2$s). Check any refund via the payment gateway."
 
 msgid "Registra il rimborso e riporta lo stock, ma NON movimenta denaro tramite il gateway: l’eventuale restituzione al cliente va confermata manualmente. Disattivato di default."
-msgstr ""
+msgstr "It records the refund and restores the stock, but does NOT move money via the gateway: any refund to the customer must be confirmed manually. Disabled by default."
 
 msgid "Repository: %s"
-msgstr ""
+msgstr "Repository: %s"
 
 msgid "Ricevuta"
-msgstr ""
+msgstr "Receipt"
 
 msgid "Ricevuta & PDF"
-msgstr ""
+msgstr "Receipt & PDF"
 
 msgid "Ricevuta PDF"
-msgstr ""
+msgstr "PDF receipt"
 
 msgid "Ricevuta non trovata."
-msgstr ""
+msgstr "Receipt not found."
 
 msgid "Richiesta di recesso online ricevuta (art. 54-bis). Ricevuta: %1$s — %2$s"
-msgstr ""
+msgstr "Online withdrawal request received (art. 54-bis). Receipt: %1$s — %2$s"
 
 msgid "Richieste"
-msgstr ""
+msgstr "Requests"
 
 msgid "Richieste di recesso"
-msgstr ""
+msgstr "Withdrawal requests"
 
 msgid "Riduci quantità"
-msgstr ""
+msgstr "Decrease quantity"
 
 msgid "Riferimento ordine"
-msgstr ""
+msgstr "Order reference"
 
 msgid "Rileva l’IP reale del cliente dagli header del proxy (Cloudflare / X-Forwarded-For)"
-msgstr ""
+msgstr "Detect the customer's real IP from the proxy headers (Cloudflare / X-Forwarded-For)"
 
 msgid "Rimborso automatico"
-msgstr ""
+msgstr "Automatic refund"
 
 msgid "Rimuovi"
-msgstr ""
+msgstr "Remove"
 
 msgid "Salva testi"
-msgstr ""
+msgstr "Save texts"
 
 msgid "Scarica PDF"
-msgstr ""
+msgstr "Download PDF"
 
 msgid "Scegli logo"
-msgstr ""
+msgstr "Choose logo"
 
 msgid "Se i dati corrispondono a un ordine valido, riceverai a breve le istruzioni via email."
-msgstr ""
+msgstr "If the data matches a valid order, you will shortly receive instructions by email."
 
 msgid "Se il tuo tema rende stretta la colonna azioni, puoi disattivarlo: il recesso resta disponibile nel dettaglio ordine e nel tab “Diritto di recesso”."
-msgstr ""
+msgstr "If your theme makes the actions column narrow, you can disable it: withdrawal stays available in the order details and in the “Right of withdrawal” tab."
 
 msgid "Se vuoto, viene usato (in ordine): logo email di WooCommerce, logo del sito, infine il nome del negozio in testo."
-msgstr ""
+msgstr "If empty, the following is used (in order): WooCommerce email logo, site logo, and finally the shop name as text."
 
 msgid "Seleziona almeno un prodotto da restituire."
-msgstr ""
+msgstr "Select at least one product to return."
 
 msgid "Seleziona i prodotti e le quantità per cui eserciti il recesso. Puoi recedere anche solo per una parte dell’ordine."
-msgstr ""
+msgstr "Select the products and quantities for which you exercise the withdrawal. You can withdraw for only part of the order."
 
 msgid "Sessione scaduta. Ricomincia la procedura."
-msgstr ""
+msgstr "Session expired. Please start the procedure again."
 
 msgid "Sfondo e testo del pulsante principale."
-msgstr ""
+msgstr "Background and text of the main button."
 
 msgid "Shortcode riutilizzabile:"
-msgstr ""
+msgstr "Reusable shortcode:"
 
 msgid "Si è verificato un errore nel salvataggio. Riprova."
-msgstr ""
+msgstr "An error occurred while saving. Please try again."
 
 msgid "Spunta se questo prodotto non dà diritto di recesso (es. beni su misura, sigillati e aperti, deperibili)."
-msgstr ""
+msgstr "Tick if this product does not grant the right of withdrawal (e.g. made-to-measure, sealed and opened, perishable goods)."
 
 msgid "Stai per inviare la seguente dichiarazione di recesso. Una volta confermata riceverai l’avviso di ricevimento via email."
-msgstr ""
+msgstr "You are about to submit the following withdrawal declaration. Once confirmed you will receive the acknowledgement of receipt by email."
 
 msgid "Stampa"
-msgstr ""
+msgstr "Print"
 
 msgid "Stato"
-msgstr ""
+msgstr "Status"
 
 msgid "Stato della richiesta aggiornato."
-msgstr ""
+msgstr "Request status updated."
 
 msgid "Stile nel footer"
-msgstr ""
+msgstr "Footer style"
 
 msgid "Strumento tecnico, non sostituisce un parere legale. I testi predefiniti sono un punto di partenza da adattare alla tua attività."
-msgstr ""
+msgstr "Technical tool, it does not replace legal advice. The default texts are a starting point to adapt to your business."
 
 msgid "Testi legali"
-msgstr ""
+msgstr "Legal texts"
 
 msgid "Testi salvati."
-msgstr ""
+msgstr "Texts saved."
 
 msgid "Testo del pulsante di recesso"
-msgstr ""
+msgstr "Withdrawal button text"
 
 msgid "Ti abbiamo inviato un’email con un link per confermare la richiesta di recesso. Controlla la posta (anche lo spam). Il link è valido per 30 minuti."
-msgstr ""
+msgstr "We have sent you an email with a link to confirm the withdrawal request. Check your inbox (and spam). The link is valid for 30 minutes."
 
 msgid "Ultima su GitHub"
-msgstr ""
+msgstr "Latest on GitHub"
 
 msgid "Vai all’elenco richieste"
-msgstr ""
+msgstr "Go to the requests list"
 
 msgid "Vale per il link footer, l’area account, lo shortcode e le voci di menu. L’overlay usa il colore scelto con trasparenza."
-msgstr ""
+msgstr "Applies to the footer link, the account area, the shortcode and the menu entries. The overlay uses the chosen colour with transparency."
 
 msgid "Vedi le release su GitHub."
-msgstr ""
+msgstr "See the releases on GitHub."
 
 msgid "Verifica i dati della dichiarazione. Al passaggio successivo potrai confermare il recesso."
-msgstr ""
+msgstr "Check the declaration details. In the next step you can confirm the withdrawal."
 
 msgid "Versione installata"
-msgstr ""
+msgstr "Installed version"
 
 msgid "Visualizza la ricevuta"
-msgstr ""
+msgstr "View the receipt"
 
 msgid "Voce “Diritto di recesso” nell’account"
-msgstr ""
+msgstr "“Right of withdrawal” entry in the account"
 
 msgid "[%1$s] Aggiornamento richiesta di recesso – %2$s"
-msgstr ""
+msgstr "[%1$s] Withdrawal request update – %2$s"
 
 msgid "[%1$s] Avviso di ricevimento del recesso – %2$s"
-msgstr ""
+msgstr "[%1$s] Acknowledgement of receipt of withdrawal – %2$s"
 
 msgid "[%s] Verifica la richiesta di recesso"
-msgstr ""
+msgstr "[%s] Verify the withdrawal request"
 
 msgid "aggiornamento disponibile"
-msgstr ""
+msgstr "update available"
 
 msgid "disponibili %1$d (già recessi %2$d)"
-msgstr ""
+msgstr "available %1$d (already withdrawn %2$d)"
 
 msgid "la fornitura di beni che rischiano di deteriorarsi o scadere rapidamente;"
-msgstr ""
+msgstr "the supply of goods liable to deteriorate or expire rapidly;"
 
 msgid "la fornitura di beni che, dopo la consegna, risultano per loro natura inscindibilmente mescolati con altri beni;"
-msgstr ""
+msgstr "the supply of goods which, after delivery, are by their nature inseparably mixed with other items;"
 
 msgid "la fornitura di beni confezionati su misura o chiaramente personalizzati;"
-msgstr ""
+msgstr "the supply of made-to-measure or clearly personalised goods;"
 
 msgid "la fornitura di beni sigillati che non si prestano a essere restituiti per motivi igienici o di protezione della salute e che sono stati aperti dopo la consegna;"
-msgstr ""
+msgstr "the supply of sealed goods which are not suitable for return for reasons of hygiene or health protection and which were unsealed after delivery;"
 
 msgid "la fornitura di contenuto digitale mediante un supporto non materiale se l’esecuzione è iniziata con il suo previo consenso espresso e con l’accettazione della perdita del diritto di recesso."
-msgstr ""
+msgstr "the supply of digital content not on a tangible medium if performance has begun with your prior express consent and acknowledgement of the loss of the right of withdrawal."
 
 msgid "la fornitura di registrazioni audio o video sigillate o di software informatici aperti dopo la consegna;"
-msgstr ""
+msgstr "the supply of sealed audio or video recordings or computer software which were unsealed after delivery;"
 
 msgid "non rilevabile (nessuna release o connessione a GitHub non riuscita)."
-msgstr ""
+msgstr "not detectable (no release or connection to GitHub failed)."
 
 msgid "sei aggiornato"
-msgstr ""
+msgstr "you are up to date"
 
 msgid "vai ad aggiornare"
-msgstr ""
+msgstr "go to update"
 
 msgid "È stata registrata una nuova richiesta di recesso online."
-msgstr ""
+msgstr "A new online withdrawal request has been registered."
 
 msgid "— Nessuno —"
-msgstr ""
+msgstr "— None —"
 

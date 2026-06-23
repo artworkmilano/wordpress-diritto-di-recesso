@@ -234,7 +234,7 @@ class DDR_Admin {
 					</tr>
 				</table>
 
-				<h2 class="title"><?php esc_html_e( 'Ricevuta &amp; PDF', 'diritto-di-recesso' ); ?></h2>
+				<h2 class="title"><?php esc_html_e( 'Ricevuta & PDF', 'diritto-di-recesso' ); ?></h2>
 				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><?php esc_html_e( 'Ricevuta PDF', 'diritto-di-recesso' ); ?></th>
@@ -273,7 +273,7 @@ class DDR_Admin {
 					</tr>
 				</table>
 
-				<h2 class="title"><?php esc_html_e( 'Notifiche &amp; rimborsi', 'diritto-di-recesso' ); ?></h2>
+				<h2 class="title"><?php esc_html_e( 'Notifiche & rimborsi', 'diritto-di-recesso' ); ?></h2>
 				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><label for="ddr_admin_recipients"><?php esc_html_e( 'Destinatari notifiche', 'diritto-di-recesso' ); ?></label></th>

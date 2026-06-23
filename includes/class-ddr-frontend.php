@@ -48,11 +48,14 @@ class DDR_Frontend {
 		// Frame "bare" per la modale (senza header/footer del tema).
 		add_action( 'template_redirect', array( __CLASS__, 'maybe_render_modal_frame' ) );
 
-		// Area "Il mio account": endpoint/tab dedicato.
+		// Area "Il mio account": endpoint/tab dedicato (endpoint sempre registrato;
+		// la voce di menu è attivabile/disattivabile dalle impostazioni).
 		add_action( 'init', array( __CLASS__, 'add_account_endpoint' ) );
-		add_filter( 'woocommerce_account_menu_items', array( __CLASS__, 'account_menu_item' ) );
 		add_action( 'woocommerce_account_' . self::ACCOUNT_EP . '_endpoint', array( __CLASS__, 'account_endpoint_content' ) );
 		add_filter( 'woocommerce_get_query_vars', array( __CLASS__, 'account_query_var' ) );
+		if ( 'yes' === get_option( 'ddr_account_tab', 'yes' ) ) {
+			add_filter( 'woocommerce_account_menu_items', array( __CLASS__, 'account_menu_item' ) );
+		}
 	}
 
 	public static function assets() {

@@ -368,6 +368,9 @@ msgstr ""
 msgid "Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo"
 msgstr ""
 
+msgid "Mostra la voce dedicata nel menu dell’area “Il mio account”"
+msgstr ""
+
 msgid "Mostra l’icona accanto al testo del link/pulsante"
 msgstr ""
 
@@ -639,6 +642,9 @@ msgid "Versione installata"
 msgstr ""
 
 msgid "Visualizza la ricevuta"
+msgstr ""
+
+msgid "Voce “Diritto di recesso” nell’account"
 msgstr ""
 
 msgid "[%1$s] Aggiornamento richiesta di recesso – %2$s"

@@ -66,6 +66,7 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_admin_recipients', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
 		register_setting( 'ddr_settings', 'ddr_footer_link', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 		register_setting( 'ddr_settings', 'ddr_orders_button', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
+		register_setting( 'ddr_settings', 'ddr_account_tab', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 		register_setting( 'ddr_settings', 'ddr_link_label', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
 		register_setting( 'ddr_settings', 'ddr_footer_style', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'link' ) );
 		register_setting( 'ddr_settings', 'ddr_btn_icon', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
@@ -164,6 +165,12 @@ class DDR_Admin {
 						<td>
 							<label><input type="checkbox" name="ddr_orders_button" value="yes" <?php checked( 'yes', get_option( 'ddr_orders_button', 'yes' ) ); ?> /> <?php esc_html_e( 'Mostra il pulsante di recesso nella tabella degli ordini dell’area account', 'diritto-di-recesso' ); ?></label>
 							<p class="description"><?php esc_html_e( 'Se il tuo tema rende stretta la colonna azioni, puoi disattivarlo: il recesso resta disponibile nel dettaglio ordine e nel tab “Diritto di recesso”.', 'diritto-di-recesso' ); ?></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'Voce “Diritto di recesso” nell’account', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="ddr_account_tab" value="yes" <?php checked( 'yes', get_option( 'ddr_account_tab', 'yes' ) ); ?> /> <?php esc_html_e( 'Mostra la voce dedicata nel menu dell’area “Il mio account”', 'diritto-di-recesso' ); ?></label>
 						</td>
 					</tr>
 					<tr>

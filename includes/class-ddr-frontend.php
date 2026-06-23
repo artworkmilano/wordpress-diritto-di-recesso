@@ -185,7 +185,7 @@ class DDR_Frontend {
 			$pill_style,
 			$ico_style,
 			$svg,
-			esc_html__( 'Recedere dal contratto qui', 'diritto-di-recesso' )
+			esc_html( ddr_link_label() )
 		);
 	}
 
@@ -199,7 +199,7 @@ class DDR_Frontend {
 		}
 		$actions['ddr'] = array(
 			'url'  => ddr_page_url( array( 'order' => $order->get_order_number() ) ),
-			'name' => __( 'Recedere dal contratto qui', 'diritto-di-recesso' ),
+			'name' => ddr_link_label(),
 		);
 		return $actions;
 	}
@@ -276,7 +276,7 @@ class DDR_Frontend {
 					<input type="email" id="ddr-email" name="ddr_email" value="<?php echo esc_attr( $email_value ); ?>" required />
 				</p>
 				<p>
-					<button type="submit" class="ddr-btn ddr-btn-primary"><?php esc_html_e( 'Recedere dal contratto qui', 'diritto-di-recesso' ); ?></button>
+					<button type="submit" class="ddr-btn ddr-btn-primary"><?php echo esc_html( ddr_link_label() ); ?></button>
 				</p>
 			</form>
 		</div>

@@ -41,6 +41,14 @@ class DDR_Admin {
 		);
 		add_submenu_page(
 			'ddr-richieste',
+			__( 'Testi legali', 'diritto-di-recesso' ),
+			__( 'Testi legali', 'diritto-di-recesso' ),
+			'manage_woocommerce',
+			'ddr-legal',
+			array( 'DDR_Legal', 'render_admin_page' )
+		);
+		add_submenu_page(
+			'ddr-richieste',
 			__( 'Impostazioni', 'diritto-di-recesso' ),
 			__( 'Impostazioni', 'diritto-di-recesso' ),
 			'manage_woocommerce',
@@ -55,6 +63,7 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_window_days', array( 'sanitize_callback' => 'absint', 'default' => 14 ) );
 		register_setting( 'ddr_settings', 'ddr_admin_recipients', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
 		register_setting( 'ddr_settings', 'ddr_footer_link', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
+		register_setting( 'ddr_settings', 'ddr_link_label', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
 		register_setting( 'ddr_settings', 'ddr_enforce_cutoff', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
 		register_setting( 'ddr_settings', 'ddr_accent', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#ea580c' ) );
 		register_setting( 'ddr_settings', 'ddr_trust_proxy', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
@@ -96,9 +105,16 @@ class DDR_Admin {
 						</td>
 					</tr>
 					<tr>
+						<th scope="row"><label for="ddr_link_label"><?php esc_html_e( 'Testo del pulsante di recesso', 'diritto-di-recesso' ); ?></label></th>
+						<td>
+							<input type="text" class="regular-text" name="ddr_link_label" id="ddr_link_label" value="<?php echo esc_attr( get_option( 'ddr_link_label', '' ) ); ?>" placeholder="<?php esc_attr_e( 'Recedere dal contratto qui', 'diritto-di-recesso' ); ?>" />
+							<p class="description"><?php esc_html_e( 'Etichetta del link/pulsante (footer, area ordini, form). Vuoto = “Recedere dal contratto qui”, l’esempio indicato dall’art. 54-bis c.3.', 'diritto-di-recesso' ); ?></p>
+						</td>
+					</tr>
+					<tr>
 						<th scope="row"><?php esc_html_e( 'Link nel footer', 'diritto-di-recesso' ); ?></th>
 						<td>
-							<label><input type="checkbox" name="ddr_footer_link" value="yes" <?php checked( 'yes', get_option( 'ddr_footer_link', 'yes' ) ); ?> /> <?php esc_html_e( 'Mostra “Recedere dal contratto qui” nel footer del sito', 'diritto-di-recesso' ); ?></label>
+							<label><input type="checkbox" name="ddr_footer_link" value="yes" <?php checked( 'yes', get_option( 'ddr_footer_link', 'yes' ) ); ?> /> <?php esc_html_e( 'Mostra il pulsante di recesso nel footer del sito', 'diritto-di-recesso' ); ?></label>
 						</td>
 					</tr>
 					<tr>

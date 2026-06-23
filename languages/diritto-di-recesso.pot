@@ -8,7 +8,16 @@ msgstr ""
 "Language: it_IT\n"
 "X-Domain: diritto-di-recesso\n"
 
+msgid "(*) Cancellare la dicitura inutile."
+msgstr ""
+
+msgid "(Compilare e restituire il presente modulo solo se si desidera recedere dal contratto.)"
+msgstr ""
+
 msgid "Abbiamo registrato la tua dichiarazione di recesso. Ti abbiamo inviato l’avviso di ricevimento all’indirizzo email indicato, con data e ora della trasmissione."
+msgstr ""
+
+msgid "All’attenzione di %1$s, %2$s:"
 msgstr ""
 
 msgid "Annulla"
@@ -32,6 +41,9 @@ msgstr ""
 msgid "Ciao %s,"
 msgstr ""
 
+msgid "Clausola di recesso (condizioni)"
+msgstr ""
+
 msgid "Cliente"
 msgstr ""
 
@@ -48,6 +60,9 @@ msgid "Colore dell’icona del badge nel footer. Intonalo al brand del sito."
 msgstr ""
 
 msgid "Completata"
+msgstr ""
+
+msgid "Con la presente io/noi (*) notifico/notifichiamo (*) il recesso dal mio/nostro (*) contratto di vendita dei seguenti beni (*)/per la prestazione dei seguenti servizi (*):"
 msgstr ""
 
 msgid "Conferma il recesso"
@@ -68,6 +83,18 @@ msgstr ""
 msgid "Cosa vuoi restituire"
 msgstr ""
 
+msgid "Crea/aggiorna una pagina “Diritto di recesso” (collegala nel footer) con la clausola, il modulo tipo e le esclusioni."
+msgstr ""
+
+msgid "Da indicare nell’informativa precontrattuale / Condizioni di Vendita per chiarire i casi in cui il recesso non si applica."
+msgstr ""
+
+msgid "Da inserire nelle Condizioni Generali di Vendita e nella pagina “Diritto di recesso” (informativa precontrattuale, art. 49 c.1 lett. h)."
+msgstr ""
+
+msgid "Da mettere a disposizione nella pagina “Diritto di recesso” (Allegato I.B Dir. 2011/83/UE). L’uso del modulo non è obbligatorio per il consumatore."
+msgstr ""
+
 msgid "Da qui puoi esercitare il diritto di recesso sugli ordini idonei e consultare le richieste già inviate."
 msgstr ""
 
@@ -78,6 +105,9 @@ msgid "Data e ora"
 msgstr ""
 
 msgid "Data e ora di trasmissione"
+msgstr ""
+
+msgid "Data:"
 msgstr ""
 
 msgid "Default 14. L’art. 53 può estendere fino a 12 mesi se l’informativa precontrattuale è carente."
@@ -101,6 +131,9 @@ msgstr ""
 msgid "Diritto di Recesso 54-bis – Impostazioni"
 msgstr ""
 
+msgid "Diritto di Recesso – Testi legali"
+msgstr ""
+
 msgid "Diritto di recesso"
 msgstr ""
 
@@ -108,6 +141,12 @@ msgid "Disponibili %1$d (già recessi %2$d)"
 msgstr ""
 
 msgid "Documento riepilogativo della dichiarazione di recesso (art. 54-bis Codice del Consumo)."
+msgstr ""
+
+msgid "Dove inserire questi testi (obblighi di legge)."
+msgstr ""
+
+msgid "Eccezioni al diritto di recesso"
 msgstr ""
 
 msgid "Elimina tabella, opzioni e pagina alla disinstallazione del plugin"
@@ -125,10 +164,19 @@ msgstr ""
 msgid "Email: %s"
 msgstr ""
 
+msgid "Esclusioni legali (art. 59)"
+msgstr ""
+
 msgid "Escluso dal recesso (art. 59)"
 msgstr ""
 
 msgid "Esporta CSV"
+msgstr ""
+
+msgid "Etichetta del link/pulsante (footer, area ordini, form). Vuoto = “Recedere dal contratto qui”, l’esempio indicato dall’art. 54-bis c.3."
+msgstr ""
+
+msgid "Firma del consumatore o dei consumatori (solo se il presente modulo è notificato in versione cartacea):"
 msgstr ""
 
 msgid "Giorni di recesso"
@@ -155,16 +203,34 @@ msgstr ""
 msgid "Il link è valido per 30 minuti. Se non hai richiesto tu il recesso, ignora questa email: nessuna azione verrà eseguita."
 msgstr ""
 
+msgid "Il pulsante di recesso viene nascosto automaticamente per gli ordini che contengono soltanto prodotti esclusi."
+msgstr ""
+
 msgid "Il termine per il recesso (%s) è scaduto."
 msgstr ""
 
 msgid "Impostazioni"
 msgstr ""
 
+msgid "In caso di recesso le rimborseremo tutti i pagamenti ricevuti, comprese le spese di consegna standard, entro e non oltre %d giorni dal giorno in cui siamo informati della sua decisione, utilizzando lo stesso mezzo di pagamento dell’ordine salvo diverso accordo espresso. Possiamo trattenere il rimborso finché non abbiamo ricevuto i beni o finché lei non abbia dimostrato di averli rispediti."
+msgstr ""
+
+msgid "In conformità alla Direttiva 2011/83/UE sui diritti dei consumatori, dispone di %d giorni per esercitare il diritto di recesso senza dover fornire alcuna motivazione e senza penalità. Il termine decorre dal giorno in cui lei, o un terzo da lei designato, acquisisce il possesso fisico dei beni (o dell’ultimo bene in caso di ordine di più beni consegnati separatamente)."
+msgstr ""
+
+msgid "In conformità alla Direttiva 2011/83/UE, il diritto di recesso non si applica a:"
+msgstr ""
+
 msgid "In lavorazione"
 msgstr ""
 
+msgid "Indirizzo del consumatore o dei consumatori:"
+msgstr ""
+
 msgid "Inserisci il numero d’ordine e l’email usata per l’acquisto. Verificheremo la titolarità e potrai inviare la dichiarazione di recesso."
+msgstr ""
+
+msgid "Inserisci la clausola anche nelle Condizioni Generali di Vendita e richiamala al checkout."
 msgstr ""
 
 msgid "Intero ordine"
@@ -191,13 +257,19 @@ msgstr ""
 msgid "Lo stato di questo ordine non consente il recesso online in questo momento."
 msgstr ""
 
+msgid "L’art. 49 c.1 lett. h del Codice del Consumo impone che condizioni, termini e procedure di recesso — e l’esistenza e collocazione della funzione digitale — siano nell’informativa precontrattuale e nelle Condizioni Generali di Vendita."
+msgstr ""
+
 msgid "Mezzo per l’avviso di ricevimento"
 msgstr ""
 
-msgid "Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo"
+msgid "Modulo tipo di recesso"
 msgstr ""
 
-msgid "Mostra “Recedere dal contratto qui” nel footer del sito"
+msgid "Mostra il pulsante di recesso nel footer del sito"
+msgstr ""
+
+msgid "Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo"
 msgstr ""
 
 msgid "Motivazione"
@@ -210,6 +282,9 @@ msgid "Nessun ordine attualmente idoneo al recesso online."
 msgstr ""
 
 msgid "Nessuna richiesta registrata."
+msgstr ""
+
+msgid "Nome del consumatore o dei consumatori:"
 msgstr ""
 
 msgid "Nome e cognome"
@@ -230,6 +305,9 @@ msgstr ""
 msgid "Nuova richiesta di recesso – ordine %s"
 msgstr ""
 
+msgid "Ordinato il (*)/ricevuto il (*):"
+msgstr ""
+
 msgid "Ordine"
 msgstr ""
 
@@ -242,6 +320,9 @@ msgstr ""
 msgid "Pagina pubblica del recesso:"
 msgstr ""
 
+msgid "Per esercitare tale diritto può utilizzare il pulsante di recesso disponibile nel suo account cliente e nel dettaglio dell’ordine, oppure comunicarci la sua decisione mediante una dichiarazione esplicita (ad esempio il modulo tipo riportato di seguito). Le invieremo senza indugio una conferma del recesso su un supporto durevole."
+msgstr ""
+
 msgid "Per questo ordine il recesso è già stato esercitato su tutti i prodotti disponibili."
 msgstr ""
 
@@ -249,6 +330,9 @@ msgid "Per questo ordine non risultano prodotti per cui è ancora possibile rece
 msgstr ""
 
 msgid "Per questo ordine non è prevista la funzione di recesso online."
+msgstr ""
+
+msgid "Per ripristinare il testo predefinito, svuota il campo e salva."
 msgstr ""
 
 msgid "Permessi insufficienti."
@@ -266,6 +350,9 @@ msgstr ""
 msgid "Prodotto"
 msgstr ""
 
+msgid "Puoi incollare il testo a mano oppure usare lo shortcode indicato sotto ogni riquadro: in questo modo, se aggiorni qui il testo, si aggiorna ovunque."
+msgstr ""
+
 msgid "Quantità"
 msgstr ""
 
@@ -279,6 +366,9 @@ msgid "Recedi"
 msgstr ""
 
 msgid "Recesso dal contratto"
+msgstr ""
+
+msgid "Recesso digitale conforme all’art. 54-bis del Codice del Consumo per WooCommerce."
 msgstr ""
 
 msgid "Recesso non disponibile per questo ordine."
@@ -308,6 +398,9 @@ msgstr ""
 msgid "Rileva l’IP reale del cliente dagli header del proxy (Cloudflare / X-Forwarded-For)"
 msgstr ""
 
+msgid "Salva testi"
+msgstr ""
+
 msgid "Se i dati corrispondono a un ordine valido, riceverai a breve le istruzioni via email."
 msgstr ""
 
@@ -318,6 +411,9 @@ msgid "Seleziona i prodotti e le quantità per cui eserciti il recesso. Puoi rec
 msgstr ""
 
 msgid "Sessione scaduta. Ricomincia la procedura."
+msgstr ""
+
+msgid "Shortcode riutilizzabile:"
 msgstr ""
 
 msgid "Si è verificato un errore nel salvataggio. Riprova."
@@ -338,10 +434,25 @@ msgstr ""
 msgid "Stato della richiesta aggiornato."
 msgstr ""
 
+msgid "Strumento tecnico, non sostituisce un parere legale. I testi predefiniti sono un punto di partenza da adattare alla tua attività."
+msgstr ""
+
+msgid "Testi legali"
+msgstr ""
+
+msgid "Testi salvati."
+msgstr ""
+
+msgid "Testo del pulsante di recesso"
+msgstr ""
+
 msgid "Ti abbiamo inviato un’email con un link per confermare la richiesta di recesso. Controlla la posta (anche lo spam). Il link è valido per 30 minuti."
 msgstr ""
 
 msgid "Vai all’elenco richieste"
+msgstr ""
+
+msgid "Vedi le release su GitHub."
 msgstr ""
 
 msgid "Verifica i dati della dichiarazione. Al passaggio successivo potrai confermare il recesso."
@@ -354,6 +465,24 @@ msgid "[%1$s] Avviso di ricevimento del recesso – %2$s"
 msgstr ""
 
 msgid "[%s] Verifica la richiesta di recesso"
+msgstr ""
+
+msgid "la fornitura di beni che rischiano di deteriorarsi o scadere rapidamente;"
+msgstr ""
+
+msgid "la fornitura di beni che, dopo la consegna, risultano per loro natura inscindibilmente mescolati con altri beni;"
+msgstr ""
+
+msgid "la fornitura di beni confezionati su misura o chiaramente personalizzati;"
+msgstr ""
+
+msgid "la fornitura di beni sigillati che non si prestano a essere restituiti per motivi igienici o di protezione della salute e che sono stati aperti dopo la consegna;"
+msgstr ""
+
+msgid "la fornitura di contenuto digitale mediante un supporto non materiale se l’esecuzione è iniziata con il suo previo consenso espresso e con l’accettazione della perdita del diritto di recesso."
+msgstr ""
+
+msgid "la fornitura di registrazioni audio o video sigillate o di software informatici aperti dopo la consegna;"
 msgstr ""
 
 msgid "È stata registrata una nuova richiesta di recesso online."

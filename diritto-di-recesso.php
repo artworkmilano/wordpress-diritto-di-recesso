@@ -3,7 +3,7 @@
  * Plugin Name:       Diritto di Recesso 54-bis
  * Plugin URI:        https://artworkstudios.it/diritto-di-recesso
  * Description:       Recesso digitale conforme all'art. 54-bis del Codice del Consumo (D.Lgs. 209/2025) per WooCommerce. Punto d'accesso unico (pagina + link footer) valido anche per ospiti senza account: lookup ordine, doppia conferma, avviso di ricevimento su supporto durevole con data/ora, notifica admin e audit trail.
- * Version:           1.1.1
+ * Version:           1.1.2
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Artwork
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DDR_VERSION', '1.1.1' );
+define( 'DDR_VERSION', '1.1.2' );
 define( 'DDR_FILE', __FILE__ );
 define( 'DDR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DDR_URL', plugin_dir_url( __FILE__ ) );
@@ -93,6 +93,19 @@ function ddr_notice_missing_wc() {
 	echo esc_html__( 'Diritto di Recesso 54-bis richiede WooCommerce attivo per funzionare.', 'diritto-di-recesso' );
 	echo '</p></div>';
 }
+
+/**
+ * Link rapidi nella riga del plugin (pagina Plugin).
+ */
+add_filter(
+	'plugin_action_links_' . plugin_basename( DDR_FILE ),
+	function ( $links ) {
+		$settings = '<a href="' . esc_url( admin_url( 'admin.php?page=ddr-settings' ) ) . '">' . esc_html__( 'Impostazioni', 'diritto-di-recesso' ) . '</a>';
+		$legal    = '<a href="' . esc_url( admin_url( 'admin.php?page=ddr-legal' ) ) . '">' . esc_html__( 'Testi legali', 'diritto-di-recesso' ) . '</a>';
+		array_unshift( $links, $settings, $legal );
+		return $links;
+	}
+);
 
 /**
  * Traduzioni.

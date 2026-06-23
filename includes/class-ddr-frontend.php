@@ -510,37 +510,41 @@ class DDR_Frontend {
 				<input type="hidden" name="ddr_action" value="select" />
 				<input type="hidden" name="ddr_token" value="<?php echo esc_attr( $flow['token'] ); ?>" />
 
-				<table class="ddr-items">
-					<thead>
-						<tr>
-							<th></th>
-							<th><?php esc_html_e( 'Prodotto', 'diritto-di-recesso' ); ?></th>
-							<th><?php esc_html_e( 'Quantità', 'diritto-di-recesso' ); ?></th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ( $items as $it ) : ?>
-							<tr class="ddr-item-row">
-								<td class="ddr-item-check">
-									<input type="checkbox" class="ddr-item-toggle" id="ddr-sel-<?php echo esc_attr( $it['line_item_id'] ); ?>" name="ddr_sel[<?php echo esc_attr( $it['line_item_id'] ); ?>]" value="1" />
-								</td>
-								<td>
-									<label for="ddr-sel-<?php echo esc_attr( $it['line_item_id'] ); ?>"><?php echo esc_html( $it['name'] ); ?></label>
-									<?php if ( $it['qty_withdrawn'] > 0 ) : ?>
-										<span class="ddr-item-note"><?php
+				<div class="ddr-items">
+					<?php
+					foreach ( $items as $it ) :
+						$cid     = 'ddr-sel-' . (int) $it['line_item_id'];
+						$oi      = $order->get_item( $it['line_item_id'] );
+						$product = $oi ? $oi->get_product() : null;
+						$thumb   = $product ? $product->get_image( 'thumbnail', array( 'class' => 'ddr-item-thumb' ) ) : '';
+						$unit    = $oi ? (float) $order->get_item_total( $oi, true ) : 0;
+						$price   = $unit ? wc_price( $unit, array( 'currency' => $order->get_currency() ) ) : '';
+						?>
+						<div class="ddr-item-row">
+							<input type="checkbox" class="ddr-item-toggle" id="<?php echo esc_attr( $cid ); ?>" name="ddr_sel[<?php echo esc_attr( $it['line_item_id'] ); ?>]" value="1" />
+							<label class="ddr-item-main" for="<?php echo esc_attr( $cid ); ?>">
+								<?php echo $thumb; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- markup WooCommerce. ?>
+								<span class="ddr-item-info">
+									<span class="ddr-item-name"><?php echo esc_html( $it['name'] ); ?></span>
+									<span class="ddr-item-meta">
+										<?php echo wp_kses_post( $price ); ?>
+										<?php if ( $it['qty_withdrawn'] > 0 ) : ?>
+											&middot; <?php
 											/* translators: 1: quantita' disponibile 2: gia' recessa */
-											printf( esc_html__( 'Disponibili %1$d (già recessi %2$d)', 'diritto-di-recesso' ), (int) $it['qty_available'], (int) $it['qty_withdrawn'] );
-										?></span>
-									<?php endif; ?>
-								</td>
-								<td>
-									<input type="number" class="ddr-item-qty" name="ddr_qty[<?php echo esc_attr( $it['line_item_id'] ); ?>]" value="<?php echo esc_attr( $it['qty_available'] ); ?>" min="1" max="<?php echo esc_attr( $it['qty_available'] ); ?>" disabled />
-									<span class="ddr-item-max">/ <?php echo esc_html( $it['qty_available'] ); ?></span>
-								</td>
-							</tr>
-						<?php endforeach; ?>
-					</tbody>
-				</table>
+											printf( esc_html__( 'disponibili %1$d (già recessi %2$d)', 'diritto-di-recesso' ), (int) $it['qty_available'], (int) $it['qty_withdrawn'] );
+											?>
+										<?php endif; ?>
+									</span>
+								</span>
+							</label>
+							<span class="ddr-qty" data-max="<?php echo esc_attr( $it['qty_available'] ); ?>">
+								<button type="button" class="ddr-qty-btn ddr-qty-minus" tabindex="-1" aria-label="<?php esc_attr_e( 'Riduci quantità', 'diritto-di-recesso' ); ?>" disabled>&minus;</button>
+								<input type="number" class="ddr-item-qty" name="ddr_qty[<?php echo esc_attr( $it['line_item_id'] ); ?>]" value="<?php echo esc_attr( $it['qty_available'] ); ?>" min="1" max="<?php echo esc_attr( $it['qty_available'] ); ?>" inputmode="numeric" disabled />
+								<button type="button" class="ddr-qty-btn ddr-qty-plus" tabindex="-1" aria-label="<?php esc_attr_e( 'Aumenta quantità', 'diritto-di-recesso' ); ?>" disabled>+</button>
+							</span>
+						</div>
+					<?php endforeach; ?>
+				</div>
 
 				<p>
 					<button type="submit" class="ddr-btn ddr-btn-primary"><?php esc_html_e( 'Continua', 'diritto-di-recesso' ); ?></button>

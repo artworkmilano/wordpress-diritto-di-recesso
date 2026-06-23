@@ -2,6 +2,30 @@
 (function () {
   'use strict';
 
+  function setRowEnabled(row, on) {
+    var qty = row.querySelector('.ddr-item-qty');
+    var btns = row.querySelectorAll('.ddr-qty-btn');
+    if (qty) {
+      qty.disabled = !on;
+      if (on && (!qty.value || qty.value === '0')) {
+        qty.value = qty.getAttribute('max') || '1';
+      }
+    }
+    for (var i = 0; i < btns.length; i++) { btns[i].disabled = !on; }
+  }
+
+  function step(row, delta) {
+    var qty = row.querySelector('.ddr-item-qty');
+    if (!qty || qty.disabled) { return; }
+    var min = parseInt(qty.getAttribute('min') || '1', 10);
+    var max = parseInt(qty.getAttribute('max') || '1', 10);
+    var val = parseInt(qty.value || min, 10) + delta;
+    if (isNaN(val)) { val = min; }
+    if (val < min) { val = min; }
+    if (val > max) { val = max; }
+    qty.value = val;
+  }
+
   document.addEventListener('change', function (e) {
     var t = e.target;
     if (!t) { return; }
@@ -13,24 +37,25 @@
       return;
     }
 
-    // Selezione prodotti: abilita il campo quantità quando la riga è spuntata.
+    // Selezione prodotti: abilita quantità + stepper quando la riga è spuntata.
     if (t.classList && t.classList.contains('ddr-item-toggle')) {
       var row = t.closest('.ddr-item-row');
-      if (!row) { return; }
-      var qty = row.querySelector('.ddr-item-qty');
-      if (qty) {
-        qty.disabled = !t.checked;
-        if (t.checked && (!qty.value || qty.value === '0')) {
-          qty.value = qty.getAttribute('max') || '1';
-        }
-      }
+      if (row) { setRowEnabled(row, t.checked); }
     }
   });
 
-  // Pulsante stampa della ricevuta.
   document.addEventListener('click', function (e) {
-    if (e.target && e.target.id === 'ddr-print') {
-      window.print();
+    var t = e.target;
+    if (!t) { return; }
+
+    // Stampa ricevuta.
+    if (t.id === 'ddr-print') { window.print(); return; }
+
+    // Stepper quantità −/+.
+    if (t.classList && t.classList.contains('ddr-qty-btn')) {
+      e.preventDefault();
+      var row = t.closest('.ddr-item-row');
+      if (row) { step(row, t.classList.contains('ddr-qty-plus') ? 1 : -1); }
     }
   });
 })();

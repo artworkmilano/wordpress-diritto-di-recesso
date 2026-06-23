@@ -53,6 +53,9 @@ msgstr ""
 msgid "Attiva solo se il sito è dietro Cloudflare o un reverse proxy affidabile. Di default viene registrato l’IP della connessione diretta."
 msgstr ""
 
+msgid "Aumenta quantità"
+msgstr ""
+
 msgid "Avvisa il cliente via email quando cambi lo stato della sua richiesta (in lavorazione, completata, annullata)"
 msgstr ""
 
@@ -180,9 +183,6 @@ msgid "Diritto di Recesso – Testi legali"
 msgstr ""
 
 msgid "Diritto di recesso"
-msgstr ""
-
-msgid "Disponibili %1$d (già recessi %2$d)"
 msgstr ""
 
 msgid "Documento riepilogativo della dichiarazione di recesso (art. 54-bis Codice del Consumo)."
@@ -428,9 +428,6 @@ msgstr ""
 msgid "Prodotti oggetto del recesso"
 msgstr ""
 
-msgid "Prodotto"
-msgstr ""
-
 msgid "Pulsante"
 msgstr ""
 
@@ -438,9 +435,6 @@ msgid "Puoi incollare il testo a mano oppure usare lo shortcode indicato sotto o
 msgstr ""
 
 msgid "Quando segni una richiesta come “completata”, crea un rimborso WooCommerce per i prodotti recessi con ripristino dello stock"
-msgstr ""
-
-msgid "Quantità"
 msgstr ""
 
 msgid "Recedere dal contratto"
@@ -495,6 +489,9 @@ msgid "Richieste"
 msgstr ""
 
 msgid "Richieste di recesso"
+msgstr ""
+
+msgid "Riduci quantità"
 msgstr ""
 
 msgid "Riferimento ordine"
@@ -603,6 +600,9 @@ msgid "[%s] Verifica la richiesta di recesso"
 msgstr ""
 
 msgid "aggiornamento disponibile"
+msgstr ""
+
+msgid "disponibili %1$d (già recessi %2$d)"
 msgstr ""
 
 msgid "la fornitura di beni che rischiano di deteriorarsi o scadere rapidamente;"

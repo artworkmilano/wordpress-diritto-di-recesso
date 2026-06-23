@@ -55,16 +55,23 @@
 .ddr-cta.ddr-link-plain:hover{text-decoration:underline}
 .ddr-cta.ddr-btn-primary .ddr-ico-svg{color:inherit}
 
-/* Selezione prodotti (recesso parziale) */
-.ddr-items{width:100%;border-collapse:collapse;margin:8px 0 20px}
-.ddr-items th,.ddr-items td{padding:10px;border-bottom:1px solid #eee;text-align:left;vertical-align:middle}
-.ddr-items thead th{font-size:.85em;text-transform:uppercase;letter-spacing:.03em;color:#666}
-.ddr-item-check{width:36px}
-.ddr-item-row label{display:inline;font-weight:600;margin:0}
-.ddr-item-note{display:block;font-size:.85em;color:#777;margin-top:2px}
-.ddr-item-qty{width:72px;padding:6px 8px;border:1px solid #ccc;border-radius:6px}
+/* Selezione prodotti (recesso parziale) - lista stile shop */
+.ddr-items{margin:8px 0 20px}
+.ddr-item-row{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid #eee}
+.ddr-item-row .ddr-item-toggle{flex:0 0 auto;width:18px;height:18px;margin:0}
+.ddr-item-main{display:flex;align-items:center;gap:12px;flex:1 1 auto;margin:0;font-weight:400;cursor:pointer}
+.ddr-item-thumb{width:52px;height:52px;object-fit:cover;border-radius:8px;flex:0 0 auto;background:#f5f5f5}
+.ddr-item-info{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ddr-item-name{font-weight:600;line-height:1.25}
+.ddr-item-meta{font-size:.85em;color:#777}
+.ddr-qty{display:inline-flex;align-items:center;flex:0 0 auto}
+.ddr-qty-btn{width:30px;height:34px;border:1px solid #ccc;background:#f7f7f7;color:#333;cursor:pointer;font-size:16px;line-height:1;padding:0}
+.ddr-qty-btn:disabled{opacity:.4;cursor:not-allowed}
+.ddr-qty-minus{border-radius:6px 0 0 6px}
+.ddr-qty-plus{border-radius:0 6px 6px 0}
+.ddr-item-qty{width:46px;height:34px;text-align:center;border:1px solid #ccc;border-left:0;border-right:0;border-radius:0;padding:0;-moz-appearance:textfield}
 .ddr-item-qty:disabled{background:#f5f5f5;color:#999}
-.ddr-item-max{color:#999;font-size:.9em;margin-left:4px}
+.ddr-item-qty::-webkit-outer-spin-button,.ddr-item-qty::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .ddr-readonly{display:block;padding:10px;background:#f7f7f7;border:1px solid #eee;border-radius:6px}
 .ddr-btn-sm{padding:6px 14px;font-size:.9em}
 

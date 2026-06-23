@@ -16,6 +16,7 @@ class DDR_Admin {
 		// Azioni admin: cambio stato + export CSV.
 		add_action( 'admin_post_ddr_set_status', array( __CLASS__, 'handle_set_status' ) );
 		add_action( 'admin_post_ddr_export_csv', array( __CLASS__, 'handle_export_csv' ) );
+		add_action( 'admin_post_ddr_check_updates', array( __CLASS__, 'handle_check_updates' ) );
 		// Esclusione recesso a livello prodotto.
 		add_action( 'woocommerce_product_options_general_product_data', array( __CLASS__, 'product_field' ) );
 		add_action( 'woocommerce_process_product_meta', array( __CLASS__, 'save_product_field' ) );
@@ -87,6 +88,8 @@ class DDR_Admin {
 				<div class="notice notice-warning"><p><?php esc_html_e( 'La pagina del recesso non è stata creata. Disattiva e riattiva il plugin, oppure crea una pagina con lo shortcode [diritto_recesso].', 'diritto-di-recesso' ); ?></p></div>
 			<?php endif; ?>
 
+			<?php self::render_updates_box(); ?>
+
 			<form method="post" action="options.php">
 				<?php settings_fields( 'ddr_settings' ); ?>
 				<table class="form-table" role="presentation">
@@ -149,6 +152,68 @@ class DDR_Admin {
 			</form>
 		</div>
 		<?php
+	}
+
+	/* --------------------------- Aggiornamenti -------------------------- */
+
+	/**
+	 * Box stato aggiornamenti: versione installata vs ultima su GitHub + check manuale.
+	 */
+	public static function render_updates_box() {
+		$repo = defined( 'DDR_GITHUB_REPO' ) ? DDR_GITHUB_REPO : '';
+		if ( ! $repo ) {
+			return;
+		}
+		$release = method_exists( 'DDR_Updater', 'fetch_release' ) ? DDR_Updater::fetch_release() : null;
+		$latest  = $release ? $release->version : null;
+		$update  = ( $latest && version_compare( $latest, DDR_VERSION, '>' ) );
+		if ( isset( $_GET['ddr_checked'] ) ) {
+			echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Controllo aggiornamenti eseguito.', 'diritto-di-recesso' ) . '</p></div>';
+		}
+		?>
+		<h2><?php esc_html_e( 'Aggiornamenti', 'diritto-di-recesso' ); ?></h2>
+		<table class="form-table" role="presentation">
+			<tr>
+				<th scope="row"><?php esc_html_e( 'Versione installata', 'diritto-di-recesso' ); ?></th>
+				<td><code><?php echo esc_html( DDR_VERSION ); ?></code></td>
+			</tr>
+			<tr>
+				<th scope="row"><?php esc_html_e( 'Ultima su GitHub', 'diritto-di-recesso' ); ?></th>
+				<td>
+					<?php if ( $latest ) : ?>
+						<code><?php echo esc_html( $latest ); ?></code>
+						<?php if ( $update ) : ?>
+							<strong style="color:#b32d2e;"> — <?php esc_html_e( 'aggiornamento disponibile', 'diritto-di-recesso' ); ?></strong>
+							<a href="<?php echo esc_url( admin_url( 'plugins.php' ) ); ?>"><?php esc_html_e( 'vai ad aggiornare', 'diritto-di-recesso' ); ?></a>
+						<?php else : ?>
+							<span style="color:#1a7f37;"> — <?php esc_html_e( 'sei aggiornato', 'diritto-di-recesso' ); ?></span>
+						<?php endif; ?>
+					<?php else : ?>
+						<em><?php esc_html_e( 'non rilevabile (nessuna release o connessione a GitHub non riuscita).', 'diritto-di-recesso' ); ?></em>
+					<?php endif; ?>
+					<p class="description"><?php printf( esc_html__( 'Repository: %s', 'diritto-di-recesso' ), '<code>' . esc_html( $repo ) . '</code>' ); ?></p>
+				</td>
+			</tr>
+		</table>
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+			<input type="hidden" name="action" value="ddr_check_updates" />
+			<?php wp_nonce_field( 'ddr_check_updates' ); ?>
+			<?php submit_button( __( 'Controlla aggiornamenti adesso', 'diritto-di-recesso' ), 'secondary', 'submit', false ); ?>
+		</form>
+		<hr />
+		<?php
+	}
+
+	public static function handle_check_updates() {
+		if ( ! current_user_can( 'manage_woocommerce' ) ) {
+			wp_die( esc_html__( 'Permessi insufficienti.', 'diritto-di-recesso' ) );
+		}
+		check_admin_referer( 'ddr_check_updates' );
+		if ( method_exists( 'DDR_Updater', 'force_recheck' ) ) {
+			DDR_Updater::force_recheck();
+		}
+		wp_safe_redirect( add_query_arg( array( 'page' => 'ddr-settings', 'ddr_checked' => 1 ), admin_url( 'admin.php' ) ) );
+		exit;
 	}
 
 	/* ----------------------------- Richieste ---------------------------- */

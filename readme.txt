@@ -5,7 +5,7 @@ Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 7.0
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,9 @@ Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli o
 Strumento tecnico, non sostituisce un parere legale. Adeguare separatamente condizioni generali di vendita e informativa precontrattuale (art. 49 c.1 lett. h). La funzione non crea il diritto di recesso: lo rende esercitabile online dove gia' esiste.
 
 == Changelog ==
+= 1.1.1 =
+* Pannello "Aggiornamenti" nelle impostazioni: mostra versione installata vs ultima su GitHub e pulsante "Controlla aggiornamenti adesso".
+
 = 1.1.0 =
 * Testo del pulsante di recesso personalizzabile dalle impostazioni.
 * Nuova sezione "Testi legali" con editor WYSIWYG e testi predefiniti (clausola di recesso, modulo tipo, esclusioni art. 59) compilati con i dati del negozio; riutilizzabili via shortcode [ddr_recesso_condizioni], [ddr_recesso_modulo], [ddr_recesso_esclusioni].

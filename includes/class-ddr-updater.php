@@ -66,20 +66,34 @@ class DDR_Updater {
 	 * @return object|null { version, zip_url, html_url, body, published_at }
 	 */
 	protected function get_release() {
+		return self::fetch_release();
+	}
+
+	/**
+	 * Recupera (con cache) l'ultima release dal repo GitHub. Statico, cosi' e'
+	 * richiamabile anche dal pannello admin per mostrare lo stato.
+	 *
+	 * @return object|null { version, zip_url, html_url, body, published_at }
+	 */
+	public static function fetch_release() {
+		if ( ! defined( 'DDR_GITHUB_REPO' ) || ! DDR_GITHUB_REPO ) {
+			return null;
+		}
+		$repo      = trim( DDR_GITHUB_REPO, '/' );
 		$cache_key = 'ddr_gh_release';
 		$cached    = get_transient( $cache_key );
 		if ( false !== $cached ) {
 			return $cached ? $cached : null;
 		}
 
-		$url      = 'https://api.github.com/repos/' . $this->repo . '/releases/latest';
+		$url      = 'https://api.github.com/repos/' . $repo . '/releases/latest';
 		$response = wp_remote_get(
 			$url,
 			array(
 				'timeout' => 15,
 				'headers' => array(
 					'Accept'     => 'application/vnd.github+json',
-					'User-Agent' => 'DirittoDiRecesso/' . $this->version . '; ' . home_url(),
+					'User-Agent' => 'DirittoDiRecesso/' . DDR_VERSION . '; ' . home_url(),
 				),
 			)
 		);
@@ -110,7 +124,7 @@ class DDR_Updater {
 		$release = (object) array(
 			'version'      => ltrim( $data->tag_name, 'vV' ),
 			'zip_url'      => $zip_url,
-			'html_url'     => isset( $data->html_url ) ? $data->html_url : ( 'https://github.com/' . $this->repo ),
+			'html_url'     => isset( $data->html_url ) ? $data->html_url : ( 'https://github.com/' . $repo ),
 			'body'         => isset( $data->body ) ? (string) $data->body : '',
 			'published_at' => isset( $data->published_at ) ? $data->published_at : '',
 		);
@@ -207,5 +221,16 @@ class DDR_Updater {
 
 	public function clear_cache() {
 		delete_transient( 'ddr_gh_release' );
+	}
+
+	/**
+	 * Forza un nuovo controllo: svuota la cache GitHub e il transient update di WP.
+	 */
+	public static function force_recheck() {
+		delete_transient( 'ddr_gh_release' );
+		delete_site_transient( 'update_plugins' );
+		if ( function_exists( 'wp_update_plugins' ) ) {
+			wp_update_plugins();
+		}
 	}
 }

@@ -17,6 +17,9 @@ msgstr ""
 msgid "Abbiamo registrato la tua dichiarazione di recesso. Ti abbiamo inviato l’avviso di ricevimento all’indirizzo email indicato, con data e ora della trasmissione."
 msgstr ""
 
+msgid "Aggiornamenti"
+msgstr ""
+
 msgid "All’attenzione di %1$s, %2$s:"
 msgstr ""
 
@@ -78,6 +81,12 @@ msgid "Confermiamo di aver ricevuto la tua dichiarazione di recesso. Questo mess
 msgstr ""
 
 msgid "Continua"
+msgstr ""
+
+msgid "Controlla aggiornamenti adesso"
+msgstr ""
+
+msgid "Controllo aggiornamenti eseguito."
 msgstr ""
 
 msgid "Cosa vuoi restituire"
@@ -377,6 +386,9 @@ msgstr ""
 msgid "Recesso ricevuto"
 msgstr ""
 
+msgid "Repository: %s"
+msgstr ""
+
 msgid "Ricevuta"
 msgstr ""
 
@@ -449,6 +461,9 @@ msgstr ""
 msgid "Ti abbiamo inviato un’email con un link per confermare la richiesta di recesso. Controlla la posta (anche lo spam). Il link è valido per 30 minuti."
 msgstr ""
 
+msgid "Ultima su GitHub"
+msgstr ""
+
 msgid "Vai all’elenco richieste"
 msgstr ""
 
@@ -458,6 +473,9 @@ msgstr ""
 msgid "Verifica i dati della dichiarazione. Al passaggio successivo potrai confermare il recesso."
 msgstr ""
 
+msgid "Versione installata"
+msgstr ""
+
 msgid "Visualizza / stampa la ricevuta"
 msgstr ""
 
@@ -465,6 +483,9 @@ msgid "[%1$s] Avviso di ricevimento del recesso – %2$s"
 msgstr ""
 
 msgid "[%s] Verifica la richiesta di recesso"
+msgstr ""
+
+msgid "aggiornamento disponibile"
 msgstr ""
 
 msgid "la fornitura di beni che rischiano di deteriorarsi o scadere rapidamente;"
@@ -483,6 +504,15 @@ msgid "la fornitura di contenuto digitale mediante un supporto non materiale se 
 msgstr ""
 
 msgid "la fornitura di registrazioni audio o video sigillate o di software informatici aperti dopo la consegna;"
+msgstr ""
+
+msgid "non rilevabile (nessuna release o connessione a GitHub non riuscita)."
+msgstr ""
+
+msgid "sei aggiornato"
+msgstr ""
+
+msgid "vai ad aggiornare"
 msgstr ""
 
 msgid "È stata registrata una nuova richiesta di recesso online."

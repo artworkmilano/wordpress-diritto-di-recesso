@@ -1,11 +1,11 @@
-=== Diritto di Recesso 54-bis ===
+=== Diritto di Recesso per WooCommerce ===
 Contributors: artwork
 Tags: woocommerce, recesso, diritto di recesso, codice del consumo, 54-bis
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 7.0
-Stable tag: 1.8.0
+Stable tag: 1.9.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,6 +57,11 @@ Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli o
 Strumento tecnico, non sostituisce un parere legale. Adeguare separatamente condizioni generali di vendita e informativa precontrattuale (art. 49 c.1 lett. h). La funzione non crea il diritto di recesso: lo rende esercitabile online dove gia' esiste.
 
 == Changelog ==
+= 1.9.0 =
+* Rinominato "Diritto di Recesso per WooCommerce".
+* Impostazioni riorganizzate a schede (tab).
+* Colore di default del brand (viola) per accento e pulsante principale.
+
 = 1.8.0 =
 * Plugin multilingua: traduzioni complete in inglese, francese, spagnolo e tedesco (oltre all'italiano).
 * Fix: corretti due titoli di sezione nell'admin che mostravano '&amp;'.

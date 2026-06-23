@@ -66,8 +66,8 @@ class DDR_Frontend {
 		wp_enqueue_script( 'ddr', DDR_URL . 'assets/js/ddr.js', array(), DDR_VERSION, true );
 
 		// Colori personalizzabili applicati via CSS inline.
-		$accent = self::color( 'ddr_accent', '#ea580c' );
-		$btn_bg = self::color( 'ddr_btn_bg', '#1a1a1a' );
+		$accent = self::color( 'ddr_accent', '#8b31ff' );
+		$btn_bg = self::color( 'ddr_btn_bg', '#8b31ff' );
 		$btn_tx = self::color( 'ddr_btn_text', '#ffffff' );
 		$radius = (int) get_option( 'ddr_radius', 10 );
 		$css  = ':root{--ddr-radius:' . $radius . 'px}';
@@ -117,8 +117,8 @@ class DDR_Frontend {
 		echo '<!DOCTYPE html><html ' . get_language_attributes() . '><head><meta charset="utf-8" />';
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1" />';
 		echo '<link rel="stylesheet" href="' . esc_url( DDR_URL . 'assets/css/ddr.css?ver=' . DDR_VERSION ) . '" />';
-		$accent = self::color( 'ddr_accent', '#ea580c' );
-		$btn_bg = self::color( 'ddr_btn_bg', '#1a1a1a' );
+		$accent = self::color( 'ddr_accent', '#8b31ff' );
+		$btn_bg = self::color( 'ddr_btn_bg', '#8b31ff' );
 		$btn_tx = self::color( 'ddr_btn_text', '#ffffff' );
 		$radius = (int) get_option( 'ddr_radius', 10 );
 		$shadow = ( 'yes' !== get_option( 'ddr_shadow', 'yes' ) ) ? '.ddr-box,.ddr-pill{box-shadow:none}' : '';
@@ -314,7 +314,7 @@ class DDR_Frontend {
 	 * Markup del "pill" (badge) con stili inline resilienti a WP Rocket / temi.
 	 */
 	protected static function pill_anchor( $label = '', $with_icon = null ) {
-		$accent = self::color( 'ddr_accent', '#ea580c' );
+		$accent = self::color( 'ddr_accent', '#8b31ff' );
 		$label  = '' !== $label ? $label : ddr_link_label();
 		if ( null === $with_icon ) {
 			$with_icon = self::show_icon();

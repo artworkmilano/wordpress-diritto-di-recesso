@@ -71,8 +71,8 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_footer_style', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'link' ) );
 		register_setting( 'ddr_settings', 'ddr_btn_icon', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 		register_setting( 'ddr_settings', 'ddr_enforce_cutoff', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
-		register_setting( 'ddr_settings', 'ddr_accent', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#ea580c' ) );
-		register_setting( 'ddr_settings', 'ddr_btn_bg', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#1a1a1a' ) );
+		register_setting( 'ddr_settings', 'ddr_accent', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#8b31ff' ) );
+		register_setting( 'ddr_settings', 'ddr_btn_bg', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#8b31ff' ) );
 		register_setting( 'ddr_settings', 'ddr_btn_text', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#ffffff' ) );
 		register_setting( 'ddr_settings', 'ddr_menu_location', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
 		register_setting( 'ddr_settings', 'ddr_modal', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
@@ -110,7 +110,16 @@ class DDR_Admin {
 			<form method="post" action="options.php" class="ddr-settings-form">
 				<?php settings_fields( 'ddr_settings' ); ?>
 
-				<h2 class="title"><?php esc_html_e( 'Recesso', 'diritto-di-recesso' ); ?></h2>
+				<h2 class="nav-tab-wrapper ddr-tabs">
+					<a href="#" class="nav-tab nav-tab-active" data-ddrtab="t-recesso"><?php esc_html_e( 'Recesso', 'diritto-di-recesso' ); ?></a>
+					<a href="#" class="nav-tab" data-ddrtab="t-access"><?php esc_html_e( 'Punto di accesso', 'diritto-di-recesso' ); ?></a>
+					<a href="#" class="nav-tab" data-ddrtab="t-aspetto"><?php esc_html_e( 'Aspetto', 'diritto-di-recesso' ); ?></a>
+					<a href="#" class="nav-tab" data-ddrtab="t-pdf"><?php esc_html_e( 'Ricevuta & PDF', 'diritto-di-recesso' ); ?></a>
+					<a href="#" class="nav-tab" data-ddrtab="t-notifiche"><?php esc_html_e( 'Notifiche & rimborsi', 'diritto-di-recesso' ); ?></a>
+					<a href="#" class="nav-tab" data-ddrtab="t-avanzate"><?php esc_html_e( 'Avanzate', 'diritto-di-recesso' ); ?></a>
+				</h2>
+
+				<div class="ddr-tab-panel" data-ddrtab="t-recesso">
 				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><label for="ddr_window_days"><?php esc_html_e( 'Giorni di recesso', 'diritto-di-recesso' ); ?></label></th>
@@ -127,7 +136,8 @@ class DDR_Admin {
 					</tr>
 				</table>
 
-				<h2 class="title"><?php esc_html_e( 'Punto di accesso', 'diritto-di-recesso' ); ?></h2>
+				</div>
+				<div class="ddr-tab-panel" data-ddrtab="t-access" style="display:none;">
 				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><label for="ddr_link_label"><?php esc_html_e( 'Testo del pulsante di recesso', 'diritto-di-recesso' ); ?></label></th>
@@ -202,19 +212,20 @@ class DDR_Admin {
 					</tr>
 				</table>
 
-				<h2 class="title"><?php esc_html_e( 'Aspetto', 'diritto-di-recesso' ); ?></h2>
+				</div>
+				<div class="ddr-tab-panel" data-ddrtab="t-aspetto" style="display:none;">
 				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><label for="ddr_accent"><?php esc_html_e( 'Colore accento', 'diritto-di-recesso' ); ?></label></th>
 						<td>
-							<input type="color" name="ddr_accent" id="ddr_accent" value="<?php echo esc_attr( get_option( 'ddr_accent', '#ea580c' ) ); ?>" />
+							<input type="color" name="ddr_accent" id="ddr_accent" value="<?php echo esc_attr( get_option( 'ddr_accent', '#8b31ff' ) ); ?>" />
 							<p class="description"><?php esc_html_e( 'Colore dell’icona e dei link “stile testo”. Intonalo al brand del sito.', 'diritto-di-recesso' ); ?></p>
 						</td>
 					</tr>
 					<tr>
 						<th scope="row"><label for="ddr_btn_bg"><?php esc_html_e( 'Colore pulsante', 'diritto-di-recesso' ); ?></label></th>
 						<td>
-							<input type="color" name="ddr_btn_bg" id="ddr_btn_bg" value="<?php echo esc_attr( get_option( 'ddr_btn_bg', '#1a1a1a' ) ); ?>" />
+							<input type="color" name="ddr_btn_bg" id="ddr_btn_bg" value="<?php echo esc_attr( get_option( 'ddr_btn_bg', '#8b31ff' ) ); ?>" />
 							<input type="color" name="ddr_btn_text" id="ddr_btn_text" value="<?php echo esc_attr( get_option( 'ddr_btn_text', '#ffffff' ) ); ?>" />
 							<p class="description"><?php esc_html_e( 'Sfondo e testo del pulsante principale.', 'diritto-di-recesso' ); ?></p>
 						</td>
@@ -234,7 +245,8 @@ class DDR_Admin {
 					</tr>
 				</table>
 
-				<h2 class="title"><?php esc_html_e( 'Ricevuta & PDF', 'diritto-di-recesso' ); ?></h2>
+				</div>
+				<div class="ddr-tab-panel" data-ddrtab="t-pdf" style="display:none;">
 				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><?php esc_html_e( 'Ricevuta PDF', 'diritto-di-recesso' ); ?></th>
@@ -273,7 +285,8 @@ class DDR_Admin {
 					</tr>
 				</table>
 
-				<h2 class="title"><?php esc_html_e( 'Notifiche & rimborsi', 'diritto-di-recesso' ); ?></h2>
+				</div>
+				<div class="ddr-tab-panel" data-ddrtab="t-notifiche" style="display:none;">
 				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><label for="ddr_admin_recipients"><?php esc_html_e( 'Destinatari notifiche', 'diritto-di-recesso' ); ?></label></th>
@@ -297,7 +310,8 @@ class DDR_Admin {
 					</tr>
 				</table>
 
-				<h2 class="title"><?php esc_html_e( 'Avanzate', 'diritto-di-recesso' ); ?></h2>
+				</div>
+				<div class="ddr-tab-panel" data-ddrtab="t-avanzate" style="display:none;">
 				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><?php esc_html_e( 'IP dietro proxy/CDN', 'diritto-di-recesso' ); ?></th>
@@ -314,6 +328,7 @@ class DDR_Admin {
 						</td>
 					</tr>
 				</table>
+				</div>
 
 				<?php submit_button(); ?>
 			</form>
@@ -399,6 +414,23 @@ jQuery(function($){
 		$('#ddr_pdf_logo').val('');
 		$('#ddr_pdf_logo_preview').empty();
 	});
+
+	// Tab impostazioni
+	function ddrShow(tab){
+		$('.ddr-tab-panel').hide();
+		$('.ddr-tab-panel[data-ddrtab="'+tab+'"]').show();
+		$('.ddr-tabs .nav-tab').removeClass('nav-tab-active');
+		$('.ddr-tabs .nav-tab[data-ddrtab="'+tab+'"]').addClass('nav-tab-active');
+	}
+	$('.ddr-tabs .nav-tab').on('click', function(e){
+		e.preventDefault();
+		var tab = $(this).data('ddrtab');
+		ddrShow(tab);
+		if (history.replaceState) { history.replaceState(null, '', '#'+tab); }
+	});
+	if (window.location.hash && $('.ddr-tab-panel[data-ddrtab="'+window.location.hash.substring(1)+'"]').length){
+		ddrShow(window.location.hash.substring(1));
+	}
 });
 JS;
 		wp_add_inline_script( 'jquery-core', $js );

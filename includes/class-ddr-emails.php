@@ -53,7 +53,7 @@ class DDR_Emails {
 			esc_html( $order->get_order_number() )
 		) . '</p>';
 		$body .= '<p style="text-align:center;margin:28px 0;">';
-		$body .= '<a href="' . esc_url( $link ) . '" style="background:#1a1a1a;color:#fff;text-decoration:none;padding:12px 22px;border-radius:6px;display:inline-block;">';
+		$body .= '<a href="' . esc_url( $link ) . '" style="background:#8b31ff;color:#fff;text-decoration:none;padding:12px 22px;border-radius:6px;display:inline-block;">';
 		$body .= esc_html( ddr_link_label() );
 		$body .= '</a></p>';
 		$body .= '<p style="font-size:12px;color:#888;">' . esc_html__( 'Il link è valido per 30 minuti. Se non hai richiesto tu il recesso, ignora questa email: nessuna azione verrà eseguita.', 'diritto-di-recesso' ) . '</p>';

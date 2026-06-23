@@ -47,6 +47,12 @@ msgstr ""
 msgid "Annullata"
 msgstr ""
 
+msgid "Apri il flusso di recesso in una finestra modale (overlay) invece di cambiare pagina"
+msgstr ""
+
+msgid "Apri in finestra modale"
+msgstr ""
+
 msgid "Attenzione: rimuove definitivamente l’audit trail delle richieste di recesso. Lascia disattivato per conservare le prove."
 msgstr ""
 
@@ -87,6 +93,9 @@ msgid "Colore accento"
 msgstr ""
 
 msgid "Colore dell’icona del badge nel footer. Intonalo al brand del sito."
+msgstr ""
+
+msgid "Colore overlay:"
 msgstr ""
 
 msgid "Colore pulsante"
@@ -576,6 +585,9 @@ msgid "Ultima su GitHub"
 msgstr ""
 
 msgid "Vai all’elenco richieste"
+msgstr ""
+
+msgid "Vale per il link footer, l’area account, lo shortcode e le voci di menu. L’overlay usa il colore scelto con trasparenza."
 msgstr ""
 
 msgid "Vedi le release su GitHub."

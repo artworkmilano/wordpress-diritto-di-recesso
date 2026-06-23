@@ -55,7 +55,54 @@
     if (t.classList && t.classList.contains('ddr-qty-btn')) {
       e.preventDefault();
       var row = t.closest('.ddr-item-row');
-      if (row) { step(row, t.classList.contains('ddr-qty-plus') ? 1 : -1); }
+      if (row) { step(row, t.classList.contains('ddr-qty-plus') ? 1 : -1); return; }
+    }
+
+    // Apertura in modale (se abilitata).
+    if (window.DDR_MODAL && t.closest) {
+      var a = t.closest('a.ddr-pill, a.ddr-cta, a.ddr-recedi, .ddr-menu-link > a');
+      if (a && a.getAttribute('href')) {
+        e.preventDefault();
+        openModal(a.getAttribute('href'));
+      }
     }
   });
+
+  function openModal(url) {
+    var src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'ddr_modal=1';
+
+    var overlay = document.createElement('div');
+    overlay.className = 'ddr-modal-overlay';
+
+    var box = document.createElement('div');
+    box.className = 'ddr-modal';
+
+    var close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'ddr-modal-close';
+    close.setAttribute('aria-label', 'Chiudi');
+    close.innerHTML = '&times;';
+
+    var frame = document.createElement('iframe');
+    frame.className = 'ddr-modal-frame';
+    frame.src = src;
+
+    box.appendChild(close);
+    box.appendChild(frame);
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
+    document.documentElement.style.overflow = 'hidden';
+
+    function destroy() {
+      if (overlay.parentNode) { overlay.parentNode.removeChild(overlay); }
+      document.documentElement.style.overflow = '';
+      document.removeEventListener('keydown', onKey);
+    }
+    function onKey(ev) { if (ev.key === 'Escape') { destroy(); } }
+
+    overlay.addEventListener('click', function (ev) {
+      if (ev.target === overlay || ev.target === close) { destroy(); }
+    });
+    document.addEventListener('keydown', onKey);
+  }
 })();

@@ -5,7 +5,7 @@ Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 7.0
-Stable tag: 1.5.0
+Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,9 @@ Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli o
 Strumento tecnico, non sostituisce un parere legale. Adeguare separatamente condizioni generali di vendita e informativa precontrattuale (art. 49 c.1 lett. h). La funzione non crea il diritto di recesso: lo rende esercitabile online dove gia' esiste.
 
 == Changelog ==
+= 1.6.0 =
+* Apertura del flusso di recesso in finestra modale (overlay) opzionale, con colore overlay personalizzabile. Il flusso gira in un frame senza tema, pulito.
+
 = 1.5.0 =
 * Schermata di selezione prodotti in stile shop: miniatura, nome e prezzo per ogni prodotto, con stepper di quantita' (-/+).
 

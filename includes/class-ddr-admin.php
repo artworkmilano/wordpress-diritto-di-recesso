@@ -73,6 +73,8 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_btn_bg', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#1a1a1a' ) );
 		register_setting( 'ddr_settings', 'ddr_btn_text', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#ffffff' ) );
 		register_setting( 'ddr_settings', 'ddr_menu_location', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
+		register_setting( 'ddr_settings', 'ddr_modal', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
+		register_setting( 'ddr_settings', 'ddr_overlay', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#0f172a' ) );
 		register_setting( 'ddr_settings', 'ddr_trust_proxy', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
 		register_setting( 'ddr_settings', 'ddr_delete_data', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
 		register_setting( 'ddr_settings', 'ddr_customer_emails', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
@@ -162,6 +164,17 @@ class DDR_Admin {
 							<input type="color" name="ddr_btn_bg" id="ddr_btn_bg" value="<?php echo esc_attr( get_option( 'ddr_btn_bg', '#1a1a1a' ) ); ?>" />
 							<input type="color" name="ddr_btn_text" id="ddr_btn_text" value="<?php echo esc_attr( get_option( 'ddr_btn_text', '#ffffff' ) ); ?>" />
 							<p class="description"><?php esc_html_e( 'Sfondo e testo del pulsante principale (form di recesso e shortcode stile pulsante).', 'diritto-di-recesso' ); ?></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'Apri in finestra modale', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="ddr_modal" value="yes" <?php checked( 'yes', get_option( 'ddr_modal', 'no' ) ); ?> /> <?php esc_html_e( 'Apri il flusso di recesso in una finestra modale (overlay) invece di cambiare pagina', 'diritto-di-recesso' ); ?></label>
+							<p style="margin-top:8px;">
+								<label for="ddr_overlay"><?php esc_html_e( 'Colore overlay:', 'diritto-di-recesso' ); ?> </label>
+								<input type="color" name="ddr_overlay" id="ddr_overlay" value="<?php echo esc_attr( get_option( 'ddr_overlay', '#0f172a' ) ); ?>" />
+							</p>
+							<p class="description"><?php esc_html_e( 'Vale per il link footer, l’area account, lo shortcode e le voci di menu. L’overlay usa il colore scelto con trasparenza.', 'diritto-di-recesso' ); ?></p>
 						</td>
 					</tr>
 					<tr>

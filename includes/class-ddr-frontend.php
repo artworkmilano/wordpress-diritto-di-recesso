@@ -26,6 +26,9 @@ class DDR_Frontend {
 	const FLOW_TTL    = 1800; // 30 minuti.
 	const ACCOUNT_EP  = 'diritto-recesso'; // endpoint area "Il mio account".
 
+	/** @var bool true quando il flusso e' renderizzato nel frame della modale. */
+	protected static $in_modal = false;
+
 	public static function init() {
 		add_shortcode( DDR_SHORTCODE, array( __CLASS__, 'render_shortcode' ) );
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'assets' ) );
@@ -38,6 +41,8 @@ class DDR_Frontend {
 
 		// Stream del PDF ricevuta (prima di qualsiasi output HTML).
 		add_action( 'template_redirect', array( __CLASS__, 'maybe_stream_pdf' ) );
+		// Frame "bare" per la modale (senza header/footer del tema).
+		add_action( 'template_redirect', array( __CLASS__, 'maybe_render_modal_frame' ) );
 
 		// Area "Il mio account": endpoint/tab dedicato.
 		add_action( 'init', array( __CLASS__, 'add_account_endpoint' ) );
@@ -50,7 +55,8 @@ class DDR_Frontend {
 		// Il badge nel footer compare su tutte le pagine: il CSS va caricato
 		// ovunque, non solo sulla pagina /recesso.
 		wp_enqueue_style( 'ddr', DDR_URL . 'assets/css/ddr.css', array(), DDR_VERSION );
-		wp_register_script( 'ddr', DDR_URL . 'assets/js/ddr.js', array(), DDR_VERSION, true );
+		// Script caricato ovunque: serve al link footer e all'apertura in modale.
+		wp_enqueue_script( 'ddr', DDR_URL . 'assets/js/ddr.js', array(), DDR_VERSION, true );
 
 		// Colori personalizzabili applicati via CSS inline.
 		$accent = self::color( 'ddr_accent', '#ea580c' );
@@ -59,7 +65,51 @@ class DDR_Frontend {
 		$css  = '.ddr-btn-primary{background:' . $btn_bg . ';color:' . $btn_tx . '}';
 		$css .= '.ddr-pill{--ddr-accent:' . $accent . '}';
 		$css .= '.ddr-link-plain,.ddr-menu-link>a{color:' . $accent . '}';
+
+		// Modale: flag JS + colore overlay configurabile.
+		if ( 'yes' === get_option( 'ddr_modal', 'no' ) ) {
+			$rgb  = sscanf( self::color( 'ddr_overlay', '#0f172a' ), '#%02x%02x%02x' );
+			$css .= '.ddr-modal-overlay{background:rgba(' . (int) $rgb[0] . ',' . (int) $rgb[1] . ',' . (int) $rgb[2] . ',.6)}';
+			wp_add_inline_script( 'ddr', 'window.DDR_MODAL=1;', 'before' );
+		}
+
 		wp_add_inline_style( 'ddr', $css );
+	}
+
+	/**
+	 * URL di destinazione dei form: propaga ddr_modal quando si è nel frame.
+	 */
+	protected static function action_url( $args = array() ) {
+		if ( self::$in_modal ) {
+			$args['ddr_modal'] = '1';
+		}
+		return ddr_page_url( $args );
+	}
+
+	/**
+	 * Renderizza il flusso in un documento minimale (senza tema) per la modale.
+	 */
+	public static function maybe_render_modal_frame() {
+		if ( ! isset( $_GET['ddr_modal'] ) || isset( $_GET['ddr_pdf'] ) ) {
+			return;
+		}
+		self::$in_modal = true;
+
+		nocache_headers();
+		header( 'Content-Type: text/html; charset=utf-8' );
+		echo '<!DOCTYPE html><html ' . get_language_attributes() . '><head><meta charset="utf-8" />';
+		echo '<meta name="viewport" content="width=device-width, initial-scale=1" />';
+		echo '<link rel="stylesheet" href="' . esc_url( DDR_URL . 'assets/css/ddr.css?ver=' . DDR_VERSION ) . '" />';
+		$accent = self::color( 'ddr_accent', '#ea580c' );
+		$btn_bg = self::color( 'ddr_btn_bg', '#1a1a1a' );
+		$btn_tx = self::color( 'ddr_btn_text', '#ffffff' );
+		echo '<style>body{margin:0;padding:22px;background:#fff;color:#1f2937;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.ddr-box{border:0;padding:0;max-width:none}'
+			. '.ddr-btn-primary{background:' . $btn_bg . ';color:' . $btn_tx . '}.ddr-pill{--ddr-accent:' . $accent . '}.ddr-link-plain{color:' . $accent . '}</style>';
+		echo '</head><body class="ddr-modal-body">';
+		echo do_shortcode( '[' . DDR_SHORTCODE . ']' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<script src="' . esc_url( DDR_URL . 'assets/js/ddr.js?ver=' . DDR_VERSION ) . '"></script>';
+		echo '</body></html>';
+		exit;
 	}
 
 	/**
@@ -133,7 +183,7 @@ class DDR_Frontend {
 			foreach ( $eligible as $order ) {
 				$url = ddr_page_url( array( 'order' => $order->get_order_number() ) );
 				printf(
-					'<li><strong>%1$s</strong> &middot; %2$s &middot; <a class="ddr-btn ddr-btn-primary ddr-btn-sm" href="%3$s">%4$s</a></li>',
+					'<li><strong>%1$s</strong> &middot; %2$s &middot; <a class="ddr-btn ddr-btn-primary ddr-btn-sm ddr-recedi" href="%3$s">%4$s</a></li>',
 					/* translators: %s numero ordine */
 					esc_html( sprintf( __( 'Ordine #%s', 'diritto-di-recesso' ), $order->get_order_number() ) ),
 					esc_html( wc_format_datetime( $order->get_date_created() ) ),
@@ -408,7 +458,7 @@ class DDR_Frontend {
 		<div class="ddr-box">
 			<h2 class="ddr-title"><?php esc_html_e( 'Recedere dal contratto', 'diritto-di-recesso' ); ?></h2>
 			<p class="ddr-intro"><?php esc_html_e( 'Inserisci il numero d’ordine e l’email usata per l’acquisto. Verificheremo la titolarità e potrai inviare la dichiarazione di recesso.', 'diritto-di-recesso' ); ?></p>
-			<form method="post" action="<?php echo esc_url( ddr_page_url() ); ?>" class="ddr-form">
+			<form method="post" action="<?php echo esc_url( self::action_url() ); ?>" class="ddr-form">
 				<?php wp_nonce_field( 'ddr_flow', 'ddr_nonce' ); ?>
 				<input type="hidden" name="ddr_action" value="lookup" />
 				<p>
@@ -505,7 +555,7 @@ class DDR_Frontend {
 		<div class="ddr-box">
 			<h2 class="ddr-title"><?php esc_html_e( 'Cosa vuoi restituire', 'diritto-di-recesso' ); ?></h2>
 			<p class="ddr-intro"><?php esc_html_e( 'Seleziona i prodotti e le quantità per cui eserciti il recesso. Puoi recedere anche solo per una parte dell’ordine.', 'diritto-di-recesso' ); ?></p>
-			<form method="post" action="<?php echo esc_url( ddr_page_url() ); ?>" class="ddr-form ddr-select">
+			<form method="post" action="<?php echo esc_url( self::action_url() ); ?>" class="ddr-form ddr-select">
 				<?php wp_nonce_field( 'ddr_flow', 'ddr_nonce' ); ?>
 				<input type="hidden" name="ddr_action" value="select" />
 				<input type="hidden" name="ddr_token" value="<?php echo esc_attr( $flow['token'] ); ?>" />
@@ -617,7 +667,7 @@ class DDR_Frontend {
 		<div class="ddr-box">
 			<h2 class="ddr-title"><?php esc_html_e( 'Dichiarazione di recesso', 'diritto-di-recesso' ); ?></h2>
 			<p class="ddr-intro"><?php esc_html_e( 'Verifica i dati della dichiarazione. Al passaggio successivo potrai confermare il recesso.', 'diritto-di-recesso' ); ?></p>
-			<form method="post" action="<?php echo esc_url( ddr_page_url() ); ?>" class="ddr-form">
+			<form method="post" action="<?php echo esc_url( self::action_url() ); ?>" class="ddr-form">
 				<?php wp_nonce_field( 'ddr_flow', 'ddr_nonce' ); ?>
 				<input type="hidden" name="ddr_action" value="declaration" />
 				<input type="hidden" name="ddr_token" value="<?php echo esc_attr( $flow['token'] ); ?>" />
@@ -702,7 +752,7 @@ class DDR_Frontend {
 				<?php endif; ?>
 			</table>
 
-			<form method="post" action="<?php echo esc_url( ddr_page_url() ); ?>" class="ddr-form">
+			<form method="post" action="<?php echo esc_url( self::action_url() ); ?>" class="ddr-form">
 				<?php wp_nonce_field( 'ddr_flow', 'ddr_nonce' ); ?>
 				<input type="hidden" name="ddr_action" value="confirm" />
 				<input type="hidden" name="ddr_token" value="<?php echo esc_attr( $flow['token'] ); ?>" />

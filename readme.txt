@@ -9,39 +9,80 @@ Stable tag: 1.9.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Recesso digitale conforme all'art. 54-bis del Codice del Consumo (D.Lgs. 209/2025) per WooCommerce. Obbligo applicabile ai contratti conclusi online dal 19 giugno 2026.
+Pulsante di recesso online per WooCommerce conforme all'art. 54-bis del Codice del Consumo (Dir. 2011/83/UE). Recesso parziale e ricevuta durevole.
 
 == Description ==
 
-Diritto di Recesso 54-bis aggiunge al tuo store WooCommerce un punto d'accesso unico per esercitare online il diritto di recesso, come previsto dal nuovo art. 54-bis del Codice del Consumo (D.Lgs. 209/2025), in vigore per i contratti conclusi online dal 19 giugno 2026.
+**Diritto di Recesso per WooCommerce** aggiunge al tuo negozio la funzione digitale di recesso prevista dall'**art. 54-bis del Codice del Consumo** (D.Lgs. 209/2025) e, piu' in generale, dal **diritto di recesso europeo** (Direttiva 2011/83/UE). Dal **19 giugno 2026** gli e-commerce che concludono contratti tramite interfaccia online devono offrire un modo semplice e sempre accessibile per recedere: questo plugin lo fornisce, gratis e pronto all'uso.
 
-La funzione e' utilizzabile anche dagli ospiti senza account: l'utente inserisce numero d'ordine ed email di fatturazione, conferma la titolarita', invia la dichiarazione di recesso e riceve l'avviso di ricevimento su supporto durevole con data e ora.
+Il consumatore trova un **pulsante di recesso** ("Recedere dal contratto qui"), inserisce numero d'ordine ed email, **sceglie i prodotti e le quantita'** da restituire, conferma, e riceve un **avviso di ricevimento su supporto durevole** (email) con il contenuto della dichiarazione, data e ora. Funziona **anche per gli ospiti** senza account.
 
-= Cosa fa =
-* Multilingua: italiano, inglese, francese, spagnolo, tedesco.
-* Pagina pubblica unica /recesso (shortcode [diritto_recesso]) valida anche per ospiti senza account.
-* Recesso PARZIALE: il cliente sceglie prodotti e quantita' da restituire; piu' richieste possibili nel tempo finche' restano quantita' recedibili.
-* Link "Recedere dal contratto qui" nel footer (etichetta letterale c.3) + pulsante nell'area "I miei ordini" + tab dedicato "Diritto di recesso" nell'area account.
-* Verifica titolarita': numero ordine + email di fatturazione. Per gli ospiti, link di conferma una tantum via email (gating anti-abuso).
-* Doppia conferma: dichiarazione (c.2) -> "Conferma recesso" (c.5).
-* Avviso di ricevimento su supporto durevole (email) con contenuto della dichiarazione, prodotti, data e ora (c.6) + ricevuta stampabile (stampa/salva PDF dal browser).
-* Notifica all'amministratore.
-* Audit trail in tabella dedicata + nota sull'ordine; gestione stato richiesta (ricevuta/in lavorazione/completata/annullata) ed export CSV dall'admin.
-* Controllo finestra 14 giorni, stati ordine, esclusioni art. 59 (flag per prodotto / per categoria).
-* IP del cliente rilevabile anche dietro proxy/CDN (Cloudflare / X-Forwarded-For), opzionale. Cleanup dati opzionale alla disinstallazione.
+= Caratteristiche principali =
+* **Pulsante di recesso sempre accessibile**: link nel footer, pulsante in "I miei ordini", tab dedicato nell'area account e CTA nel dettaglio ordine. Ogni punto d'accesso e' attivabile o disattivabile.
+* **Recesso parziale**: il cliente seleziona singoli prodotti e quantita' (con miniatura e prezzo); piu' richieste nel tempo, finche' restano articoli recedibili.
+* **Anche senza account (ospiti)**: verifica con numero ordine + email di fatturazione e link di conferma una tantum via email (anti-abuso).
+* **Doppia conferma** (dichiarazione -> conferma), come previsto dalla norma.
+* **Avviso di ricevimento su supporto durevole**: email automatica con dichiarazione, prodotti, data e ora, piu' **ricevuta in PDF** (con il tuo logo) e versione stampabile.
+* **Gestione lato negozio**: registro (audit trail) delle richieste, stati (ricevuta / in lavorazione / completata / annullata), **export CSV**, nota automatica sull'ordine e notifica email all'amministratore.
+* **Rimborso WooCommerce opzionale** con ripristino dello stock alla chiusura della richiesta.
+* **Esclusioni art. 59** per prodotto o categoria (beni su misura, sigillati, deperibili...): il pulsante si nasconde quando l'ordine contiene solo prodotti esclusi.
+* **Testi legali pronti** (clausola di recesso, modulo tipo, esclusioni) editabili con editor visuale e riutilizzabili via shortcode.
+* **Aspetto personalizzabile**: colori, raggio dei bordi, icona, stile del link, apertura in **finestra modale**. Eredita lo stile del tema.
+* **Multilingua**: italiano, inglese, francese, spagnolo, tedesco.
+* **Compatibile HPOS** (tabelle ordini ad alte prestazioni di WooCommerce).
+
+= Per chi e' =
+Negozi **WooCommerce** che devono adeguarsi all'obbligo del pulsante di recesso (art. 54-bis) e, in generale, qualsiasi e-commerce dell'Unione Europea che voglia offrire una procedura di recesso online chiara e tracciabile.
+
+= Conformita' =
+Il plugin fornisce la **funzione tecnica**: non sostituisce la consulenza legale e non crea il diritto di recesso, lo rende **esercitabile online** dove gia' esiste. Si raccomanda la validazione del flusso da parte di un legale prima della messa in produzione (vedi sezione Disclaimer).
+
+Realizzato da [Artwork Web Agency](https://artworkstudios.it), agenzia specializzata nella realizzazione di siti e-commerce e WooCommerce.
 
 == Installation ==
-1. Carica la cartella in /wp-content/plugins/ (o installa lo zip).
-2. Attiva il plugin: viene creata la pagina /recesso e la tabella audit.
-3. WooCommerce > Diritto di Recesso > Impostazioni per i parametri.
+
+1. Dal backend vai su **Plugin > Aggiungi nuovo**, cerca "Diritto di Recesso per WooCommerce" e installa; oppure carica lo zip da **Plugin > Aggiungi nuovo > Carica plugin**.
+2. **Attiva** il plugin: vengono creati automaticamente la pagina pubblica /recesso (shortcode `[diritto_recesso]`) e la tabella del registro richieste.
+3. Configura i parametri in **WooCommerce > Diritto di Recesso > Impostazioni** (giorni di recesso, punti d'accesso, aspetto, PDF, notifiche, rimborso).
+4. Apri **Testi legali** per personalizzare clausola, modulo tipo ed esclusioni (precompilati con i dati del tuo negozio).
+5. Consigliato: collega la pagina /recesso nel menu del footer e richiama la clausola nelle Condizioni Generali di Vendita.
+
+Requisiti: WordPress 6.0+, PHP 7.4+, WooCommerce 7.0+.
 
 == Frequently Asked Questions ==
 
 = Il plugin crea il diritto di recesso? =
-No. E' uno strumento tecnico: rende esercitabile online il recesso dove gia' esiste. Non sostituisce un parere legale. Vanno adeguate separatamente le condizioni generali di vendita e l'informativa precontrattuale (art. 49 c.1 lett. h).
+No. E' uno strumento tecnico che rende **esercitabile online** il recesso dove gia' esiste per legge. Non sostituisce un parere legale; vanno adeguate separatamente le Condizioni Generali di Vendita e l'informativa precontrattuale (art. 49 c.1 lett. h).
 
-= Funziona senza account cliente? =
-Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli ospiti si aggiunge un link di conferma via email.
+= Da quando e' obbligatorio il pulsante di recesso? =
+L'art. 54-bis del Codice del Consumo (D.Lgs. 209/2025) si applica ai contratti conclusi online a partire dal **19 giugno 2026**.
+
+= Funziona anche senza account cliente (ospiti)? =
+Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli ospiti si aggiunge un link di conferma una tantum via email.
+
+= Si puo' recedere solo da alcuni prodotti dell'ordine? =
+Si. Il cliente sceglie i singoli prodotti e le quantita' (recesso parziale) e puo' inviare piu' richieste nel tempo, finche' restano articoli recedibili.
+
+= Come viene fornita la conferma su "supporto durevole"? =
+Con un'email automatica di avviso di ricevimento che riporta dichiarazione, prodotti, data e ora, piu' una ricevuta in PDF (con logo) e una versione stampabile.
+
+= Posso escludere alcuni prodotti dal recesso (art. 59)? =
+Si, per singolo prodotto o per categoria (es. beni su misura, sigillati, deperibili). Se l'ordine contiene solo prodotti esclusi, il pulsante non viene mostrato.
+
+= Il plugin gestisce i rimborsi? =
+Opzionalmente: alla chiusura della richiesta puo' creare un rimborso WooCommerce con ripristino dello stock. L'eventuale restituzione del denaro tramite gateway di pagamento resta a conferma manuale.
+
+= In quante lingue e' disponibile? =
+Italiano, inglese, francese, spagnolo e tedesco. Segue automaticamente la lingua del sito.
+
+= Dove posso mostrare il pulsante di recesso? =
+Nel footer del sito, nell'area "I miei ordini", nel dettaglio ordine, in un tab dedicato dell'area account, oppure ovunque tramite lo shortcode `[diritto_recesso_link]` o una voce di menu.
+
+= E' davvero gratuito? =
+Si: gratuito e open source (licenza GPL-2.0-or-later).
+
+= E' compatibile con HPOS? =
+Si, il plugin dichiara la compatibilita' con le tabelle ordini ad alte prestazioni (HPOS) di WooCommerce.
 
 == Filtri per gli sviluppatori ==
 * ddr_withdrawal_days( $days, $order )

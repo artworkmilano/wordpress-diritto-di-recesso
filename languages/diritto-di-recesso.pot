@@ -53,6 +53,9 @@ msgstr ""
 msgid "Avviso di ricevimento del recesso"
 msgstr ""
 
+msgid "Badge (pill)"
+msgstr ""
+
 msgid "Cancellazione dati"
 msgstr ""
 
@@ -224,10 +227,16 @@ msgstr ""
 msgid "IP dietro proxy/CDN"
 msgstr ""
 
+msgid "Icona"
+msgstr ""
+
 msgid "Il consumatore dichiara di recedere dal contratto relativo ai prodotti indicati dell’ordine."
 msgstr ""
 
 msgid "Il link di verifica non è valido o è scaduto. Ricomincia la procedura."
+msgstr ""
+
+msgid "Il link testuale si integra come una normale voce di footer; non invadente e conforme (posizione chiaramente visibile)."
 msgstr ""
 
 msgid "Il link è valido per 30 minuti. Se non hai richiesto tu il recesso, ignora questa email: nessuna azione verrà eseguita."
@@ -293,6 +302,9 @@ msgstr ""
 msgid "Link nel footer"
 msgstr ""
 
+msgid "Link testuale (discreto, consigliato)"
+msgstr ""
+
 msgid "Lo stato di questo ordine non consente il recesso online in questo momento."
 msgstr ""
 
@@ -305,10 +317,13 @@ msgstr ""
 msgid "Modulo tipo di recesso"
 msgstr ""
 
-msgid "Mostra il pulsante di recesso nel footer del sito"
+msgid "Mostra automaticamente il link di recesso nel footer del sito"
 msgstr ""
 
 msgid "Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo"
+msgstr ""
+
+msgid "Mostra l’icona accanto al testo del link/pulsante"
 msgstr ""
 
 msgid "Motivazione"
@@ -387,6 +402,9 @@ msgid "Prodotti oggetto del recesso"
 msgstr ""
 
 msgid "Prodotto"
+msgstr ""
+
+msgid "Pulsante"
 msgstr ""
 
 msgid "Puoi incollare il testo a mano oppure usare lo shortcode indicato sotto ogni riquadro: in questo modo, se aggiorni qui il testo, si aggiorna ovunque."
@@ -495,6 +513,9 @@ msgid "Stato"
 msgstr ""
 
 msgid "Stato della richiesta aggiornato."
+msgstr ""
+
+msgid "Stile nel footer"
 msgstr ""
 
 msgid "Strumento tecnico, non sostituisce un parere legale. I testi predefiniti sono un punto di partenza da adattare alla tua attività."

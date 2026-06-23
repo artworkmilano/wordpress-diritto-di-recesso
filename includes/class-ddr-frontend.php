@@ -55,7 +55,7 @@ class DDR_Frontend {
 		$btn_tx = self::color( 'ddr_btn_text', '#ffffff' );
 		$css  = '.ddr-btn-primary{background:' . $btn_bg . ';color:' . $btn_tx . '}';
 		$css .= '.ddr-pill{--ddr-accent:' . $accent . '}';
-		$css .= '.ddr-link-plain a,.ddr-menu-link>a{color:' . $accent . '}';
+		$css .= '.ddr-link-plain,.ddr-menu-link>a{color:' . $accent . '}';
 		wp_add_inline_style( 'ddr', $css );
 	}
 
@@ -187,51 +187,91 @@ class DDR_Frontend {
 		if ( 'yes' !== get_option( 'ddr_footer_link', 'yes' ) ) {
 			return;
 		}
-		echo '<div class="ddr-footer-link" style="margin:0 auto;padding:18px 0 32px;width:100%;text-align:center;box-sizing:border-box;">'
-			. self::pill_anchor() // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped — markup gia' sanificato.
+		$style = get_option( 'ddr_footer_style', 'link' );
+		echo '<div class="ddr-footer-link" style="margin:0 auto;padding:18px 0 28px;width:100%;text-align:center;box-sizing:border-box;">'
+			. self::render_link( $style ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped — markup gia' sanificato.
 			. '</div>';
 	}
 
 	/**
-	 * Markup del "pill" (badge) con stili inline resilienti a WP Rocket / temi.
+	 * Mostra l'icona nel CTA? (opzione, default si).
 	 */
-	protected static function pill_anchor( $label = '' ) {
-		$accent = self::color( 'ddr_accent', '#ea580c' );
-		$label  = '' !== $label ? $label : ddr_link_label();
+	protected static function show_icon() {
+		return 'yes' === get_option( 'ddr_btn_icon', 'yes' );
+	}
 
-		$pill_style = 'display:inline-flex;align-items:center;gap:9px;padding:11px 20px 11px 14px;border-radius:999px;background:#ffffff;color:#1f2937;font-size:14px;font-weight:600;line-height:1;text-decoration:none;border:1px solid rgba(15,23,42,.10);box-shadow:0 1px 2px rgba(15,23,42,.14),0 6px 16px rgba(15,23,42,.18);';
-		$ico_style  = 'display:inline-flex;width:22px;height:22px;min-width:22px;align-items:center;justify-content:center;border-radius:50%;flex:0 0 auto;color:' . esc_attr( $accent ) . ';';
+	/**
+	 * SVG dell'icona (eredita il colore dal testo via currentColor).
+	 */
+	protected static function icon_svg() {
+		return '<svg class="ddr-ico-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:-2px;width:1em;height:1em;"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg>';
+	}
 
-		$svg = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;width:13px;height:13px;" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg>';
+	/**
+	 * Rendering unificato del CTA di recesso nei vari stili.
+	 *
+	 * @param string    $style     link|button|pill
+	 * @param string    $label     etichetta (vuoto = ddr_link_label())
+	 * @param bool|null $with_icon null = segue l'opzione globale
+	 */
+	public static function render_link( $style = 'button', $label = '', $with_icon = null ) {
+		$label = '' !== $label ? $label : ddr_link_label();
+		if ( null === $with_icon ) {
+			$with_icon = self::show_icon();
+		}
+		$url  = ddr_page_url();
+		$icon = $with_icon ? self::icon_svg() . ' ' : '';
 
+		if ( 'pill' === $style ) {
+			return self::pill_anchor( $label, $with_icon );
+		}
+
+		$class = ( 'link' === $style ) ? 'ddr-cta ddr-link-plain' : 'ddr-cta ddr-btn ddr-btn-primary';
 		return sprintf(
-			'<a class="ddr-pill" href="%1$s" style="%2$s"><span class="ddr-ico" style="%3$s">%4$s</span><span class="ddr-pill-text">%5$s</span></a>',
-			esc_url( ddr_page_url() ),
-			$pill_style,
-			$ico_style,
-			$svg,
+			'<a class="%1$s" href="%2$s">%3$s<span class="ddr-cta-text">%4$s</span></a>',
+			esc_attr( $class ),
+			esc_url( $url ),
+			$icon,
 			esc_html( $label )
 		);
 	}
 
 	/**
-	 * Shortcode [diritto_recesso_link style="pill|button|link" text="..."].
+	 * Markup del "pill" (badge) con stili inline resilienti a WP Rocket / temi.
+	 */
+	protected static function pill_anchor( $label = '', $with_icon = null ) {
+		$accent = self::color( 'ddr_accent', '#ea580c' );
+		$label  = '' !== $label ? $label : ddr_link_label();
+		if ( null === $with_icon ) {
+			$with_icon = self::show_icon();
+		}
+
+		$pill_style = 'display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;background:#ffffff;color:#1f2937;font-size:14px;font-weight:600;line-height:1;text-decoration:none;border:1px solid rgba(15,23,42,.10);box-shadow:0 1px 2px rgba(15,23,42,.14),0 6px 16px rgba(15,23,42,.18);';
+		$ico = $with_icon ? '<span class="ddr-ico" style="display:inline-flex;align-items:center;color:' . esc_attr( $accent ) . ';">' . self::icon_svg() . '</span>' : '';
+
+		return sprintf(
+			'<a class="ddr-pill" href="%1$s" style="%2$s">%3$s<span class="ddr-pill-text">%4$s</span></a>',
+			esc_url( ddr_page_url() ),
+			$pill_style,
+			$ico,
+			esc_html( $label )
+		);
+	}
+
+	/**
+	 * Shortcode [diritto_recesso_link style="button|link|pill" text="..." icon="yes|no"].
 	 * Permette di inserire il pulsante ovunque (pagine, widget, builder).
 	 */
 	public static function link_shortcode( $atts ) {
-		$atts  = shortcode_atts( array( 'style' => 'pill', 'text' => '' ), $atts, 'diritto_recesso_link' );
-		$label = '' !== $atts['text'] ? sanitize_text_field( $atts['text'] ) : ddr_link_label();
-		$url   = ddr_page_url();
+		$atts  = shortcode_atts( array( 'style' => 'button', 'text' => '', 'icon' => '' ), $atts, 'diritto_recesso_link' );
+		$label = '' !== $atts['text'] ? sanitize_text_field( $atts['text'] ) : '';
 
-		switch ( $atts['style'] ) {
-			case 'button':
-				return sprintf( '<a class="ddr-btn ddr-btn-primary" href="%s">%s</a>', esc_url( $url ), esc_html( $label ) );
-			case 'link':
-				return sprintf( '<span class="ddr-link-plain"><a href="%s">%s</a></span>', esc_url( $url ), esc_html( $label ) );
-			case 'pill':
-			default:
-				return '<span class="ddr-inline-pill">' . self::pill_anchor( $label ) . '</span>';
+		$with_icon = null;
+		if ( '' !== $atts['icon'] ) {
+			$with_icon = in_array( strtolower( $atts['icon'] ), array( 'yes', 'true', '1' ), true );
 		}
+
+		return self::render_link( $atts['style'], $label, $with_icon );
 	}
 
 	/**

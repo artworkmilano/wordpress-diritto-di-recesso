@@ -65,6 +65,8 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_admin_recipients', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
 		register_setting( 'ddr_settings', 'ddr_footer_link', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 		register_setting( 'ddr_settings', 'ddr_link_label', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
+		register_setting( 'ddr_settings', 'ddr_footer_style', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'link' ) );
+		register_setting( 'ddr_settings', 'ddr_btn_icon', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 		register_setting( 'ddr_settings', 'ddr_enforce_cutoff', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
 		register_setting( 'ddr_settings', 'ddr_accent', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#ea580c' ) );
 		register_setting( 'ddr_settings', 'ddr_btn_bg', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#1a1a1a' ) );
@@ -122,7 +124,25 @@ class DDR_Admin {
 					<tr>
 						<th scope="row"><?php esc_html_e( 'Link nel footer', 'diritto-di-recesso' ); ?></th>
 						<td>
-							<label><input type="checkbox" name="ddr_footer_link" value="yes" <?php checked( 'yes', get_option( 'ddr_footer_link', 'yes' ) ); ?> /> <?php esc_html_e( 'Mostra il pulsante di recesso nel footer del sito', 'diritto-di-recesso' ); ?></label>
+							<label><input type="checkbox" name="ddr_footer_link" value="yes" <?php checked( 'yes', get_option( 'ddr_footer_link', 'yes' ) ); ?> /> <?php esc_html_e( 'Mostra automaticamente il link di recesso nel footer del sito', 'diritto-di-recesso' ); ?></label>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="ddr_footer_style"><?php esc_html_e( 'Stile nel footer', 'diritto-di-recesso' ); ?></label></th>
+						<td>
+							<?php $fs = get_option( 'ddr_footer_style', 'link' ); ?>
+							<select name="ddr_footer_style" id="ddr_footer_style">
+								<option value="link" <?php selected( $fs, 'link' ); ?>><?php esc_html_e( 'Link testuale (discreto, consigliato)', 'diritto-di-recesso' ); ?></option>
+								<option value="button" <?php selected( $fs, 'button' ); ?>><?php esc_html_e( 'Pulsante', 'diritto-di-recesso' ); ?></option>
+								<option value="pill" <?php selected( $fs, 'pill' ); ?>><?php esc_html_e( 'Badge (pill)', 'diritto-di-recesso' ); ?></option>
+							</select>
+							<p class="description"><?php esc_html_e( 'Il link testuale si integra come una normale voce di footer; non invadente e conforme (posizione chiaramente visibile).', 'diritto-di-recesso' ); ?></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'Icona', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="ddr_btn_icon" value="yes" <?php checked( 'yes', get_option( 'ddr_btn_icon', 'yes' ) ); ?> /> <?php esc_html_e( 'Mostra l’icona accanto al testo del link/pulsante', 'diritto-di-recesso' ); ?></label>
 						</td>
 					</tr>
 					<tr>

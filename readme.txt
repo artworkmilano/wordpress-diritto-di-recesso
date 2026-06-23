@@ -5,7 +5,7 @@ Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 7.0
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,10 @@ Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli o
 Strumento tecnico, non sostituisce un parere legale. Adeguare separatamente condizioni generali di vendita e informativa precontrattuale (art. 49 c.1 lett. h). La funzione non crea il diritto di recesso: lo rende esercitabile online dove gia' esiste.
 
 == Changelog ==
+= 1.3.1 =
+* Icona del CTA senza cerchietto di sfondo e colorata (segue accento/testo); toggle per mostrarla o nasconderla.
+* Stile del link nel footer selezionabile: link testuale (default, discreto), pulsante o badge.
+
 = 1.3.0 =
 * Colori personalizzabili: accento, sfondo e testo del pulsante.
 * Shortcode [diritto_recesso_link] (stili pill/button/link) per inserire il pulsante ovunque.

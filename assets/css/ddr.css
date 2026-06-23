@@ -42,23 +42,18 @@
 	color:#1f2937 !important;
 }
 .ddr-footer-link .ddr-pill:focus-visible{outline:2px solid var(--ddr-accent);outline-offset:2px}
-.ddr-footer-link .ddr-ico{
-	display:inline-flex;width:22px;height:22px;
-	align-items:center;justify-content:center;
-	border-radius:50%;
-	background:rgba(234,88,12,.12);
-	background:color-mix(in srgb, var(--ddr-accent) 13%, #fff);
-	color:var(--ddr-accent);
-	flex:0 0 auto;
-}
-.ddr-footer-link .ddr-ico svg{width:13px;height:13px;display:block}
 @media (prefers-reduced-motion:reduce){.ddr-footer-link .ddr-pill{transition:none}}
 /* Pill riutilizzabile (shortcode) fuori dal footer */
 .ddr-pill{--ddr-accent:#ea580c}
-.ddr-pill .ddr-ico{background:rgba(234,88,12,.12);background:color-mix(in srgb,var(--ddr-accent) 13%,#fff);color:var(--ddr-accent)}
-.ddr-pill .ddr-ico svg{width:13px;height:13px;display:block}
+/* Icona: nessun cerchietto di sfondo, eredita il colore dal testo */
+.ddr-ico,.ddr-pill .ddr-ico{display:inline-flex;align-items:center;color:var(--ddr-accent)}
+.ddr-ico-svg{width:1em;height:1em;display:inline-block;vertical-align:-2px}
 .ddr-inline-pill{display:inline-block}
-.ddr-link-plain a{text-decoration:underline}
+/* CTA unificato (footer/shortcode) negli stili link e button */
+.ddr-cta{display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+.ddr-cta.ddr-link-plain{font-weight:600}
+.ddr-cta.ddr-link-plain:hover{text-decoration:underline}
+.ddr-cta.ddr-btn-primary .ddr-ico-svg{color:inherit}
 
 /* Selezione prodotti (recesso parziale) */
 .ddr-items{width:100%;border-collapse:collapse;margin:8px 0 20px}

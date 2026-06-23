@@ -389,6 +389,9 @@ msgstr ""
 msgid "Ordine"
 msgstr ""
 
+msgid "Ordine #%s"
+msgstr ""
+
 msgid "Ordine non trovato."
 msgstr ""
 

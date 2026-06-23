@@ -134,7 +134,8 @@ class DDR_Frontend {
 				$url = ddr_page_url( array( 'order' => $order->get_order_number() ) );
 				printf(
 					'<li><strong>%1$s</strong> &middot; %2$s &middot; <a class="ddr-btn ddr-btn-primary ddr-btn-sm" href="%3$s">%4$s</a></li>',
-					esc_html( '#' . $order->get_order_number() ),
+					/* translators: %s numero ordine */
+					esc_html( sprintf( __( 'Ordine #%s', 'diritto-di-recesso' ), $order->get_order_number() ) ),
 					esc_html( wc_format_datetime( $order->get_date_created() ) ),
 					esc_url( $url ),
 					esc_html__( 'Recedi', 'diritto-di-recesso' )
@@ -166,9 +167,10 @@ class DDR_Frontend {
 		foreach ( $mine as $r ) {
 			$dt = mysql2date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $r['created_at'] );
 			printf(
-				'<tr><td>%1$s</td><td>#%2$s</td><td>%3$s</td><td>%4$s</td><td><a href="%5$s" target="_blank" rel="noopener">%6$s</a></td></tr>',
+				'<tr><td>%1$s</td><td>%2$s</td><td>%3$s</td><td>%4$s</td><td><a href="%5$s" target="_blank" rel="noopener">%6$s</a></td></tr>',
 				esc_html( $dt ),
-				esc_html( $r['order_id'] ),
+				/* translators: %s numero ordine */
+				esc_html( sprintf( __( 'Ordine #%s', 'diritto-di-recesso' ), $r['order_id'] ) ),
 				esc_html( self::items_summary( $r['items_data'] ) ),
 				esc_html( DDR_DB::status_label( $r['status'] ) ),
 				esc_url( ddr_page_url( array( 'ddr_receipt' => $r['receipt_code'] ) ) ),
@@ -347,7 +349,45 @@ class DDR_Frontend {
 			return self::notice( __( 'Il link di verifica non è valido o è scaduto. Ricomincia la procedura.', 'diritto-di-recesso' ), 'error' ) . self::step_lookup();
 		}
 
+		// Arrivo con ?order=N (footer/area account): se l'utente loggato è il
+		// proprietario dell'ordine ed è eleggibile, salta il lookup e va dritto
+		// alla selezione dei prodotti. La verifica titolarità è già garantita
+		// dall'autenticazione; il recesso vero resta un POST con nonce.
+		if ( isset( $_GET['order'] ) ) {
+			$direct = self::maybe_direct_select( sanitize_text_field( wp_unslash( $_GET['order'] ) ) );
+			if ( null !== $direct ) {
+				return $direct;
+			}
+		}
+
 		return self::step_lookup();
+	}
+
+	/**
+	 * Avvio diretto della selezione per il proprietario loggato. Ritorna l'HTML
+	 * dello step di selezione, oppure null (si ricade sul lookup normale).
+	 */
+	protected static function maybe_direct_select( $order_value ) {
+		$user = wp_get_current_user();
+		if ( ! $user->exists() ) {
+			return null;
+		}
+		$order = self::resolve_order( $order_value );
+		if ( ! $order || (int) $order->get_customer_id() !== (int) $user->ID ) {
+			return null;
+		}
+		$eval = DDR_Eligibility::evaluate( $order );
+		if ( empty( $eval['eligible'] ) ) {
+			return null;
+		}
+		$token = self::create_flow(
+			array(
+				'order_id' => $order->get_id(),
+				'email'    => $order->get_billing_email(),
+				'name'     => trim( $order->get_billing_first_name() . ' ' . $order->get_billing_last_name() ),
+			)
+		);
+		return self::step_select( self::get_flow( $token ) );
 	}
 
 	/* ---------------------------------------------------------------------

@@ -82,6 +82,8 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_pdf_enable', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 		register_setting( 'ddr_settings', 'ddr_pdf_attach', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 		register_setting( 'ddr_settings', 'ddr_pdf_logo', array( 'sanitize_callback' => 'absint', 'default' => 0 ) );
+		register_setting( 'ddr_settings', 'ddr_radius', array( 'sanitize_callback' => 'absint', 'default' => 10 ) );
+		register_setting( 'ddr_settings', 'ddr_shadow', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 	}
 
 	public static function render_settings() {
@@ -103,8 +105,10 @@ class DDR_Admin {
 
 			<?php self::render_updates_box(); ?>
 
-			<form method="post" action="options.php">
+			<form method="post" action="options.php" class="ddr-settings-form">
 				<?php settings_fields( 'ddr_settings' ); ?>
+
+				<h2 class="title"><?php esc_html_e( 'Recesso', 'diritto-di-recesso' ); ?></h2>
 				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><label for="ddr_window_days"><?php esc_html_e( 'Giorni di recesso', 'diritto-di-recesso' ); ?></label></th>
@@ -114,12 +118,15 @@ class DDR_Admin {
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="ddr_admin_recipients"><?php esc_html_e( 'Destinatari notifiche', 'diritto-di-recesso' ); ?></label></th>
+						<th scope="row"><?php esc_html_e( 'Limita agli ordini dal 19/06/2026', 'diritto-di-recesso' ); ?></th>
 						<td>
-							<input type="text" class="regular-text" name="ddr_admin_recipients" id="ddr_admin_recipients" value="<?php echo esc_attr( get_option( 'ddr_admin_recipients', '' ) ); ?>" />
-							<p class="description"><?php esc_html_e( 'Email separate da virgola. Vuoto = email amministratore del sito.', 'diritto-di-recesso' ); ?></p>
+							<label><input type="checkbox" name="ddr_enforce_cutoff" value="yes" <?php checked( 'yes', get_option( 'ddr_enforce_cutoff', 'no' ) ); ?> /> <?php esc_html_e( 'Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo', 'diritto-di-recesso' ); ?></label>
 						</td>
 					</tr>
+				</table>
+
+				<h2 class="title"><?php esc_html_e( 'Punto di accesso', 'diritto-di-recesso' ); ?></h2>
+				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><label for="ddr_link_label"><?php esc_html_e( 'Testo del pulsante di recesso', 'diritto-di-recesso' ); ?></label></th>
 						<td>
@@ -152,32 +159,6 @@ class DDR_Admin {
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="ddr_accent"><?php esc_html_e( 'Colore accento', 'diritto-di-recesso' ); ?></label></th>
-						<td>
-							<input type="color" name="ddr_accent" id="ddr_accent" value="<?php echo esc_attr( get_option( 'ddr_accent', '#ea580c' ) ); ?>" />
-							<p class="description"><?php esc_html_e( 'Colore dell’icona del badge nel footer. Intonalo al brand del sito.', 'diritto-di-recesso' ); ?></p>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row"><label for="ddr_btn_bg"><?php esc_html_e( 'Colore pulsante', 'diritto-di-recesso' ); ?></label></th>
-						<td>
-							<input type="color" name="ddr_btn_bg" id="ddr_btn_bg" value="<?php echo esc_attr( get_option( 'ddr_btn_bg', '#1a1a1a' ) ); ?>" />
-							<input type="color" name="ddr_btn_text" id="ddr_btn_text" value="<?php echo esc_attr( get_option( 'ddr_btn_text', '#ffffff' ) ); ?>" />
-							<p class="description"><?php esc_html_e( 'Sfondo e testo del pulsante principale (form di recesso e shortcode stile pulsante).', 'diritto-di-recesso' ); ?></p>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row"><?php esc_html_e( 'Apri in finestra modale', 'diritto-di-recesso' ); ?></th>
-						<td>
-							<label><input type="checkbox" name="ddr_modal" value="yes" <?php checked( 'yes', get_option( 'ddr_modal', 'no' ) ); ?> /> <?php esc_html_e( 'Apri il flusso di recesso in una finestra modale (overlay) invece di cambiare pagina', 'diritto-di-recesso' ); ?></label>
-							<p style="margin-top:8px;">
-								<label for="ddr_overlay"><?php esc_html_e( 'Colore overlay:', 'diritto-di-recesso' ); ?> </label>
-								<input type="color" name="ddr_overlay" id="ddr_overlay" value="<?php echo esc_attr( get_option( 'ddr_overlay', '#0f172a' ) ); ?>" />
-							</p>
-							<p class="description"><?php esc_html_e( 'Vale per il link footer, l’area account, lo shortcode e le voci di menu. L’overlay usa il colore scelto con trasparenza.', 'diritto-di-recesso' ); ?></p>
-						</td>
-					</tr>
-					<tr>
 						<th scope="row"><label for="ddr_menu_location"><?php esc_html_e( 'Aggiungi a un menu', 'diritto-di-recesso' ); ?></label></th>
 						<td>
 							<?php $ddr_menus = get_registered_nav_menus(); $ddr_cur = get_option( 'ddr_menu_location', '' ); ?>
@@ -194,24 +175,52 @@ class DDR_Admin {
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><?php esc_html_e( 'Limita agli ordini dal 19/06/2026', 'diritto-di-recesso' ); ?></th>
+						<th scope="row"><?php esc_html_e( 'Apri in finestra modale', 'diritto-di-recesso' ); ?></th>
 						<td>
-							<label><input type="checkbox" name="ddr_enforce_cutoff" value="yes" <?php checked( 'yes', get_option( 'ddr_enforce_cutoff', 'no' ) ); ?> /> <?php esc_html_e( 'Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo', 'diritto-di-recesso' ); ?></label>
+							<label><input type="checkbox" name="ddr_modal" value="yes" <?php checked( 'yes', get_option( 'ddr_modal', 'no' ) ); ?> /> <?php esc_html_e( 'Apri il flusso di recesso in una finestra modale (overlay) invece di cambiare pagina', 'diritto-di-recesso' ); ?></label>
+							<p style="margin-top:8px;">
+								<label for="ddr_overlay"><?php esc_html_e( 'Colore overlay:', 'diritto-di-recesso' ); ?> </label>
+								<input type="color" name="ddr_overlay" id="ddr_overlay" value="<?php echo esc_attr( get_option( 'ddr_overlay', '#0f172a' ) ); ?>" />
+							</p>
+							<p class="description"><?php esc_html_e( 'Vale per il link footer, l’area account, lo shortcode e le voci di menu. L’overlay usa il colore scelto con trasparenza.', 'diritto-di-recesso' ); ?></p>
+						</td>
+					</tr>
+				</table>
+
+				<h2 class="title"><?php esc_html_e( 'Aspetto', 'diritto-di-recesso' ); ?></h2>
+				<table class="form-table" role="presentation">
+					<tr>
+						<th scope="row"><label for="ddr_accent"><?php esc_html_e( 'Colore accento', 'diritto-di-recesso' ); ?></label></th>
+						<td>
+							<input type="color" name="ddr_accent" id="ddr_accent" value="<?php echo esc_attr( get_option( 'ddr_accent', '#ea580c' ) ); ?>" />
+							<p class="description"><?php esc_html_e( 'Colore dell’icona e dei link “stile testo”. Intonalo al brand del sito.', 'diritto-di-recesso' ); ?></p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><?php esc_html_e( 'Email al cliente sui cambi di stato', 'diritto-di-recesso' ); ?></th>
+						<th scope="row"><label for="ddr_btn_bg"><?php esc_html_e( 'Colore pulsante', 'diritto-di-recesso' ); ?></label></th>
 						<td>
-							<label><input type="checkbox" name="ddr_customer_emails" value="yes" <?php checked( 'yes', get_option( 'ddr_customer_emails', 'yes' ) ); ?> /> <?php esc_html_e( 'Avvisa il cliente via email quando cambi lo stato della sua richiesta (in lavorazione, completata, annullata)', 'diritto-di-recesso' ); ?></label>
+							<input type="color" name="ddr_btn_bg" id="ddr_btn_bg" value="<?php echo esc_attr( get_option( 'ddr_btn_bg', '#1a1a1a' ) ); ?>" />
+							<input type="color" name="ddr_btn_text" id="ddr_btn_text" value="<?php echo esc_attr( get_option( 'ddr_btn_text', '#ffffff' ) ); ?>" />
+							<p class="description"><?php esc_html_e( 'Sfondo e testo del pulsante principale.', 'diritto-di-recesso' ); ?></p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><?php esc_html_e( 'Rimborso automatico', 'diritto-di-recesso' ); ?></th>
+						<th scope="row"><label for="ddr_radius"><?php esc_html_e( 'Raggio dei bordi', 'diritto-di-recesso' ); ?></label></th>
 						<td>
-							<label><input type="checkbox" name="ddr_auto_refund" value="yes" <?php checked( 'yes', get_option( 'ddr_auto_refund', 'no' ) ); ?> /> <?php esc_html_e( 'Quando segni una richiesta come “completata”, crea un rimborso WooCommerce per i prodotti recessi con ripristino dello stock', 'diritto-di-recesso' ); ?></label>
-							<p class="description"><?php esc_html_e( 'Registra il rimborso e riporta lo stock, ma NON movimenta denaro tramite il gateway: l’eventuale restituzione al cliente va confermata manualmente. Disattivato di default.', 'diritto-di-recesso' ); ?></p>
+							<input type="number" min="0" max="40" name="ddr_radius" id="ddr_radius" value="<?php echo esc_attr( get_option( 'ddr_radius', 10 ) ); ?>" /> px
+							<p class="description"><?php esc_html_e( 'Arrotondamento globale di box, card, pulsanti e campi. 0 = squadrato.', 'diritto-di-recesso' ); ?></p>
 						</td>
 					</tr>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'Ombra', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="ddr_shadow" value="yes" <?php checked( 'yes', get_option( 'ddr_shadow', 'yes' ) ); ?> /> <?php esc_html_e( 'Mostra l’ombra (box-shadow) su box, badge e modale', 'diritto-di-recesso' ); ?></label>
+						</td>
+					</tr>
+				</table>
+
+				<h2 class="title"><?php esc_html_e( 'Ricevuta &amp; PDF', 'diritto-di-recesso' ); ?></h2>
+				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><?php esc_html_e( 'Ricevuta PDF', 'diritto-di-recesso' ); ?></th>
 						<td>
@@ -247,6 +256,34 @@ class DDR_Admin {
 							?>
 						</td>
 					</tr>
+				</table>
+
+				<h2 class="title"><?php esc_html_e( 'Notifiche &amp; rimborsi', 'diritto-di-recesso' ); ?></h2>
+				<table class="form-table" role="presentation">
+					<tr>
+						<th scope="row"><label for="ddr_admin_recipients"><?php esc_html_e( 'Destinatari notifiche', 'diritto-di-recesso' ); ?></label></th>
+						<td>
+							<input type="text" class="regular-text" name="ddr_admin_recipients" id="ddr_admin_recipients" value="<?php echo esc_attr( get_option( 'ddr_admin_recipients', '' ) ); ?>" />
+							<p class="description"><?php esc_html_e( 'Email separate da virgola. Vuoto = email amministratore del sito.', 'diritto-di-recesso' ); ?></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'Email al cliente sui cambi di stato', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="ddr_customer_emails" value="yes" <?php checked( 'yes', get_option( 'ddr_customer_emails', 'yes' ) ); ?> /> <?php esc_html_e( 'Avvisa il cliente via email quando cambi lo stato della sua richiesta (in lavorazione, completata, annullata)', 'diritto-di-recesso' ); ?></label>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'Rimborso automatico', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="ddr_auto_refund" value="yes" <?php checked( 'yes', get_option( 'ddr_auto_refund', 'no' ) ); ?> /> <?php esc_html_e( 'Quando segni una richiesta come “completata”, crea un rimborso WooCommerce per i prodotti recessi con ripristino dello stock', 'diritto-di-recesso' ); ?></label>
+							<p class="description"><?php esc_html_e( 'Registra il rimborso e riporta lo stock, ma NON movimenta denaro tramite il gateway: l’eventuale restituzione al cliente va confermata manualmente. Disattivato di default.', 'diritto-di-recesso' ); ?></p>
+						</td>
+					</tr>
+				</table>
+
+				<h2 class="title"><?php esc_html_e( 'Avanzate', 'diritto-di-recesso' ); ?></h2>
+				<table class="form-table" role="presentation">
 					<tr>
 						<th scope="row"><?php esc_html_e( 'IP dietro proxy/CDN', 'diritto-di-recesso' ); ?></th>
 						<td>
@@ -262,6 +299,7 @@ class DDR_Admin {
 						</td>
 					</tr>
 				</table>
+
 				<?php submit_button(); ?>
 			</form>
 		</div>

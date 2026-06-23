@@ -62,9 +62,15 @@ class DDR_Frontend {
 		$accent = self::color( 'ddr_accent', '#ea580c' );
 		$btn_bg = self::color( 'ddr_btn_bg', '#1a1a1a' );
 		$btn_tx = self::color( 'ddr_btn_text', '#ffffff' );
-		$css  = '.ddr-btn-primary{background:' . $btn_bg . ';color:' . $btn_tx . '}';
+		$radius = (int) get_option( 'ddr_radius', 10 );
+		$css  = ':root{--ddr-radius:' . $radius . 'px}';
+		$css .= '.ddr-btn-primary{background:' . $btn_bg . ';color:' . $btn_tx . '}';
 		$css .= '.ddr-pill{--ddr-accent:' . $accent . '}';
 		$css .= '.ddr-link-plain,.ddr-menu-link>a{color:' . $accent . '}';
+
+		if ( 'yes' !== get_option( 'ddr_shadow', 'yes' ) ) {
+			$css .= '.ddr-box,.ddr-pill,.ddr-footer-link .ddr-pill,.ddr-modal{box-shadow:none}';
+		}
 
 		// Modale: flag JS + colore overlay configurabile.
 		if ( 'yes' === get_option( 'ddr_modal', 'no' ) ) {
@@ -103,8 +109,10 @@ class DDR_Frontend {
 		$accent = self::color( 'ddr_accent', '#ea580c' );
 		$btn_bg = self::color( 'ddr_btn_bg', '#1a1a1a' );
 		$btn_tx = self::color( 'ddr_btn_text', '#ffffff' );
-		echo '<style>body{margin:0;padding:22px;background:#fff;color:#1f2937;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.ddr-box{border:0;padding:0;max-width:none}'
-			. '.ddr-btn-primary{background:' . $btn_bg . ';color:' . $btn_tx . '}.ddr-pill{--ddr-accent:' . $accent . '}.ddr-link-plain{color:' . $accent . '}</style>';
+		$radius = (int) get_option( 'ddr_radius', 10 );
+		$shadow = ( 'yes' !== get_option( 'ddr_shadow', 'yes' ) ) ? '.ddr-box,.ddr-pill{box-shadow:none}' : '';
+		echo '<style>:root{--ddr-radius:' . $radius . 'px}body{margin:0;padding:22px;background:#fff;color:#1f2937;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.ddr-box{border:0;padding:0;max-width:none}'
+			. '.ddr-btn-primary{background:' . $btn_bg . ';color:' . $btn_tx . '}.ddr-pill{--ddr-accent:' . $accent . '}.ddr-link-plain{color:' . $accent . '}' . $shadow . '</style>';
 		echo '</head><body class="ddr-modal-body">';
 		echo do_shortcode( '[' . DDR_SHORTCODE . ']' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo '<script src="' . esc_url( DDR_URL . 'assets/js/ddr.js?ver=' . DDR_VERSION ) . '"></script>';
@@ -566,7 +574,11 @@ class DDR_Frontend {
 						$cid     = 'ddr-sel-' . (int) $it['line_item_id'];
 						$oi      = $order->get_item( $it['line_item_id'] );
 						$product = $oi ? $oi->get_product() : null;
-						$thumb   = $product ? $product->get_image( 'thumbnail', array( 'class' => 'ddr-item-thumb' ) ) : '';
+						// URL diretto (niente get_image): evita lazy-load/data-src di plugin
+						// di ottimizzazione, così l'immagine si carica anche nel frame modale.
+						$img_id  = $product ? $product->get_image_id() : 0;
+						$thumb_u = $img_id ? wp_get_attachment_image_url( $img_id, 'thumbnail' ) : ( function_exists( 'wc_placeholder_img_src' ) ? wc_placeholder_img_src( 'thumbnail' ) : '' );
+						$thumb   = $thumb_u ? '<img class="ddr-item-thumb" src="' . esc_url( $thumb_u ) . '" alt="" loading="lazy" />' : '';
 						$unit    = $oi ? (float) $order->get_item_total( $oi, true ) : 0;
 						$price   = $unit ? wc_price( $unit, array( 'currency' => $order->get_currency() ) ) : '';
 						?>

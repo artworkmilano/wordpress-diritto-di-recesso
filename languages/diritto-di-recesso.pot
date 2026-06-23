@@ -53,6 +53,12 @@ msgstr ""
 msgid "Apri in finestra modale"
 msgstr ""
 
+msgid "Arrotondamento globale di box, card, pulsanti e campi. 0 = squadrato."
+msgstr ""
+
+msgid "Aspetto"
+msgstr ""
+
 msgid "Attenzione: rimuove definitivamente l’audit trail delle richieste di recesso. Lascia disattivato per conservare le prove."
 msgstr ""
 
@@ -60,6 +66,9 @@ msgid "Attiva solo se il sito è dietro Cloudflare o un reverse proxy affidabile
 msgstr ""
 
 msgid "Aumenta quantità"
+msgstr ""
+
+msgid "Avanzate"
 msgstr ""
 
 msgid "Avvisa il cliente via email quando cambi lo stato della sua richiesta (in lavorazione, completata, annullata)"
@@ -92,7 +101,7 @@ msgstr ""
 msgid "Colore accento"
 msgstr ""
 
-msgid "Colore dell’icona del badge nel footer. Intonalo al brand del sito."
+msgid "Colore dell’icona e dei link “stile testo”. Intonalo al brand del sito."
 msgstr ""
 
 msgid "Colore overlay:"
@@ -359,6 +368,9 @@ msgstr ""
 msgid "Mostra l’icona accanto al testo del link/pulsante"
 msgstr ""
 
+msgid "Mostra l’ombra (box-shadow) su box, badge e modale"
+msgstr ""
+
 msgid "Motivazione"
 msgstr ""
 
@@ -380,6 +392,9 @@ msgstr ""
 msgid "Non hai ancora inviato richieste di recesso."
 msgstr ""
 
+msgid "Notifiche &amp; rimborsi"
+msgstr ""
+
 msgid "Numero d’ordine"
 msgstr ""
 
@@ -390,6 +405,9 @@ msgid "Nuova richiesta di recesso"
 msgstr ""
 
 msgid "Nuova richiesta di recesso – ordine %s"
+msgstr ""
+
+msgid "Ombra"
 msgstr ""
 
 msgid "Ordinato il (*)/ricevuto il (*):"
@@ -440,10 +458,16 @@ msgstr ""
 msgid "Pulsante"
 msgstr ""
 
+msgid "Punto di accesso"
+msgstr ""
+
 msgid "Puoi incollare il testo a mano oppure usare lo shortcode indicato sotto ogni riquadro: in questo modo, se aggiorni qui il testo, si aggiorna ovunque."
 msgstr ""
 
 msgid "Quando segni una richiesta come “completata”, crea un rimborso WooCommerce per i prodotti recessi con ripristino dello stock"
+msgstr ""
+
+msgid "Raggio dei bordi"
 msgstr ""
 
 msgid "Recedere dal contratto"
@@ -453,6 +477,9 @@ msgid "Recedere dal contratto qui"
 msgstr ""
 
 msgid "Recedi"
+msgstr ""
+
+msgid "Recesso"
 msgstr ""
 
 msgid "Recesso art. 54-bis – ricevuta %s"
@@ -483,6 +510,9 @@ msgid "Repository: %s"
 msgstr ""
 
 msgid "Ricevuta"
+msgstr ""
+
+msgid "Ricevuta &amp; PDF"
 msgstr ""
 
 msgid "Ricevuta PDF"
@@ -539,7 +569,7 @@ msgstr ""
 msgid "Sessione scaduta. Ricomincia la procedura."
 msgstr ""
 
-msgid "Sfondo e testo del pulsante principale (form di recesso e shortcode stile pulsante)."
+msgid "Sfondo e testo del pulsante principale."
 msgstr ""
 
 msgid "Shortcode riutilizzabile:"

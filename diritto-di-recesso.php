@@ -32,6 +32,19 @@ define( 'DDR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DDR_URL', plugin_dir_url( __FILE__ ) );
 define( 'DDR_SHORTCODE', 'diritto_recesso' );
 
+// Repo GitHub per l'auto-aggiornamento integrato (formato "owner/repo").
+// Vuoto = updater disattivato. Impostato alla pubblicazione del repo.
+if ( ! defined( 'DDR_GITHUB_REPO' ) ) {
+	define( 'DDR_GITHUB_REPO', '' );
+}
+
+/**
+ * Auto-aggiornamento dalle release GitHub (nessun plugin esterno richiesto).
+ * Caricato sempre, anche senza WooCommerce, cosi' gli update funzionano comunque.
+ */
+require_once DDR_PATH . 'includes/class-ddr-updater.php';
+add_action( 'init', array( 'DDR_Updater', 'init' ) );
+
 /**
  * Verifica che WooCommerce sia attivo.
  */

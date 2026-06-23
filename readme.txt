@@ -5,7 +5,7 @@ Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 7.0
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,9 @@ Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli o
 Strumento tecnico, non sostituisce un parere legale. Adeguare separatamente condizioni generali di vendita e informativa precontrattuale (art. 49 c.1 lett. h). La funzione non crea il diritto di recesso: lo rende esercitabile online dove gia' esiste.
 
 == Changelog ==
+= 1.4.1 =
+* Logo PDF: supporto SVG con conversione automatica (Imagick) quando il server lo consente; altrimenti avviso e fallback. Risoluzione consigliata mostrata nell'admin.
+
 = 1.4.0 =
 * Ricevuta in PDF (generatore interno, nessuna libreria di terzi) con logo: pulsante "Scarica PDF" e allegato all'email di avviso ricevimento.
 * Logo del PDF: caricabile dalle impostazioni, altrimenti logo email WooCommerce, logo del sito o nome del negozio.

@@ -107,6 +107,9 @@ msgstr ""
 msgid "Confermiamo di aver ricevuto la tua dichiarazione di recesso. Questo messaggio costituisce avviso di ricevimento su supporto durevole ai sensi dell’art. 54-bis del Codice del Consumo."
 msgstr ""
 
+msgid "Consigliato: PNG o JPG, lato lungo ~600 px (orizzontale), fondo trasparente o bianco."
+msgstr ""
+
 msgid "Continua"
 msgstr ""
 
@@ -114,6 +117,12 @@ msgid "Controlla aggiornamenti adesso"
 msgstr ""
 
 msgid "Controllo aggiornamenti eseguito."
+msgstr ""
+
+msgid "Conversione SVG su questo server: NON disponibile. Per il PDF carica un PNG o JPG."
+msgstr ""
+
+msgid "Conversione SVG su questo server: disponibile (gli SVG vengono convertiti automaticamente)."
 msgstr ""
 
 msgid "Cosa vuoi restituire"
@@ -251,6 +260,9 @@ msgstr ""
 msgid "Il link è valido per 30 minuti. Se non hai richiesto tu il recesso, ignora questa email: nessuna azione verrà eseguita."
 msgstr ""
 
+msgid "Il logo selezionato è un SVG e questo server non può convertirlo: nel PDF verrà usato il logo successivo o il testo. Carica un PNG/JPG."
+msgstr ""
+
 msgid "Il pulsante di recesso viene nascosto automaticamente per gli ordini che contengono soltanto prodotti esclusi."
 msgstr ""
 
@@ -318,9 +330,6 @@ msgid "Lo stato di questo ordine non consente il recesso online in questo moment
 msgstr ""
 
 msgid "Logo del PDF"
-msgstr ""
-
-msgid "Logo per il PDF. Se vuoto, viene usato (in ordine): il logo email di WooCommerce, poi il logo del sito, infine il nome del negozio in testo."
 msgstr ""
 
 msgid "L’art. 49 c.1 lett. h del Codice del Consumo impone che condizioni, termini e procedure di recesso — e l’esistenza e collocazione della funzione digitale — siano nell’informativa precontrattuale e nelle Condizioni Generali di Vendita."
@@ -507,6 +516,9 @@ msgid "Scegli logo"
 msgstr ""
 
 msgid "Se i dati corrispondono a un ordine valido, riceverai a breve le istruzioni via email."
+msgstr ""
+
+msgid "Se vuoto, viene usato (in ordine): logo email di WooCommerce, logo del sito, infine il nome del negozio in testo."
 msgstr ""
 
 msgid "Seleziona almeno un prodotto da restituire."

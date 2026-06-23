@@ -130,6 +130,12 @@ class DDR_PDF {
 			return '';
 		}
 
+		// SVG: rasterizzabile solo con Imagick (con supporto SVG). Altrimenti
+		// si rinuncia al logo (il PDF esce comunque, col testo).
+		if ( preg_match( '/\.svg$/i', $src ) ) {
+			return self::rasterize_svg( $src );
+		}
+
 		// Converte in JPEG (max 600x200, sfondo bianco) via l'editor immagini WP.
 		$editor = wp_get_image_editor( $src );
 		if ( is_wp_error( $editor ) ) {
@@ -145,6 +151,51 @@ class DDR_PDF {
 			return '';
 		}
 		return $saved['path'];
+	}
+
+	/**
+	 * Questo server è in grado di rasterizzare gli SVG? (Imagick con delegato SVG)
+	 */
+	public static function can_rasterize_svg() {
+		if ( ! class_exists( 'Imagick' ) ) {
+			return false;
+		}
+		try {
+			$formats = Imagick::queryFormats( 'SVG' );
+			return ! empty( $formats );
+		} catch ( Exception $e ) {
+			return false;
+		}
+	}
+
+	/**
+	 * Rasterizza un SVG in JPEG temporaneo (sfondo bianco). '' se non possibile.
+	 */
+	protected static function rasterize_svg( $src ) {
+		if ( ! self::can_rasterize_svg() ) {
+			return '';
+		}
+		try {
+			$im = new Imagick();
+			$im->setBackgroundColor( new ImagickPixel( 'white' ) );
+			$im->setResolution( 200, 200 );
+			$im->readImage( $src );
+			$im->setImageBackgroundColor( new ImagickPixel( 'white' ) );
+			if ( method_exists( $im, 'flattenImages' ) ) {
+				$im = $im->flattenImages();
+			}
+			if ( $im->getImageWidth() > 600 ) {
+				$im->resizeImage( 600, 0, Imagick::FILTER_LANCZOS, 1 );
+			}
+			$im->setImageFormat( 'jpeg' );
+			$im->setImageCompressionQuality( 90 );
+			$path = wp_tempnam( 'ddr-logo' ) . '.jpg';
+			$im->writeImage( $path );
+			$im->clear();
+			return file_exists( $path ) ? $path : '';
+		} catch ( Exception $e ) {
+			return '';
+		}
 	}
 
 	/* ========================= Core PDF (no WP) ======================== */

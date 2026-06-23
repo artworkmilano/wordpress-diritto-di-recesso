@@ -216,7 +216,22 @@ class DDR_Admin {
 							</div>
 							<button type="button" class="button" id="ddr_pdf_logo_btn"><?php esc_html_e( 'Scegli logo', 'diritto-di-recesso' ); ?></button>
 							<button type="button" class="button" id="ddr_pdf_logo_clear"><?php esc_html_e( 'Rimuovi', 'diritto-di-recesso' ); ?></button>
-							<p class="description"><?php esc_html_e( 'Logo per il PDF. Se vuoto, viene usato (in ordine): il logo email di WooCommerce, poi il logo del sito, infine il nome del negozio in testo.', 'diritto-di-recesso' ); ?></p>
+							<p class="description">
+								<strong><?php esc_html_e( 'Consigliato: PNG o JPG, lato lungo ~600 px (orizzontale), fondo trasparente o bianco.', 'diritto-di-recesso' ); ?></strong><br />
+								<?php esc_html_e( 'Se vuoto, viene usato (in ordine): logo email di WooCommerce, logo del sito, infine il nome del negozio in testo.', 'diritto-di-recesso' ); ?>
+							</p>
+							<?php
+							$svg_ok  = class_exists( 'DDR_PDF' ) && DDR_PDF::can_rasterize_svg();
+							$is_svg  = $logo_id && 'image/svg+xml' === get_post_mime_type( $logo_id );
+							if ( $svg_ok ) {
+								echo '<p class="description">' . esc_html__( 'Conversione SVG su questo server: disponibile (gli SVG vengono convertiti automaticamente).', 'diritto-di-recesso' ) . '</p>';
+							} else {
+								echo '<p class="description">' . esc_html__( 'Conversione SVG su questo server: NON disponibile. Per il PDF carica un PNG o JPG.', 'diritto-di-recesso' ) . '</p>';
+							}
+							if ( $is_svg && ! $svg_ok ) {
+								echo '<p style="color:#b32d2e;"><strong>' . esc_html__( 'Il logo selezionato è un SVG e questo server non può convertirlo: nel PDF verrà usato il logo successivo o il testo. Carica un PNG/JPG.', 'diritto-di-recesso' ) . '</strong></p>';
+							}
+							?>
 						</td>
 					</tr>
 					<tr>

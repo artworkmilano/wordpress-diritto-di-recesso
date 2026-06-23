@@ -17,6 +17,7 @@ class DDR_Admin {
 		add_action( 'admin_post_ddr_set_status', array( __CLASS__, 'handle_set_status' ) );
 		add_action( 'admin_post_ddr_export_csv', array( __CLASS__, 'handle_export_csv' ) );
 		add_action( 'admin_post_ddr_check_updates', array( __CLASS__, 'handle_check_updates' ) );
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'maybe_media' ) );
 		// Esclusione recesso a livello prodotto.
 		add_action( 'woocommerce_product_options_general_product_data', array( __CLASS__, 'product_field' ) );
 		add_action( 'woocommerce_process_product_meta', array( __CLASS__, 'save_product_field' ) );
@@ -76,6 +77,9 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_delete_data', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
 		register_setting( 'ddr_settings', 'ddr_customer_emails', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 		register_setting( 'ddr_settings', 'ddr_auto_refund', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
+		register_setting( 'ddr_settings', 'ddr_pdf_enable', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
+		register_setting( 'ddr_settings', 'ddr_pdf_attach', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
+		register_setting( 'ddr_settings', 'ddr_pdf_logo', array( 'sanitize_callback' => 'absint', 'default' => 0 ) );
 	}
 
 	public static function render_settings() {
@@ -196,6 +200,26 @@ class DDR_Admin {
 						</td>
 					</tr>
 					<tr>
+						<th scope="row"><?php esc_html_e( 'Ricevuta PDF', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="ddr_pdf_enable" value="yes" <?php checked( 'yes', get_option( 'ddr_pdf_enable', 'yes' ) ); ?> /> <?php esc_html_e( 'Abilita la generazione del PDF della ricevuta (pulsante “Scarica PDF”)', 'diritto-di-recesso' ); ?></label><br />
+							<label><input type="checkbox" name="ddr_pdf_attach" value="yes" <?php checked( 'yes', get_option( 'ddr_pdf_attach', 'yes' ) ); ?> /> <?php esc_html_e( 'Allega il PDF all’email di avviso ricevimento', 'diritto-di-recesso' ); ?></label>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'Logo del PDF', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<?php $logo_id = (int) get_option( 'ddr_pdf_logo', 0 ); $logo_src = $logo_id ? wp_get_attachment_image_url( $logo_id, 'medium' ) : ''; ?>
+							<input type="hidden" name="ddr_pdf_logo" id="ddr_pdf_logo" value="<?php echo esc_attr( $logo_id ); ?>" />
+							<div id="ddr_pdf_logo_preview" style="margin-bottom:8px;">
+								<?php if ( $logo_src ) : ?><img src="<?php echo esc_url( $logo_src ); ?>" style="max-width:240px;height:auto;border:1px solid #ddd;padding:4px;background:#fff;" /><?php endif; ?>
+							</div>
+							<button type="button" class="button" id="ddr_pdf_logo_btn"><?php esc_html_e( 'Scegli logo', 'diritto-di-recesso' ); ?></button>
+							<button type="button" class="button" id="ddr_pdf_logo_clear"><?php esc_html_e( 'Rimuovi', 'diritto-di-recesso' ); ?></button>
+							<p class="description"><?php esc_html_e( 'Logo per il PDF. Se vuoto, viene usato (in ordine): il logo email di WooCommerce, poi il logo del sito, infine il nome del negozio in testo.', 'diritto-di-recesso' ); ?></p>
+						</td>
+					</tr>
+					<tr>
 						<th scope="row"><?php esc_html_e( 'IP dietro proxy/CDN', 'diritto-di-recesso' ); ?></th>
 						<td>
 							<label><input type="checkbox" name="ddr_trust_proxy" value="yes" <?php checked( 'yes', get_option( 'ddr_trust_proxy', 'no' ) ); ?> /> <?php esc_html_e( 'Rileva l’IP reale del cliente dagli header del proxy (Cloudflare / X-Forwarded-For)', 'diritto-di-recesso' ); ?></label>
@@ -264,6 +288,39 @@ class DDR_Admin {
 		</form>
 		<hr />
 		<?php
+	}
+
+	/**
+	 * Carica il media picker solo nella pagina impostazioni del plugin.
+	 */
+	public static function maybe_media( $hook ) {
+		if ( ! isset( $_GET['page'] ) || 'ddr-settings' !== $_GET['page'] ) {
+			return;
+		}
+		wp_enqueue_media();
+		$js = <<<JS
+jQuery(function($){
+	var frame;
+	$('#ddr_pdf_logo_btn').on('click', function(e){
+		e.preventDefault();
+		if(frame){ frame.open(); return; }
+		frame = wp.media({ title: 'Logo PDF', button:{ text:'Usa questo logo' }, library:{ type:'image' }, multiple:false });
+		frame.on('select', function(){
+			var a = frame.state().get('selection').first().toJSON();
+			$('#ddr_pdf_logo').val(a.id);
+			var url = (a.sizes && a.sizes.medium) ? a.sizes.medium.url : a.url;
+			$('#ddr_pdf_logo_preview').html('<img src="'+url+'" style="max-width:240px;height:auto;border:1px solid #ddd;padding:4px;background:#fff;" />');
+		});
+		frame.open();
+	});
+	$('#ddr_pdf_logo_clear').on('click', function(e){
+		e.preventDefault();
+		$('#ddr_pdf_logo').val('');
+		$('#ddr_pdf_logo_preview').empty();
+	});
+});
+JS;
+		wp_add_inline_script( 'jquery-core', $js );
 	}
 
 	public static function handle_check_updates() {

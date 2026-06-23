@@ -3,7 +3,7 @@
  * Plugin Name:       Diritto di Recesso 54-bis
  * Plugin URI:        https://artworkstudios.it/diritto-di-recesso
  * Description:       Recesso digitale conforme all'art. 54-bis del Codice del Consumo (D.Lgs. 209/2025) per WooCommerce. Punto d'accesso unico (pagina + link footer) valido anche per ospiti senza account: lookup ordine, doppia conferma, avviso di ricevimento su supporto durevole con data/ora, notifica admin e audit trail.
- * Version:           1.3.1
+ * Version:           1.4.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Artwork
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DDR_VERSION', '1.3.1' );
+define( 'DDR_VERSION', '1.4.0' );
 define( 'DDR_FILE', __FILE__ );
 define( 'DDR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DDR_URL', plugin_dir_url( __FILE__ ) );
@@ -70,6 +70,7 @@ function ddr_bootstrap() {
 	require_once DDR_PATH . 'includes/class-ddr-eligibility.php';
 	require_once DDR_PATH . 'includes/class-ddr-emails.php';
 	require_once DDR_PATH . 'includes/class-ddr-refund.php';
+	require_once DDR_PATH . 'includes/class-ddr-pdf.php';
 	require_once DDR_PATH . 'includes/class-ddr-legal.php';
 	require_once DDR_PATH . 'includes/class-ddr-frontend.php';
 	require_once DDR_PATH . 'includes/class-ddr-admin.php';

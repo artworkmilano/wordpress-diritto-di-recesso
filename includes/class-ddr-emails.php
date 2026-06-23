@@ -94,12 +94,22 @@ class DDR_Emails {
 		$body .= '<table style="width:100%;border-collapse:collapse;font-size:14px;margin:16px 0;">' . $rows . '</table>';
 		$body .= '<p style="font-size:13px;color:#555;">' . esc_html__( 'La presente dichiarazione di recesso si intende validamente esercitata alla data e ora sopra indicate. Riceverai a breve istruzioni operative per l’eventuale restituzione dei beni e il rimborso.', 'diritto-di-recesso' ) . '</p>';
 
-		$ok = wp_mail( $request['customer_email'], $subject, self::wrap( __( 'Avviso di ricevimento del recesso', 'diritto-di-recesso' ), $body ), self::headers() );
+		// Allega il PDF della ricevuta (supporto durevole), se abilitato.
+		$attachments = array();
+		$pdf_path    = '';
+		if ( 'yes' === get_option( 'ddr_pdf_enable', 'yes' ) && 'yes' === get_option( 'ddr_pdf_attach', 'yes' ) && class_exists( 'DDR_PDF' ) ) {
+			$pdf_path = DDR_PDF::tmp_file( $request );
+			if ( $pdf_path ) {
+				$attachments[] = $pdf_path;
+			}
+		}
 
-		/**
-		 * Per un supporto durevole piu' robusto si puo' agganciare qui la
-		 * generazione di un PDF allegato. Lasciato come hook.
-		 */
+		$ok = wp_mail( $request['customer_email'], $subject, self::wrap( __( 'Avviso di ricevimento del recesso', 'diritto-di-recesso' ), $body ), self::headers(), $attachments );
+
+		if ( $pdf_path && file_exists( $pdf_path ) ) {
+			@unlink( $pdf_path ); // phpcs:ignore -- temporaneo gia' inviato.
+		}
+
 		do_action( 'ddr_after_receipt_sent', $request, $ok );
 
 		return $ok;

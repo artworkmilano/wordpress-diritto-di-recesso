@@ -20,6 +20,9 @@ msgstr ""
 msgid "Abbiamo registrato la tua dichiarazione di recesso. Ti abbiamo inviato l’avviso di ricevimento all’indirizzo email indicato, con data e ora della trasmissione."
 msgstr ""
 
+msgid "Abilita la generazione del PDF della ricevuta (pulsante “Scarica PDF”)"
+msgstr ""
+
 msgid "Aggiornamenti"
 msgstr ""
 
@@ -30,6 +33,9 @@ msgid "Aggiunge la voce di recesso al menu selezionato. In alternativa usa lo sh
 msgstr ""
 
 msgid "Aggiungi a un menu"
+msgstr ""
+
+msgid "Allega il PDF all’email di avviso ricevimento"
 msgstr ""
 
 msgid "All’attenzione di %1$s, %2$s:"
@@ -173,6 +179,9 @@ msgstr ""
 msgid "Documento riepilogativo della dichiarazione di recesso (art. 54-bis Codice del Consumo)."
 msgstr ""
 
+msgid "Documento riepilogativo della dichiarazione di recesso ai sensi dell’art. 54-bis del Codice del Consumo. Costituisce avviso di ricevimento su supporto durevole."
+msgstr ""
+
 msgid "Dove inserire questi testi (obblighi di legge)."
 msgstr ""
 
@@ -306,6 +315,12 @@ msgid "Link testuale (discreto, consigliato)"
 msgstr ""
 
 msgid "Lo stato di questo ordine non consente il recesso online in questo momento."
+msgstr ""
+
+msgid "Logo del PDF"
+msgstr ""
+
+msgid "Logo per il PDF. Se vuoto, viene usato (in ordine): il logo email di WooCommerce, poi il logo del sito, infine il nome del negozio in testo."
 msgstr ""
 
 msgid "L’art. 49 c.1 lett. h del Codice del Consumo impone che condizioni, termini e procedure di recesso — e l’esistenza e collocazione della funzione digitale — siano nell’informativa precontrattuale e nelle Condizioni Generali di Vendita."
@@ -455,6 +470,9 @@ msgstr ""
 msgid "Ricevuta"
 msgstr ""
 
+msgid "Ricevuta PDF"
+msgstr ""
+
 msgid "Ricevuta non trovata."
 msgstr ""
 
@@ -476,7 +494,16 @@ msgstr ""
 msgid "Rimborso automatico"
 msgstr ""
 
+msgid "Rimuovi"
+msgstr ""
+
 msgid "Salva testi"
+msgstr ""
+
+msgid "Scarica PDF"
+msgstr ""
+
+msgid "Scegli logo"
 msgstr ""
 
 msgid "Se i dati corrispondono a un ordine valido, riceverai a breve le istruzioni via email."
@@ -506,7 +533,7 @@ msgstr ""
 msgid "Stai per inviare la seguente dichiarazione di recesso. Una volta confermata riceverai l’avviso di ricevimento via email."
 msgstr ""
 
-msgid "Stampa / salva PDF"
+msgid "Stampa"
 msgstr ""
 
 msgid "Stato"
@@ -548,7 +575,7 @@ msgstr ""
 msgid "Versione installata"
 msgstr ""
 
-msgid "Visualizza / stampa la ricevuta"
+msgid "Visualizza la ricevuta"
 msgstr ""
 
 msgid "[%1$s] Aggiornamento richiesta di recesso – %2$s"

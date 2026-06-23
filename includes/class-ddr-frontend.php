@@ -36,6 +36,9 @@ class DDR_Frontend {
 		add_shortcode( 'diritto_recesso_link', array( __CLASS__, 'link_shortcode' ) );
 		add_filter( 'wp_nav_menu_items', array( __CLASS__, 'menu_link' ), 10, 2 );
 
+		// Stream del PDF ricevuta (prima di qualsiasi output HTML).
+		add_action( 'template_redirect', array( __CLASS__, 'maybe_stream_pdf' ) );
+
 		// Area "Il mio account": endpoint/tab dedicato.
 		add_action( 'init', array( __CLASS__, 'add_account_endpoint' ) );
 		add_filter( 'woocommerce_account_menu_items', array( __CLASS__, 'account_menu_item' ) );
@@ -785,7 +788,12 @@ class DDR_Frontend {
 			<h2 class="ddr-title"><?php esc_html_e( 'Recesso ricevuto', 'diritto-di-recesso' ); ?></h2>
 			<p><?php esc_html_e( 'Abbiamo registrato la tua dichiarazione di recesso. Ti abbiamo inviato l’avviso di ricevimento all’indirizzo email indicato, con data e ora della trasmissione.', 'diritto-di-recesso' ); ?></p>
 			<p><strong><?php esc_html_e( 'Codice ricevuta:', 'diritto-di-recesso' ); ?></strong> <?php echo esc_html( $request['receipt_code'] ); ?></p>
-			<p><a class="ddr-btn ddr-btn-primary" href="<?php echo esc_url( $receipt_url ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Visualizza / stampa la ricevuta', 'diritto-di-recesso' ); ?></a></p>
+			<p>
+				<a class="ddr-btn ddr-btn-primary" href="<?php echo esc_url( $receipt_url ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Visualizza la ricevuta', 'diritto-di-recesso' ); ?></a>
+				<?php if ( 'yes' === get_option( 'ddr_pdf_enable', 'yes' ) ) : ?>
+					<a class="ddr-btn" href="<?php echo esc_url( ddr_page_url( array( 'ddr_pdf' => $request['receipt_code'] ) ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Scarica PDF', 'diritto-di-recesso' ); ?></a>
+				<?php endif; ?>
+			</p>
 		</div>
 		<?php
 		return ob_get_clean();
@@ -821,11 +829,27 @@ class DDR_Frontend {
 				<?php endif; ?>
 			</table>
 			<p class="ddr-no-print">
-				<button type="button" class="ddr-btn ddr-btn-primary" id="ddr-print"><?php esc_html_e( 'Stampa / salva PDF', 'diritto-di-recesso' ); ?></button>
+				<?php if ( 'yes' === get_option( 'ddr_pdf_enable', 'yes' ) ) : ?>
+					<a class="ddr-btn ddr-btn-primary" href="<?php echo esc_url( ddr_page_url( array( 'ddr_pdf' => $request['receipt_code'] ) ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Scarica PDF', 'diritto-di-recesso' ); ?></a>
+				<?php endif; ?>
+				<button type="button" class="ddr-btn" id="ddr-print"><?php esc_html_e( 'Stampa', 'diritto-di-recesso' ); ?></button>
 			</p>
 		</div>
 		<?php
 		return ob_get_clean();
+	}
+
+	/**
+	 * Genera e invia il PDF della ricevuta se richiesto via ?ddr_pdf=CODICE.
+	 */
+	public static function maybe_stream_pdf() {
+		if ( ! isset( $_GET['ddr_pdf'] ) || 'yes' !== get_option( 'ddr_pdf_enable', 'yes' ) ) {
+			return;
+		}
+		$request = DDR_DB::get_by_receipt( sanitize_text_field( wp_unslash( $_GET['ddr_pdf'] ) ) );
+		if ( $request ) {
+			DDR_PDF::stream( $request );
+		}
 	}
 
 	/* ---------------------------------------------------------------------

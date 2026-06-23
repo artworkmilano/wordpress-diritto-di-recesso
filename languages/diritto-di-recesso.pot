@@ -401,6 +401,9 @@ msgstr ""
 msgid "Non hai ancora inviato richieste di recesso."
 msgstr ""
 
+msgid "Nota importante: il plugin fornisce la funzione tecnica per WooCommerce. Non sostituisce la consulenza legale; si raccomanda la validazione del flusso da parte di un legale prima della messa in produzione."
+msgstr ""
+
 msgid "Notifiche & rimborsi"
 msgstr ""
 
@@ -453,9 +456,6 @@ msgid "Per ripristinare il testo predefinito, svuota il campo e salva."
 msgstr ""
 
 msgid "Permessi insufficienti."
-msgstr ""
-
-msgid "Plugin gratuito fornito «così com’è», senza garanzie. È uno strumento tecnico: non costituisce consulenza legale né garantisce la conformità normativa. La responsabilità degli adempimenti di legge (art. 54-bis e art. 49 del Codice del Consumo, Direttiva 2011/83/UE) e dell’adeguamento dei testi resta esclusivamente del titolare del sito. Nei limiti consentiti dalla legge, Artwork non risponde di danni, sanzioni o conseguenze derivanti dall’uso."
 msgstr ""
 
 msgid "Procedi alla conferma"
@@ -594,6 +594,9 @@ msgid "Shortcode riutilizzabile:"
 msgstr ""
 
 msgid "Si è verificato un errore nel salvataggio. Riprova."
+msgstr ""
+
+msgid "Software gratuito fornito «così com’è», senza garanzie. La responsabilità degli adempimenti di legge (art. 54-bis e art. 49 del Codice del Consumo, Direttiva 2011/83/UE) e dell’adeguamento dei testi resta esclusivamente del titolare del sito. Realizzato da %s; nei limiti consentiti dalla legge non risponde di danni, sanzioni o conseguenze derivanti dall’uso."
 msgstr ""
 
 msgid "Spunta se questo prodotto non dà diritto di recesso (es. beni su misura, sigillati e aperti, deperibili)."

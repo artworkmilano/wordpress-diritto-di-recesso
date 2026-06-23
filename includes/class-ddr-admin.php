@@ -92,9 +92,13 @@ class DDR_Admin {
 	 * Disclaimer / esclusione di responsabilità mostrato nelle pagine del plugin.
 	 */
 	public static function disclaimer_notice() {
-		echo '<div class="notice notice-info inline" style="border-left-color:#8b31ff;padding:10px 14px;margin:14px 0;"><p style="margin:0;">';
-		echo '<strong>' . esc_html__( 'Disclaimer.', 'diritto-di-recesso' ) . '</strong> ';
-		echo esc_html__( 'Plugin gratuito fornito «così com’è», senza garanzie. È uno strumento tecnico: non costituisce consulenza legale né garantisce la conformità normativa. La responsabilità degli adempimenti di legge (art. 54-bis e art. 49 del Codice del Consumo, Direttiva 2011/83/UE) e dell’adeguamento dei testi resta esclusivamente del titolare del sito. Nei limiti consentiti dalla legge, Artwork non risponde di danni, sanzioni o conseguenze derivanti dall’uso.', 'diritto-di-recesso' );
+		$agency = '<a href="https://artworkstudios.it" target="_blank" rel="noopener" title="Artwork Web Agency">Artwork Web Agency</a>';
+		echo '<div class="notice notice-info inline" style="border-left-color:#8b31ff;padding:10px 14px;margin:18px 0;">';
+		echo '<p style="margin:0 0 6px;"><strong>' . esc_html__( 'Disclaimer.', 'diritto-di-recesso' ) . '</strong> ';
+		echo esc_html__( 'Nota importante: il plugin fornisce la funzione tecnica per WooCommerce. Non sostituisce la consulenza legale; si raccomanda la validazione del flusso da parte di un legale prima della messa in produzione.', 'diritto-di-recesso' );
+		echo '</p><p style="margin:0;">';
+		// translators: %s = link "Artwork Web Agency".
+		echo wp_kses_post( sprintf( __( 'Software gratuito fornito «così com’è», senza garanzie. La responsabilità degli adempimenti di legge (art. 54-bis e art. 49 del Codice del Consumo, Direttiva 2011/83/UE) e dell’adeguamento dei testi resta esclusivamente del titolare del sito. Realizzato da %s; nei limiti consentiti dalla legge non risponde di danni, sanzioni o conseguenze derivanti dall’uso.', 'diritto-di-recesso' ), $agency ) );
 		echo '</p></div>';
 	}
 
@@ -107,7 +111,7 @@ class DDR_Admin {
 		<div class="wrap">
 			<h1><?php esc_html_e( 'Diritto di Recesso 54-bis – Impostazioni', 'diritto-di-recesso' ); ?></h1>
 
-			<?php self::disclaimer_notice(); ?>
+			<?php /* disclaimer mostrato in fondo alla pagina */ ?>
 
 			<?php if ( $page_id ) : ?>
 				<p><?php esc_html_e( 'Pagina pubblica del recesso:', 'diritto-di-recesso' ); ?>
@@ -344,6 +348,8 @@ class DDR_Admin {
 
 				<?php submit_button(); ?>
 			</form>
+
+			<?php self::disclaimer_notice(); ?>
 		</div>
 		<?php
 	}

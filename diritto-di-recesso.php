@@ -3,10 +3,10 @@
  * Plugin Name:       Diritto di Recesso per WooCommerce
  * Plugin URI:        https://artworkstudios.it/diritto-di-recesso
  * Description:       Recesso digitale conforme all'art. 54-bis del Codice del Consumo (D.Lgs. 209/2025) per WooCommerce. Punto d'accesso unico (pagina + link footer) valido anche per ospiti senza account: lookup ordine, doppia conferma, avviso di ricevimento su supporto durevole con data/ora, notifica admin e audit trail.
- * Version:           1.9.2
+ * Version:           1.9.3
  * Requires at least: 6.0
  * Requires PHP:      7.4
- * Author:            Artwork
+ * Author:            Artwork Web Agency
  * Author URI:        https://artworkstudios.it
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,7 +15,7 @@
  * WC requires at least: 7.0
  * Update URI:        https://github.com/artworkmilano/wordpress-diritto-di-recesso
  *
- * Diritto di Recesso per WooCommerce — by Artwork (https://artworkstudios.it)
+ * Diritto di Recesso per WooCommerce — by Artwork Web Agency (https://artworkstudios.it)
  *
  * DISCLAIMER / ESCLUSIONE DI RESPONSABILITA':
  * Software libero e gratuito (licenza GPL-2.0-or-later) fornito "COSI' COM'E'"
@@ -24,16 +24,17 @@
  * conformita' normativa. La responsabilita' dell'adempimento degli obblighi di
  * legge (art. 54-bis e art. 49 c.1 lett. h del Codice del Consumo, Direttiva
  * 2011/83/UE) e dell'adeguamento dei testi resta ESCLUSIVAMENTE del titolare del
- * sito. Nei limiti massimi consentiti dalla legge applicabile, l'autore (Artwork)
- * non e' responsabile per danni diretti o indiretti, sanzioni, perdite o
- * conseguenze derivanti dall'installazione o dall'uso del plugin.
+ * sito. Si raccomanda la validazione del flusso da parte di un legale prima della
+ * messa in produzione. Nei limiti massimi consentiti dalla legge applicabile,
+ * l'autore (Artwork Web Agency) non e' responsabile per danni diretti o indiretti,
+ * sanzioni, perdite o conseguenze derivanti dall'installazione o dall'uso del plugin.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DDR_VERSION', '1.9.2' );
+define( 'DDR_VERSION', '1.9.3' );
 define( 'DDR_FILE', __FILE__ );
 define( 'DDR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DDR_URL', plugin_dir_url( __FILE__ ) );

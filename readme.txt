@@ -5,7 +5,7 @@ Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 7.0
-Stable tag: 1.9.2
+Stable tag: 1.9.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,9 +56,9 @@ Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli o
 == Disclaimer ==
 Plugin **gratuito** e open source (GPL-2.0-or-later), fornito "cosi' com'e'" ("as is"), SENZA GARANZIE di alcun tipo, esplicite o implicite, incluse garanzie di commerciabilita' o idoneita' a uno scopo specifico.
 
-Si tratta di uno **strumento tecnico**: NON costituisce consulenza legale e NON garantisce la conformita' normativa del sito. La responsabilita' dell'adempimento degli obblighi di legge (in particolare art. 54-bis e art. 49 c.1 lett. h del Codice del Consumo, Direttiva 2011/83/UE), dell'adeguamento dei testi e delle condizioni di vendita, e della corretta configurazione, resta **esclusivamente del titolare del sito**.
+Il plugin fornisce la funzione **tecnica** per WooCommerce. NON costituisce consulenza legale e NON garantisce la conformita' normativa del sito: si raccomanda la **validazione del flusso da parte di un legale prima della messa in produzione**. La responsabilita' dell'adempimento degli obblighi di legge (in particolare art. 54-bis e art. 49 c.1 lett. h del Codice del Consumo, Direttiva 2011/83/UE), dell'adeguamento dei testi e delle condizioni di vendita, e della corretta configurazione, resta **esclusivamente del titolare del sito**.
 
-Nei limiti massimi consentiti dalla legge applicabile, l'autore (Artwork) e i contributori NON sono responsabili per danni diretti, indiretti, incidentali o consequenziali, sanzioni, perdite di dati o di profitto, ne' per qualsiasi conseguenza derivante dall'installazione, configurazione o uso del plugin. L'uso del plugin implica l'accettazione di queste condizioni.
+Nei limiti massimi consentiti dalla legge applicabile, l'autore [Artwork Web Agency](https://artworkstudios.it) e i contributori NON sono responsabili per danni diretti, indiretti, incidentali o consequenziali, sanzioni, perdite di dati o di profitto, ne' per qualsiasi conseguenza derivante dall'installazione, configurazione o uso del plugin. L'uso del plugin implica l'accettazione di queste condizioni.
 
 I testi legali predefiniti sono un punto di partenza generico (basato sulla Direttiva 2011/83/UE) da adattare alla propria attivita' e giurisdizione; si raccomanda la revisione di un legale.
 
@@ -66,6 +66,10 @@ I testi legali predefiniti sono un punto di partenza generico (basato sulla Dire
 Strumento tecnico, non sostituisce un parere legale. Adeguare separatamente condizioni generali di vendita e informativa precontrattuale (art. 49 c.1 lett. h). La funzione non crea il diritto di recesso: lo rende esercitabile online dove gia' esiste.
 
 == Changelog ==
+= 1.9.3 =
+* Disclaimer spostato in fondo alle impostazioni e arricchito (nota tecnica + raccomandazione di validazione legale prima della produzione).
+* Le citazioni del marchio ora riportano «Artwork Web Agency» con link a artworkstudios.it; Author del plugin aggiornato.
+
 = 1.9.2 =
 * Fix: nella pagina "Richieste di recesso" veniva stampata una riga di codice (tag PHP errato). Risolto.
 

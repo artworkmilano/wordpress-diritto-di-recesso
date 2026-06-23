@@ -26,6 +26,12 @@ msgstr ""
 msgid "Aggiornamento richiesta di recesso"
 msgstr ""
 
+msgid "Aggiunge la voce di recesso al menu selezionato. In alternativa usa lo shortcode:"
+msgstr ""
+
+msgid "Aggiungi a un menu"
+msgstr ""
+
 msgid "All’attenzione di %1$s, %2$s:"
 msgstr ""
 
@@ -65,10 +71,13 @@ msgstr ""
 msgid "Codice ricevuta:"
 msgstr ""
 
-msgid "Colore accento badge"
+msgid "Colore accento"
 msgstr ""
 
 msgid "Colore dell’icona del badge nel footer. Intonalo al brand del sito."
+msgstr ""
+
+msgid "Colore pulsante"
 msgstr ""
 
 msgid "Completata"
@@ -464,6 +473,9 @@ msgstr ""
 msgid "Sessione scaduta. Ricomincia la procedura."
 msgstr ""
 
+msgid "Sfondo e testo del pulsante principale (form di recesso e shortcode stile pulsante)."
+msgstr ""
+
 msgid "Shortcode riutilizzabile:"
 msgstr ""
 
@@ -558,5 +570,8 @@ msgid "vai ad aggiornare"
 msgstr ""
 
 msgid "È stata registrata una nuova richiesta di recesso online."
+msgstr ""
+
+msgid "— Nessuno —"
 msgstr ""
 

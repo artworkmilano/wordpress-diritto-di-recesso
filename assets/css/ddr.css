@@ -53,6 +53,12 @@
 }
 .ddr-footer-link .ddr-ico svg{width:13px;height:13px;display:block}
 @media (prefers-reduced-motion:reduce){.ddr-footer-link .ddr-pill{transition:none}}
+/* Pill riutilizzabile (shortcode) fuori dal footer */
+.ddr-pill{--ddr-accent:#ea580c}
+.ddr-pill .ddr-ico{background:rgba(234,88,12,.12);background:color-mix(in srgb,var(--ddr-accent) 13%,#fff);color:var(--ddr-accent)}
+.ddr-pill .ddr-ico svg{width:13px;height:13px;display:block}
+.ddr-inline-pill{display:inline-block}
+.ddr-link-plain a{text-decoration:underline}
 
 /* Selezione prodotti (recesso parziale) */
 .ddr-items{width:100%;border-collapse:collapse;margin:8px 0 20px}

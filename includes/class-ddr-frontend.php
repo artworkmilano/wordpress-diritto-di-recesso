@@ -32,6 +32,10 @@ class DDR_Frontend {
 		add_action( 'wp_footer', array( __CLASS__, 'footer_link' ) );
 		add_filter( 'woocommerce_my_account_my_orders_actions', array( __CLASS__, 'account_order_action' ), 10, 2 );
 
+		// Modi alternativi di inserire il pulsante: shortcode + voce di menu.
+		add_shortcode( 'diritto_recesso_link', array( __CLASS__, 'link_shortcode' ) );
+		add_filter( 'wp_nav_menu_items', array( __CLASS__, 'menu_link' ), 10, 2 );
+
 		// Area "Il mio account": endpoint/tab dedicato.
 		add_action( 'init', array( __CLASS__, 'add_account_endpoint' ) );
 		add_filter( 'woocommerce_account_menu_items', array( __CLASS__, 'account_menu_item' ) );
@@ -44,6 +48,23 @@ class DDR_Frontend {
 		// ovunque, non solo sulla pagina /recesso.
 		wp_enqueue_style( 'ddr', DDR_URL . 'assets/css/ddr.css', array(), DDR_VERSION );
 		wp_register_script( 'ddr', DDR_URL . 'assets/js/ddr.js', array(), DDR_VERSION, true );
+
+		// Colori personalizzabili applicati via CSS inline.
+		$accent = self::color( 'ddr_accent', '#ea580c' );
+		$btn_bg = self::color( 'ddr_btn_bg', '#1a1a1a' );
+		$btn_tx = self::color( 'ddr_btn_text', '#ffffff' );
+		$css  = '.ddr-btn-primary{background:' . $btn_bg . ';color:' . $btn_tx . '}';
+		$css .= '.ddr-pill{--ddr-accent:' . $accent . '}';
+		$css .= '.ddr-link-plain a,.ddr-menu-link>a{color:' . $accent . '}';
+		wp_add_inline_style( 'ddr', $css );
+	}
+
+	/**
+	 * Colore esadecimale validato dall'opzione, con fallback.
+	 */
+	protected static function color( $option, $default ) {
+		$val = sanitize_hex_color( (string) get_option( $option, $default ) );
+		return $val ? $val : $default;
 	}
 
 	/* ---------------------------------------------------------------------
@@ -166,27 +187,67 @@ class DDR_Frontend {
 		if ( 'yes' !== get_option( 'ddr_footer_link', 'yes' ) ) {
 			return;
 		}
-		$accent = get_option( 'ddr_accent', '#ea580c' );
+		echo '<div class="ddr-footer-link" style="margin:0 auto;padding:18px 0 32px;width:100%;text-align:center;box-sizing:border-box;">'
+			. self::pill_anchor() // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped — markup gia' sanificato.
+			. '</div>';
+	}
 
-		// Stili base INLINE: resistono a WP Rocket / "Remove Unused CSS" e a
-		// qualsiasi tema. Hover e focus arrivano dal foglio di stile (enhancement).
-		$wrap_style = 'margin:0 auto;padding:18px 0 32px;width:100%;text-align:center;box-sizing:border-box;';
+	/**
+	 * Markup del "pill" (badge) con stili inline resilienti a WP Rocket / temi.
+	 */
+	protected static function pill_anchor( $label = '' ) {
+		$accent = self::color( 'ddr_accent', '#ea580c' );
+		$label  = '' !== $label ? $label : ddr_link_label();
+
 		$pill_style = 'display:inline-flex;align-items:center;gap:9px;padding:11px 20px 11px 14px;border-radius:999px;background:#ffffff;color:#1f2937;font-size:14px;font-weight:600;line-height:1;text-decoration:none;border:1px solid rgba(15,23,42,.10);box-shadow:0 1px 2px rgba(15,23,42,.14),0 6px 16px rgba(15,23,42,.18);';
-		$ico_style  = 'display:inline-flex;width:22px;height:22px;min-width:22px;align-items:center;justify-content:center;border-radius:50%;background:rgba(234,88,12,.12);flex:0 0 auto;color:' . esc_attr( $accent ) . ';';
+		$ico_style  = 'display:inline-flex;width:22px;height:22px;min-width:22px;align-items:center;justify-content:center;border-radius:50%;flex:0 0 auto;color:' . esc_attr( $accent ) . ';';
 
-		// width/height anche come ATTRIBUTI sul tag: impediscono che l'SVG si
-		// espanda a tutta pagina se il CSS non viene caricato.
 		$svg = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;width:13px;height:13px;" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg>';
 
-		printf(
-			'<div class="ddr-footer-link" style="%1$s"><a class="ddr-pill" href="%2$s" style="%3$s"><span class="ddr-ico" style="%4$s">%5$s</span><span class="ddr-pill-text">%6$s</span></a></div>',
-			$wrap_style,
+		return sprintf(
+			'<a class="ddr-pill" href="%1$s" style="%2$s"><span class="ddr-ico" style="%3$s">%4$s</span><span class="ddr-pill-text">%5$s</span></a>',
 			esc_url( ddr_page_url() ),
 			$pill_style,
 			$ico_style,
 			$svg,
+			esc_html( $label )
+		);
+	}
+
+	/**
+	 * Shortcode [diritto_recesso_link style="pill|button|link" text="..."].
+	 * Permette di inserire il pulsante ovunque (pagine, widget, builder).
+	 */
+	public static function link_shortcode( $atts ) {
+		$atts  = shortcode_atts( array( 'style' => 'pill', 'text' => '' ), $atts, 'diritto_recesso_link' );
+		$label = '' !== $atts['text'] ? sanitize_text_field( $atts['text'] ) : ddr_link_label();
+		$url   = ddr_page_url();
+
+		switch ( $atts['style'] ) {
+			case 'button':
+				return sprintf( '<a class="ddr-btn ddr-btn-primary" href="%s">%s</a>', esc_url( $url ), esc_html( $label ) );
+			case 'link':
+				return sprintf( '<span class="ddr-link-plain"><a href="%s">%s</a></span>', esc_url( $url ), esc_html( $label ) );
+			case 'pill':
+			default:
+				return '<span class="ddr-inline-pill">' . self::pill_anchor( $label ) . '</span>';
+		}
+	}
+
+	/**
+	 * Aggiunge la voce di recesso a una posizione di menu scelta nelle impostazioni.
+	 */
+	public static function menu_link( $items, $args ) {
+		$location = get_option( 'ddr_menu_location', '' );
+		if ( ! $location || empty( $args->theme_location ) || $args->theme_location !== $location ) {
+			return $items;
+		}
+		$items .= sprintf(
+			'<li class="menu-item ddr-menu-link"><a href="%s">%s</a></li>',
+			esc_url( ddr_page_url() ),
 			esc_html( ddr_link_label() )
 		);
+		return $items;
 	}
 
 	/**

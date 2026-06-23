@@ -67,6 +67,9 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_link_label', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
 		register_setting( 'ddr_settings', 'ddr_enforce_cutoff', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
 		register_setting( 'ddr_settings', 'ddr_accent', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#ea580c' ) );
+		register_setting( 'ddr_settings', 'ddr_btn_bg', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#1a1a1a' ) );
+		register_setting( 'ddr_settings', 'ddr_btn_text', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#ffffff' ) );
+		register_setting( 'ddr_settings', 'ddr_menu_location', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
 		register_setting( 'ddr_settings', 'ddr_trust_proxy', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
 		register_setting( 'ddr_settings', 'ddr_delete_data', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
 		register_setting( 'ddr_settings', 'ddr_customer_emails', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
@@ -123,10 +126,34 @@ class DDR_Admin {
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="ddr_accent"><?php esc_html_e( 'Colore accento badge', 'diritto-di-recesso' ); ?></label></th>
+						<th scope="row"><label for="ddr_accent"><?php esc_html_e( 'Colore accento', 'diritto-di-recesso' ); ?></label></th>
 						<td>
 							<input type="color" name="ddr_accent" id="ddr_accent" value="<?php echo esc_attr( get_option( 'ddr_accent', '#ea580c' ) ); ?>" />
 							<p class="description"><?php esc_html_e( 'Colore dell’icona del badge nel footer. Intonalo al brand del sito.', 'diritto-di-recesso' ); ?></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="ddr_btn_bg"><?php esc_html_e( 'Colore pulsante', 'diritto-di-recesso' ); ?></label></th>
+						<td>
+							<input type="color" name="ddr_btn_bg" id="ddr_btn_bg" value="<?php echo esc_attr( get_option( 'ddr_btn_bg', '#1a1a1a' ) ); ?>" />
+							<input type="color" name="ddr_btn_text" id="ddr_btn_text" value="<?php echo esc_attr( get_option( 'ddr_btn_text', '#ffffff' ) ); ?>" />
+							<p class="description"><?php esc_html_e( 'Sfondo e testo del pulsante principale (form di recesso e shortcode stile pulsante).', 'diritto-di-recesso' ); ?></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="ddr_menu_location"><?php esc_html_e( 'Aggiungi a un menu', 'diritto-di-recesso' ); ?></label></th>
+						<td>
+							<?php $ddr_menus = get_registered_nav_menus(); $ddr_cur = get_option( 'ddr_menu_location', '' ); ?>
+							<select name="ddr_menu_location" id="ddr_menu_location">
+								<option value=""><?php esc_html_e( '— Nessuno —', 'diritto-di-recesso' ); ?></option>
+								<?php foreach ( $ddr_menus as $loc => $name ) : ?>
+									<option value="<?php echo esc_attr( $loc ); ?>" <?php selected( $ddr_cur, $loc ); ?>><?php echo esc_html( $name ); ?></option>
+								<?php endforeach; ?>
+							</select>
+							<p class="description">
+								<?php esc_html_e( 'Aggiunge la voce di recesso al menu selezionato. In alternativa usa lo shortcode:', 'diritto-di-recesso' ); ?>
+								<code>[diritto_recesso_link style="pill"]</code> (<code>pill</code> / <code>button</code> / <code>link</code>).
+							</p>
 						</td>
 					</tr>
 					<tr>

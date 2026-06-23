@@ -1,0 +1,361 @@
+# Diritto di Recesso 54-bis - by Artwork
+# Copyright (C) 2026 Artwork
+msgid ""
+msgstr ""
+"Project-Id-Version: Diritto di Recesso 54-bis 1.0.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it_IT\n"
+"X-Domain: diritto-di-recesso\n"
+
+msgid "Abbiamo registrato la tua dichiarazione di recesso. Ti abbiamo inviato l’avviso di ricevimento all’indirizzo email indicato, con data e ora della trasmissione."
+msgstr ""
+
+msgid "Annulla"
+msgstr ""
+
+msgid "Annullata"
+msgstr ""
+
+msgid "Attenzione: rimuove definitivamente l’audit trail delle richieste di recesso. Lascia disattivato per conservare le prove."
+msgstr ""
+
+msgid "Attiva solo se il sito è dietro Cloudflare o un reverse proxy affidabile. Di default viene registrato l’IP della connessione diretta."
+msgstr ""
+
+msgid "Avviso di ricevimento del recesso"
+msgstr ""
+
+msgid "Cancellazione dati"
+msgstr ""
+
+msgid "Ciao %s,"
+msgstr ""
+
+msgid "Cliente"
+msgstr ""
+
+msgid "Codice ricevuta"
+msgstr ""
+
+msgid "Codice ricevuta:"
+msgstr ""
+
+msgid "Colore accento badge"
+msgstr ""
+
+msgid "Colore dell’icona del badge nel footer. Intonalo al brand del sito."
+msgstr ""
+
+msgid "Completata"
+msgstr ""
+
+msgid "Conferma il recesso"
+msgstr ""
+
+msgid "Conferma la richiesta di recesso"
+msgstr ""
+
+msgid "Conferma recesso"
+msgstr ""
+
+msgid "Confermiamo di aver ricevuto la tua dichiarazione di recesso. Questo messaggio costituisce avviso di ricevimento su supporto durevole ai sensi dell’art. 54-bis del Codice del Consumo."
+msgstr ""
+
+msgid "Continua"
+msgstr ""
+
+msgid "Cosa vuoi restituire"
+msgstr ""
+
+msgid "Da qui puoi esercitare il diritto di recesso sugli ordini idonei e consultare le richieste già inviate."
+msgstr ""
+
+msgid "Data"
+msgstr ""
+
+msgid "Data e ora"
+msgstr ""
+
+msgid "Data e ora di trasmissione"
+msgstr ""
+
+msgid "Default 14. L’art. 53 può estendere fino a 12 mesi se l’informativa precontrattuale è carente."
+msgstr ""
+
+msgid "Destinatari notifiche"
+msgstr ""
+
+msgid "Dichiarazione di recesso"
+msgstr ""
+
+msgid "Dichiaro di voler recedere dal contratto relativo ai prodotti sopra indicati."
+msgstr ""
+
+msgid "Diritto di Recesso"
+msgstr ""
+
+msgid "Diritto di Recesso 54-bis richiede WooCommerce attivo per funzionare."
+msgstr ""
+
+msgid "Diritto di Recesso 54-bis – Impostazioni"
+msgstr ""
+
+msgid "Diritto di recesso"
+msgstr ""
+
+msgid "Disponibili %1$d (già recessi %2$d)"
+msgstr ""
+
+msgid "Documento riepilogativo della dichiarazione di recesso (art. 54-bis Codice del Consumo)."
+msgstr ""
+
+msgid "Elimina tabella, opzioni e pagina alla disinstallazione del plugin"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Email di fatturazione"
+msgstr ""
+
+msgid "Email separate da virgola. Vuoto = email amministratore del sito."
+msgstr ""
+
+msgid "Email: %s"
+msgstr ""
+
+msgid "Escluso dal recesso (art. 59)"
+msgstr ""
+
+msgid "Esporta CSV"
+msgstr ""
+
+msgid "Giorni di recesso"
+msgstr ""
+
+msgid "Hai avviato una procedura di recesso per l’ordine %s. Per proseguire in modo sicuro, conferma di essere l’intestatario dell’ordine cliccando il pulsante qui sotto."
+msgstr ""
+
+msgid "I prodotti di questo ordine sono esclusi dal diritto di recesso ai sensi dell’art. 59 del Codice del Consumo."
+msgstr ""
+
+msgid "I prodotti selezionati non sono più disponibili per il recesso. Ricomincia la procedura."
+msgstr ""
+
+msgid "IP dietro proxy/CDN"
+msgstr ""
+
+msgid "Il consumatore dichiara di recedere dal contratto relativo ai prodotti indicati dell’ordine."
+msgstr ""
+
+msgid "Il link di verifica non è valido o è scaduto. Ricomincia la procedura."
+msgstr ""
+
+msgid "Il link è valido per 30 minuti. Se non hai richiesto tu il recesso, ignora questa email: nessuna azione verrà eseguita."
+msgstr ""
+
+msgid "Il termine per il recesso (%s) è scaduto."
+msgstr ""
+
+msgid "Impostazioni"
+msgstr ""
+
+msgid "In lavorazione"
+msgstr ""
+
+msgid "Inserisci il numero d’ordine e l’email usata per l’acquisto. Verificheremo la titolarità e potrai inviare la dichiarazione di recesso."
+msgstr ""
+
+msgid "Intero ordine"
+msgstr ""
+
+msgid "Intestatario"
+msgstr ""
+
+msgid "La pagina del recesso non è stata creata. Disattiva e riattiva il plugin, oppure crea una pagina con lo shortcode [diritto_recesso]."
+msgstr ""
+
+msgid "La presente dichiarazione di recesso si intende validamente esercitata alla data e ora sopra indicate. Riceverai a breve istruzioni operative per l’eventuale restituzione dei beni e il rimborso."
+msgstr ""
+
+msgid "Le tue richieste di recesso"
+msgstr ""
+
+msgid "Limita agli ordini dal 19/06/2026"
+msgstr ""
+
+msgid "Link nel footer"
+msgstr ""
+
+msgid "Lo stato di questo ordine non consente il recesso online in questo momento."
+msgstr ""
+
+msgid "Mezzo per l’avviso di ricevimento"
+msgstr ""
+
+msgid "Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo"
+msgstr ""
+
+msgid "Mostra “Recedere dal contratto qui” nel footer del sito"
+msgstr ""
+
+msgid "Motivazione"
+msgstr ""
+
+msgid "Motivazione (facoltativa)"
+msgstr ""
+
+msgid "Nessun ordine attualmente idoneo al recesso online."
+msgstr ""
+
+msgid "Nessuna richiesta registrata."
+msgstr ""
+
+msgid "Nome e cognome"
+msgstr ""
+
+msgid "Non hai ancora inviato richieste di recesso."
+msgstr ""
+
+msgid "Numero d’ordine"
+msgstr ""
+
+msgid "Numero ordine"
+msgstr ""
+
+msgid "Nuova richiesta di recesso"
+msgstr ""
+
+msgid "Nuova richiesta di recesso – ordine %s"
+msgstr ""
+
+msgid "Ordine"
+msgstr ""
+
+msgid "Ordine non trovato."
+msgstr ""
+
+msgid "Ordini per cui puoi recedere"
+msgstr ""
+
+msgid "Pagina pubblica del recesso:"
+msgstr ""
+
+msgid "Per questo ordine il recesso è già stato esercitato su tutti i prodotti disponibili."
+msgstr ""
+
+msgid "Per questo ordine non risultano prodotti per cui è ancora possibile recedere."
+msgstr ""
+
+msgid "Per questo ordine non è prevista la funzione di recesso online."
+msgstr ""
+
+msgid "Permessi insufficienti."
+msgstr ""
+
+msgid "Procedi alla conferma"
+msgstr ""
+
+msgid "Prodotti"
+msgstr ""
+
+msgid "Prodotti oggetto del recesso"
+msgstr ""
+
+msgid "Prodotto"
+msgstr ""
+
+msgid "Quantità"
+msgstr ""
+
+msgid "Recedere dal contratto"
+msgstr ""
+
+msgid "Recedere dal contratto qui"
+msgstr ""
+
+msgid "Recedi"
+msgstr ""
+
+msgid "Recesso dal contratto"
+msgstr ""
+
+msgid "Recesso non disponibile per questo ordine."
+msgstr ""
+
+msgid "Recesso ricevuto"
+msgstr ""
+
+msgid "Ricevuta"
+msgstr ""
+
+msgid "Ricevuta non trovata."
+msgstr ""
+
+msgid "Richiesta di recesso online ricevuta (art. 54-bis). Ricevuta: %1$s — %2$s"
+msgstr ""
+
+msgid "Richieste"
+msgstr ""
+
+msgid "Richieste di recesso"
+msgstr ""
+
+msgid "Riferimento ordine"
+msgstr ""
+
+msgid "Rileva l’IP reale del cliente dagli header del proxy (Cloudflare / X-Forwarded-For)"
+msgstr ""
+
+msgid "Se i dati corrispondono a un ordine valido, riceverai a breve le istruzioni via email."
+msgstr ""
+
+msgid "Seleziona almeno un prodotto da restituire."
+msgstr ""
+
+msgid "Seleziona i prodotti e le quantità per cui eserciti il recesso. Puoi recedere anche solo per una parte dell’ordine."
+msgstr ""
+
+msgid "Sessione scaduta. Ricomincia la procedura."
+msgstr ""
+
+msgid "Si è verificato un errore nel salvataggio. Riprova."
+msgstr ""
+
+msgid "Spunta se questo prodotto non dà diritto di recesso (es. beni su misura, sigillati e aperti, deperibili)."
+msgstr ""
+
+msgid "Stai per inviare la seguente dichiarazione di recesso. Una volta confermata riceverai l’avviso di ricevimento via email."
+msgstr ""
+
+msgid "Stampa / salva PDF"
+msgstr ""
+
+msgid "Stato"
+msgstr ""
+
+msgid "Stato della richiesta aggiornato."
+msgstr ""
+
+msgid "Ti abbiamo inviato un’email con un link per confermare la richiesta di recesso. Controlla la posta (anche lo spam). Il link è valido per 30 minuti."
+msgstr ""
+
+msgid "Vai all’elenco richieste"
+msgstr ""
+
+msgid "Verifica i dati della dichiarazione. Al passaggio successivo potrai confermare il recesso."
+msgstr ""
+
+msgid "Visualizza / stampa la ricevuta"
+msgstr ""
+
+msgid "[%1$s] Avviso di ricevimento del recesso – %2$s"
+msgstr ""
+
+msgid "[%s] Verifica la richiesta di recesso"
+msgstr ""
+
+msgid "È stata registrata una nuova richiesta di recesso online."
+msgstr ""
+

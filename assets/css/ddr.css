@@ -1,0 +1,83 @@
+/* Diritto di Recesso 54-bis - by Artwork - stili front-end (sobri, ereditano dal tema) */
+.ddr-box{max-width:560px;margin:0 auto;padding:24px;border:1px solid #e5e5e5;border-radius:10px;background:#fff}
+.ddr-title{margin-top:0;font-size:1.4em}
+.ddr-intro{color:#555}
+.ddr-form p{margin:0 0 16px}
+.ddr-form label{display:block;font-weight:600;margin-bottom:6px}
+.ddr-form input[type=text],
+.ddr-form input[type=email],
+.ddr-form textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;box-sizing:border-box}
+.ddr-form input:disabled{background:#f5f5f5;color:#666}
+.ddr-btn{display:inline-block;padding:12px 22px;border:0;border-radius:6px;font-size:1em;cursor:pointer}
+.ddr-btn-primary{background:#1a1a1a;color:#fff}
+.ddr-btn-danger{background:#b32d2e;color:#fff}
+.ddr-btn-danger:disabled{background:#d9a3a3;cursor:not-allowed}
+.ddr-summary{width:100%;border-collapse:collapse;margin:16px 0}
+.ddr-summary th,.ddr-summary td{text-align:left;padding:8px 10px;border:1px solid #eee;vertical-align:top}
+.ddr-summary th{background:#fafafa;width:35%}
+.ddr-ack{font-size:.95em}
+.ddr-notice{max-width:560px;margin:0 auto 16px;padding:12px 16px;border-radius:8px}
+.ddr-notice-info{background:#eef4fb;border:1px solid #bcd6f2}
+.ddr-notice-success{background:#edf7ed;border:1px solid #bfe3bf}
+.ddr-notice-error{background:#fbeaea;border:1px solid #f0bcbc}
+/* Footer: badge auto-contenuto, leggibile su qualsiasi sfondo */
+.ddr-footer-link{margin:0 auto;padding:18px 0 32px;width:100%;text-align:center;box-sizing:border-box}
+.ddr-footer-link .ddr-pill{
+	--ddr-accent:#ea580c;
+	display:inline-flex;align-items:center;gap:9px;
+	padding:11px 20px 11px 14px;
+	border-radius:999px;
+	background:#ffffff;
+	color:#1f2937 !important;
+	font-size:14px;font-weight:600;line-height:1;
+	text-decoration:none !important;
+	border:1px solid rgba(15,23,42,.10);
+	box-shadow:0 1px 2px rgba(15,23,42,.14),0 6px 16px rgba(15,23,42,.18);
+	transition:transform .15s ease,box-shadow .15s ease;
+	-webkit-font-smoothing:antialiased;
+}
+.ddr-footer-link .ddr-pill:hover{
+	transform:translateY(-1px);
+	box-shadow:0 2px 4px rgba(15,23,42,.16),0 10px 24px rgba(15,23,42,.24) !important;
+	color:#1f2937 !important;
+}
+.ddr-footer-link .ddr-pill:focus-visible{outline:2px solid var(--ddr-accent);outline-offset:2px}
+.ddr-footer-link .ddr-ico{
+	display:inline-flex;width:22px;height:22px;
+	align-items:center;justify-content:center;
+	border-radius:50%;
+	background:rgba(234,88,12,.12);
+	background:color-mix(in srgb, var(--ddr-accent) 13%, #fff);
+	color:var(--ddr-accent);
+	flex:0 0 auto;
+}
+.ddr-footer-link .ddr-ico svg{width:13px;height:13px;display:block}
+@media (prefers-reduced-motion:reduce){.ddr-footer-link .ddr-pill{transition:none}}
+
+/* Selezione prodotti (recesso parziale) */
+.ddr-items{width:100%;border-collapse:collapse;margin:8px 0 20px}
+.ddr-items th,.ddr-items td{padding:10px;border-bottom:1px solid #eee;text-align:left;vertical-align:middle}
+.ddr-items thead th{font-size:.85em;text-transform:uppercase;letter-spacing:.03em;color:#666}
+.ddr-item-check{width:36px}
+.ddr-item-row label{display:inline;font-weight:600;margin:0}
+.ddr-item-note{display:block;font-size:.85em;color:#777;margin-top:2px}
+.ddr-item-qty{width:72px;padding:6px 8px;border:1px solid #ccc;border-radius:6px}
+.ddr-item-qty:disabled{background:#f5f5f5;color:#999}
+.ddr-item-max{color:#999;font-size:.9em;margin-left:4px}
+.ddr-readonly{display:block;padding:10px;background:#f7f7f7;border:1px solid #eee;border-radius:6px}
+.ddr-btn-sm{padding:6px 14px;font-size:.9em}
+
+/* Area account */
+.ddr-account-list{list-style:none;margin:0 0 24px;padding:0}
+.ddr-account-list li{padding:8px 0;border-bottom:1px solid #eee}
+.ddr-account-table{width:100%;border-collapse:collapse;margin:8px 0}
+.ddr-account-table th,.ddr-account-table td{padding:8px 10px;border:1px solid #eee;text-align:left;font-size:.95em}
+
+/* Ricevuta stampabile */
+.ddr-receipt .ddr-summary th{width:38%}
+@media print{
+	body *{visibility:hidden}
+	.ddr-receipt,.ddr-receipt *{visibility:visible}
+	.ddr-receipt{position:absolute;left:0;top:0;width:100%;border:0;box-shadow:none}
+	.ddr-no-print,.ddr-footer-link{display:none !important}
+}

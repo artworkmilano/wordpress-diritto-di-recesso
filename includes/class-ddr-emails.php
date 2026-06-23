@@ -141,6 +141,39 @@ class DDR_Emails {
 	}
 
 	/**
+	 * Email al cliente quando l'esercente cambia lo stato della richiesta.
+	 */
+	public static function send_status_update( $request ) {
+		$status = $request['status'];
+
+		$intro = array(
+			'ricevuta'    => __( 'Abbiamo aggiornato lo stato della tua richiesta di recesso.', 'diritto-di-recesso' ),
+			'lavorazione' => __( 'La tua richiesta di recesso è ora in lavorazione.', 'diritto-di-recesso' ),
+			'completata'  => __( 'La tua richiesta di recesso è stata completata.', 'diritto-di-recesso' ),
+			'annullata'   => __( 'La tua richiesta di recesso è stata annullata. Per chiarimenti rispondi a questa email.', 'diritto-di-recesso' ),
+		);
+		$message = isset( $intro[ $status ] ) ? $intro[ $status ] : $intro['ricevuta'];
+
+		$subject = sprintf(
+			/* translators: 1: nome sito 2: codice ricevuta */
+			__( '[%1$s] Aggiornamento richiesta di recesso – %2$s', 'diritto-di-recesso' ),
+			wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ),
+			$request['receipt_code']
+		);
+
+		$rows  = '';
+		$rows .= self::row( __( 'Codice ricevuta', 'diritto-di-recesso' ), $request['receipt_code'] );
+		$rows .= self::row( __( 'Ordine', 'diritto-di-recesso' ), $request['order_id'] );
+		$rows .= self::row( __( 'Prodotti', 'diritto-di-recesso' ), self::items_text( $request ) );
+		$rows .= self::row( __( 'Stato', 'diritto-di-recesso' ), DDR_DB::status_label( $status ) );
+
+		$body  = '<p>' . esc_html( $message ) . '</p>';
+		$body .= '<table style="width:100%;border-collapse:collapse;font-size:14px;margin:16px 0;">' . $rows . '</table>';
+
+		return wp_mail( $request['customer_email'], $subject, self::wrap( __( 'Aggiornamento richiesta di recesso', 'diritto-di-recesso' ), $body ), self::headers() );
+	}
+
+	/**
 	 * Riepilogo testuale dei prodotti recessi dalla riga richiesta.
 	 */
 	protected static function items_text( $request ) {

@@ -14,10 +14,16 @@ msgstr ""
 msgid "(Compilare e restituire il presente modulo solo se si desidera recedere dal contratto.)"
 msgstr ""
 
+msgid "Abbiamo aggiornato lo stato della tua richiesta di recesso."
+msgstr ""
+
 msgid "Abbiamo registrato la tua dichiarazione di recesso. Ti abbiamo inviato l’avviso di ricevimento all’indirizzo email indicato, con data e ora della trasmissione."
 msgstr ""
 
 msgid "Aggiornamenti"
+msgstr ""
+
+msgid "Aggiornamento richiesta di recesso"
 msgstr ""
 
 msgid "All’attenzione di %1$s, %2$s:"
@@ -33,6 +39,9 @@ msgid "Attenzione: rimuove definitivamente l’audit trail delle richieste di re
 msgstr ""
 
 msgid "Attiva solo se il sito è dietro Cloudflare o un reverse proxy affidabile. Di default viene registrato l’IP della connessione diretta."
+msgstr ""
+
+msgid "Avvisa il cliente via email quando cambi lo stato della sua richiesta (in lavorazione, completata, annullata)"
 msgstr ""
 
 msgid "Avviso di ricevimento del recesso"
@@ -164,6 +173,9 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
+msgid "Email al cliente sui cambi di stato"
+msgstr ""
+
 msgid "Email di fatturazione"
 msgstr ""
 
@@ -252,6 +264,15 @@ msgid "La pagina del recesso non è stata creata. Disattiva e riattiva il plugin
 msgstr ""
 
 msgid "La presente dichiarazione di recesso si intende validamente esercitata alla data e ora sopra indicate. Riceverai a breve istruzioni operative per l’eventuale restituzione dei beni e il rimborso."
+msgstr ""
+
+msgid "La tua richiesta di recesso è ora in lavorazione."
+msgstr ""
+
+msgid "La tua richiesta di recesso è stata annullata. Per chiarimenti rispondi a questa email."
+msgstr ""
+
+msgid "La tua richiesta di recesso è stata completata."
 msgstr ""
 
 msgid "Le tue richieste di recesso"
@@ -362,6 +383,9 @@ msgstr ""
 msgid "Puoi incollare il testo a mano oppure usare lo shortcode indicato sotto ogni riquadro: in questo modo, se aggiorni qui il testo, si aggiorna ovunque."
 msgstr ""
 
+msgid "Quando segni una richiesta come “completata”, crea un rimborso WooCommerce per i prodotti recessi con ripristino dello stock"
+msgstr ""
+
 msgid "Quantità"
 msgstr ""
 
@@ -374,6 +398,9 @@ msgstr ""
 msgid "Recedi"
 msgstr ""
 
+msgid "Recesso art. 54-bis – ricevuta %s"
+msgstr ""
+
 msgid "Recesso dal contratto"
 msgstr ""
 
@@ -384,6 +411,15 @@ msgid "Recesso non disponibile per questo ordine."
 msgstr ""
 
 msgid "Recesso ricevuto"
+msgstr ""
+
+msgid "Recesso: rimborso automatico non riuscito (%s)."
+msgstr ""
+
+msgid "Recesso: rimborso di %1$s registrato con ripristino stock (ricevuta %2$s). Verificare l’eventuale rimborso tramite il gateway di pagamento."
+msgstr ""
+
+msgid "Registra il rimborso e riporta lo stock, ma NON movimenta denaro tramite il gateway: l’eventuale restituzione al cliente va confermata manualmente. Disattivato di default."
 msgstr ""
 
 msgid "Repository: %s"
@@ -408,6 +444,9 @@ msgid "Riferimento ordine"
 msgstr ""
 
 msgid "Rileva l’IP reale del cliente dagli header del proxy (Cloudflare / X-Forwarded-For)"
+msgstr ""
+
+msgid "Rimborso automatico"
 msgstr ""
 
 msgid "Salva testi"
@@ -477,6 +516,9 @@ msgid "Versione installata"
 msgstr ""
 
 msgid "Visualizza / stampa la ricevuta"
+msgstr ""
+
+msgid "[%1$s] Aggiornamento richiesta di recesso – %2$s"
 msgstr ""
 
 msgid "[%1$s] Avviso di ricevimento del recesso – %2$s"

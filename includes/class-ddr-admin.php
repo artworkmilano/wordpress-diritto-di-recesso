@@ -69,6 +69,8 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_accent', array( 'sanitize_callback' => 'sanitize_hex_color', 'default' => '#ea580c' ) );
 		register_setting( 'ddr_settings', 'ddr_trust_proxy', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
 		register_setting( 'ddr_settings', 'ddr_delete_data', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
+		register_setting( 'ddr_settings', 'ddr_customer_emails', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
+		register_setting( 'ddr_settings', 'ddr_auto_refund', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'no' ) );
 	}
 
 	public static function render_settings() {
@@ -131,6 +133,19 @@ class DDR_Admin {
 						<th scope="row"><?php esc_html_e( 'Limita agli ordini dal 19/06/2026', 'diritto-di-recesso' ); ?></th>
 						<td>
 							<label><input type="checkbox" name="ddr_enforce_cutoff" value="yes" <?php checked( 'yes', get_option( 'ddr_enforce_cutoff', 'no' ) ); ?> /> <?php esc_html_e( 'Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo', 'diritto-di-recesso' ); ?></label>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'Email al cliente sui cambi di stato', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="ddr_customer_emails" value="yes" <?php checked( 'yes', get_option( 'ddr_customer_emails', 'yes' ) ); ?> /> <?php esc_html_e( 'Avvisa il cliente via email quando cambi lo stato della sua richiesta (in lavorazione, completata, annullata)', 'diritto-di-recesso' ); ?></label>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'Rimborso automatico', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="ddr_auto_refund" value="yes" <?php checked( 'yes', get_option( 'ddr_auto_refund', 'no' ) ); ?> /> <?php esc_html_e( 'Quando segni una richiesta come “completata”, crea un rimborso WooCommerce per i prodotti recessi con ripristino dello stock', 'diritto-di-recesso' ); ?></label>
+							<p class="description"><?php esc_html_e( 'Registra il rimborso e riporta lo stock, ma NON movimenta denaro tramite il gateway: l’eventuale restituzione al cliente va confermata manualmente. Disattivato di default.', 'diritto-di-recesso' ); ?></p>
 						</td>
 					</tr>
 					<tr>
@@ -337,7 +352,22 @@ class DDR_Admin {
 		$status = isset( $_GET['status'] ) ? sanitize_key( wp_unslash( $_GET['status'] ) ) : '';
 		check_admin_referer( 'ddr_set_status_' . $id );
 
+		$before = DDR_DB::get( $id );
+		$old    = $before ? $before['status'] : '';
+
 		DDR_DB::update_status( $id, $status );
+
+		$request = DDR_DB::get( $id );
+		if ( $request ) {
+			// Email al cliente (se abilitata).
+			if ( 'yes' === get_option( 'ddr_customer_emails', 'yes' ) ) {
+				DDR_Emails::send_status_update( $request );
+			}
+			// Rimborso automatico al passaggio a "completata" (se abilitato).
+			if ( 'completata' === $status && 'completata' !== $old && 'yes' === get_option( 'ddr_auto_refund', 'no' ) ) {
+				DDR_Refund::process( $request );
+			}
+		}
 
 		wp_safe_redirect( add_query_arg( array( 'page' => 'ddr-richieste', 'ddr_updated' => 1 ), admin_url( 'admin.php' ) ) );
 		exit;

@@ -33,7 +33,11 @@ class DDR_Frontend {
 		add_shortcode( DDR_SHORTCODE, array( __CLASS__, 'render_shortcode' ) );
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'assets' ) );
 		add_action( 'wp_footer', array( __CLASS__, 'footer_link' ) );
-		add_filter( 'woocommerce_my_account_my_orders_actions', array( __CLASS__, 'account_order_action' ), 10, 2 );
+		if ( 'yes' === get_option( 'ddr_orders_button', 'yes' ) ) {
+			add_filter( 'woocommerce_my_account_my_orders_actions', array( __CLASS__, 'account_order_action' ), 10, 2 );
+		}
+		// CTA nella pagina di dettaglio ordine (theme-safe, larghezza piena).
+		add_action( 'woocommerce_order_details_after_order_table', array( __CLASS__, 'order_detail_cta' ) );
 
 		// Modi alternativi di inserire il pulsante: shortcode + voce di menu.
 		add_shortcode( 'diritto_recesso_link', array( __CLASS__, 'link_shortcode' ) );
@@ -366,6 +370,26 @@ class DDR_Frontend {
 			'name' => ddr_link_label(),
 		);
 		return $actions;
+	}
+
+	/**
+	 * CTA a tutta larghezza nella pagina di dettaglio dell'ordine.
+	 * Posizione ampia e theme-safe (a differenza della colonna azioni stretta).
+	 */
+	public static function order_detail_cta( $order ) {
+		if ( ! $order instanceof WC_Order ) {
+			return;
+		}
+		$eval = DDR_Eligibility::evaluate( $order );
+		if ( empty( $eval['eligible'] ) ) {
+			return;
+		}
+		printf(
+			'<p class="ddr-order-cta"><a class="ddr-cta ddr-btn ddr-btn-primary ddr-recedi" href="%1$s">%2$s%3$s</a></p>',
+			esc_url( ddr_page_url( array( 'order' => $order->get_order_number() ) ) ),
+			self::show_icon() ? self::icon_svg() . ' ' : '', // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			esc_html( ddr_link_label() )
+		);
 	}
 
 	/* ---------------------------------------------------------------------

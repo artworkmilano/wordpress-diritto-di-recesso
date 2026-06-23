@@ -362,6 +362,9 @@ msgstr ""
 msgid "Mostra automaticamente il link di recesso nel footer del sito"
 msgstr ""
 
+msgid "Mostra il pulsante di recesso nella tabella degli ordini dell’area account"
+msgstr ""
+
 msgid "Mostra la funzione solo per ordini conclusi dalla data di applicabilità dell’obbligo"
 msgstr ""
 
@@ -456,6 +459,9 @@ msgid "Prodotti oggetto del recesso"
 msgstr ""
 
 msgid "Pulsante"
+msgstr ""
+
+msgid "Pulsante in “I miei ordini”"
 msgstr ""
 
 msgid "Punto di accesso"
@@ -555,6 +561,9 @@ msgid "Scegli logo"
 msgstr ""
 
 msgid "Se i dati corrispondono a un ordine valido, riceverai a breve le istruzioni via email."
+msgstr ""
+
+msgid "Se il tuo tema rende stretta la colonna azioni, puoi disattivarlo: il recesso resta disponibile nel dettaglio ordine e nel tab “Diritto di recesso”."
 msgstr ""
 
 msgid "Se vuoto, viene usato (in ordine): logo email di WooCommerce, logo del sito, infine il nome del negozio in testo."

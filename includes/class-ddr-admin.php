@@ -65,6 +65,7 @@ class DDR_Admin {
 		register_setting( 'ddr_settings', 'ddr_window_days', array( 'sanitize_callback' => 'absint', 'default' => 14 ) );
 		register_setting( 'ddr_settings', 'ddr_admin_recipients', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
 		register_setting( 'ddr_settings', 'ddr_footer_link', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
+		register_setting( 'ddr_settings', 'ddr_orders_button', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
 		register_setting( 'ddr_settings', 'ddr_link_label', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '' ) );
 		register_setting( 'ddr_settings', 'ddr_footer_style', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'link' ) );
 		register_setting( 'ddr_settings', 'ddr_btn_icon', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'yes' ) );
@@ -156,6 +157,13 @@ class DDR_Admin {
 						<th scope="row"><?php esc_html_e( 'Icona', 'diritto-di-recesso' ); ?></th>
 						<td>
 							<label><input type="checkbox" name="ddr_btn_icon" value="yes" <?php checked( 'yes', get_option( 'ddr_btn_icon', 'yes' ) ); ?> /> <?php esc_html_e( 'Mostra l’icona accanto al testo del link/pulsante', 'diritto-di-recesso' ); ?></label>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'Pulsante in “I miei ordini”', 'diritto-di-recesso' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="ddr_orders_button" value="yes" <?php checked( 'yes', get_option( 'ddr_orders_button', 'yes' ) ); ?> /> <?php esc_html_e( 'Mostra il pulsante di recesso nella tabella degli ordini dell’area account', 'diritto-di-recesso' ); ?></label>
+							<p class="description"><?php esc_html_e( 'Se il tuo tema rende stretta la colonna azioni, puoi disattivarlo: il recesso resta disponibile nel dettaglio ordine e nel tab “Diritto di recesso”.', 'diritto-di-recesso' ); ?></p>
 						</td>
 					</tr>
 					<tr>

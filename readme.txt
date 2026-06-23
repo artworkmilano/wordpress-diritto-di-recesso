@@ -5,7 +5,7 @@ Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 7.0
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,11 @@ Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli o
 Strumento tecnico, non sostituisce un parere legale. Adeguare separatamente condizioni generali di vendita e informativa precontrattuale (art. 49 c.1 lett. h). La funzione non crea il diritto di recesso: lo rende esercitabile online dove gia' esiste.
 
 == Changelog ==
+= 1.7.1 =
+* Fix layout: il pulsante di recesso nella tabella "I miei ordini" ora e' un blocco contenuto nella cella (niente overflow su nessun tema).
+* Nuovo CTA nella pagina di dettaglio ordine (larghezza piena, theme-safe).
+* Nuova spunta per attivare/disattivare il pulsante nella lista ordini.
+
 = 1.7.0 =
 * Raggio dei bordi globale e attiva/disattiva ombra dalle impostazioni.
 * Pannello impostazioni riorganizzato in sezioni (Recesso, Punto di accesso, Aspetto, Ricevuta & PDF, Notifiche & rimborsi, Avanzate).

@@ -573,6 +573,16 @@ JS;
 		header( 'Content-Type: text/csv; charset=utf-8' );
 		header( 'Content-Disposition: attachment; filename=recesso-' . gmdate( 'Y-m-d' ) . '.csv' );
 
+		// Neutralizza la CSV formula injection: anteponi un apice ai valori che
+		// iniziano con =,+,-,@ (o tab/CR) così Excel/Sheets non li esegue.
+		$safe = static function ( $v ) {
+			$v = (string) $v;
+			if ( '' !== $v && in_array( $v[0], array( '=', '+', '-', '@', "\t", "\r" ), true ) ) {
+				$v = "'" . $v;
+			}
+			return $v;
+		};
+
 		$out = fopen( 'php://output', 'w' );
 		// BOM per Excel.
 		fwrite( $out, "\xEF\xBB\xBF" );
@@ -583,17 +593,20 @@ JS;
 		foreach ( $rows as $r ) {
 			fputcsv(
 				$out,
-				array(
-					$r['id'],
-					$r['receipt_code'],
-					$r['created_at'],
-					$r['order_id'],
-					$r['customer_name'],
-					$r['customer_email'],
-					DDR_Frontend::items_summary( $r['items_data'] ),
-					DDR_DB::status_label( $r['status'] ),
-					$r['reason'],
-					$r['ip_address'],
+				array_map(
+					$safe,
+					array(
+						$r['id'],
+						$r['receipt_code'],
+						$r['created_at'],
+						$r['order_id'],
+						$r['customer_name'],
+						$r['customer_email'],
+						DDR_Frontend::items_summary( $r['items_data'] ),
+						DDR_DB::status_label( $r['status'] ),
+						$r['reason'],
+						$r['ip_address'],
+					)
 				)
 			);
 		}

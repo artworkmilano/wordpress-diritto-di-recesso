@@ -8,10 +8,12 @@
 .ddr-form input[type=email],
 .ddr-form textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:var(--ddr-radius,10px);box-sizing:border-box}
 .ddr-form input:disabled{background:#f5f5f5;color:#666}
-.ddr-btn{display:inline-block;padding:12px 22px;border:0;border-radius:var(--ddr-radius,10px);font-size:1em;cursor:pointer}
+.ddr-btn{display:inline-block;padding:12px 22px;border:0;border-radius:var(--ddr-radius,10px);font-size:1em;font-family:inherit;cursor:pointer;transition:opacity .15s ease}
+/* Hover/focus: solo opacità, mai cambio colore (testo leggibile anche su fondo scuro) */
+.ddr-btn:hover,.ddr-btn:focus{opacity:.88}
 .ddr-btn-primary{background:#1a1a1a;color:#fff}
 .ddr-btn-danger{background:#b32d2e;color:#fff}
-.ddr-btn-danger:disabled{background:#d9a3a3;cursor:not-allowed}
+.ddr-btn-danger:disabled{background:#d9a3a3;cursor:not-allowed;opacity:1}
 .ddr-summary{width:100%;border-collapse:collapse;margin:16px 0}
 .ddr-summary th,.ddr-summary td{text-align:left;padding:8px 10px;border:1px solid #eee;vertical-align:top}
 .ddr-summary th{background:#fafafa;width:35%}

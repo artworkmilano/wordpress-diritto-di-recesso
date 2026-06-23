@@ -71,7 +71,8 @@ class DDR_Frontend {
 		$btn_tx = self::color( 'ddr_btn_text', '#ffffff' );
 		$radius = (int) get_option( 'ddr_radius', 10 );
 		$css  = ':root{--ddr-radius:' . $radius . 'px}';
-		$css .= '.ddr-btn-primary{background:' . $btn_bg . ';color:' . $btn_tx . '}';
+		// Colore pulsante stabile anche su hover/focus (niente blackening del tema).
+		$css .= '.ddr-btn-primary,.ddr-btn-primary:hover,.ddr-btn-primary:focus{background:' . $btn_bg . ' !important;color:' . $btn_tx . ' !important}';
 		$css .= '.ddr-pill{--ddr-accent:' . $accent . '}';
 		$css .= '.ddr-link-plain,.ddr-menu-link>a{color:' . $accent . '}';
 
@@ -110,6 +111,9 @@ class DDR_Frontend {
 
 		nocache_headers();
 		header( 'Content-Type: text/html; charset=utf-8' );
+		// Solo il nostro dominio può incorporare il frame (anti clickjacking).
+		header( 'X-Frame-Options: SAMEORIGIN' );
+		header( "Content-Security-Policy: frame-ancestors 'self'" );
 		echo '<!DOCTYPE html><html ' . get_language_attributes() . '><head><meta charset="utf-8" />';
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1" />';
 		echo '<link rel="stylesheet" href="' . esc_url( DDR_URL . 'assets/css/ddr.css?ver=' . DDR_VERSION ) . '" />';
@@ -119,7 +123,7 @@ class DDR_Frontend {
 		$radius = (int) get_option( 'ddr_radius', 10 );
 		$shadow = ( 'yes' !== get_option( 'ddr_shadow', 'yes' ) ) ? '.ddr-box,.ddr-pill{box-shadow:none}' : '';
 		echo '<style>:root{--ddr-radius:' . $radius . 'px}body{margin:0;padding:22px;background:#fff;color:#1f2937;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.ddr-box{border:0;padding:0;max-width:none}'
-			. '.ddr-btn-primary{background:' . $btn_bg . ';color:' . $btn_tx . '}.ddr-pill{--ddr-accent:' . $accent . '}.ddr-link-plain{color:' . $accent . '}' . $shadow . '</style>';
+			. '.ddr-btn-primary,.ddr-btn-primary:hover,.ddr-btn-primary:focus{background:' . $btn_bg . ' !important;color:' . $btn_tx . ' !important}.ddr-pill{--ddr-accent:' . $accent . '}.ddr-link-plain{color:' . $accent . '}' . $shadow . '</style>';
 		echo '</head><body class="ddr-modal-body">';
 		echo do_shortcode( '[' . DDR_SHORTCODE . ']' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo '<script src="' . esc_url( DDR_URL . 'assets/js/ddr.js?ver=' . DDR_VERSION ) . '"></script>';

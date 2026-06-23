@@ -5,7 +5,7 @@ Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 7.0
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,10 @@ Si. La verifica avviene tramite numero ordine + email di fatturazione; per gli o
 Strumento tecnico, non sostituisce un parere legale. Adeguare separatamente condizioni generali di vendita e informativa precontrattuale (art. 49 c.1 lett. h). La funzione non crea il diritto di recesso: lo rende esercitabile online dove gia' esiste.
 
 == Changelog ==
+= 1.7.3 =
+* I pulsanti ereditano il font del tema; hover con sola opacità (testo leggibile anche su fondo scuro).
+* Sicurezza: neutralizzata la CSV formula injection nell'export; header anti-clickjacking sul frame della modale.
+
 = 1.7.2 =
 * Nuova spunta per mostrare/nascondere la voce "Diritto di recesso" nel menu dell'area account.
 

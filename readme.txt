@@ -84,6 +84,12 @@ Si: gratuito e open source (licenza GPL-2.0-or-later).
 = E' compatibile con HPOS? =
 Si, il plugin dichiara la compatibilita' con le tabelle ordini ad alte prestazioni (HPOS) di WooCommerce.
 
+== Screenshots ==
+
+1. Pannello impostazioni a schede: giorni di recesso, punti d'accesso, aspetto, ricevuta/PDF, notifiche e rimborsi.
+2. Registro delle richieste di recesso con stati ed esportazione CSV (audit trail).
+3. Testi legali pronti (clausola di recesso, modulo tipo, esclusioni) con editor visuale e shortcode.
+
 == Filtri per gli sviluppatori ==
 * ddr_withdrawal_days( $days, $order )
 * ddr_eligible_statuses( $statuses )
